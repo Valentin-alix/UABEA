@@ -3,6 +3,7 @@ using AssetsTools.NET.Extra;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace UABEAvalonia
 {
@@ -56,6 +57,14 @@ namespace UABEAvalonia
             AssetBundleFile bun = new AssetBundleFile();
 
             Stream fs = File.OpenRead(file);
+            bun = CommandLineHandler.ReadAssetBundleFile(decompFile, fs, bun);
+
+            return bun;
+        }
+
+        private static AssetBundleFile ReadAssetBundleFile(string? decompFile, Stream fs, AssetBundleFile bun)
+        {
+
             AssetsFileReader r = new AssetsFileReader(fs);
 
             bun.Read(r);
@@ -79,7 +88,6 @@ namespace UABEAvalonia
                 bun = new AssetBundleFile();
                 bun.Read(r);
             }
-
             return bun;
         }
 
@@ -106,7 +114,7 @@ namespace UABEAvalonia
                 Console.WriteLine("Directory does not exist!");
                 return;
             }
-
+            
             HashSet<string> flags = GetFlags(args);
             foreach (string file in Directory.EnumerateFiles(exportDirectory))
             {
@@ -130,18 +138,69 @@ namespace UABEAvalonia
                 Console.WriteLine($"Decompressing {file}...");
                 AssetBundleFile bun = DecompressBundle(file, decompFile);
 
+                var am = new AssetsManager();
+                
+                string classDataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "classdata.tpk");
+                if (File.Exists(classDataPath))
+                {
+                    am.LoadClassPackage(classDataPath);
+                }
+                
                 int entryCount = bun.BlockAndDirInfo.DirectoryInfos.Length;
+                
+                var outDir = Path.Combine(exportDirectory, "exported");
+                Directory.CreateDirectory(outDir);
+
                 for (int i = 0; i < entryCount; i++)
                 {
+                    var ass = new AssetWorkspace(am, true);
+
                     string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
                     byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
+                    
                     string outName;
                     if (flags.Contains("-keepnames"))
                         outName = Path.Combine(exportDirectory, name);
                     else
                         outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
+                    
                     Console.WriteLine($"Exporting {outName}...");
                     File.WriteAllBytes(outName, data);
+                    
+                    DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
+                    AssetsFileInstance fileInst = am.LoadAssetsFile(outName, true);
+                    ass.LoadedFiles.Add(fileInst);
+
+                    Directory.CreateDirectory(Path.Combine(outDir, name));
+                    
+                    string uVer = fileInst.file.Metadata.UnityVersion;
+                    if (uVer == "0.0.0" && fileInst.parentBundle != null)
+                    {
+                        uVer = fileInst.parentBundle.file.Header.EngineVersion;
+                    }
+                    am.LoadClassDatabaseFromPackage(uVer);
+
+                    foreach (AssetFileInfo info in fileInst.file.AssetInfos)
+                    {
+                        AssetContainer cont = new AssetContainer(info, fileInst);
+                        ass.LoadedAssets.Add(cont.AssetId, cont);
+                        
+                    }
+
+                    foreach (var asset in ass.LoadedAssets)
+                    {
+                        AssetImportExport dumper = new AssetImportExport();
+                        AssetNameUtils.GetDisplayNameFast(ass, asset.Value, false, out var assetName, out var type);
+                        
+                        using (FileStream fs = File.Open(Path.Combine(outDir, name,  assetName+ ".json"), FileMode.Create))
+                        using (StreamWriter sw = new StreamWriter(fs))
+                        {
+                            AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
+                            dumper.DumpJsonAsset(sw, baseField);
+                        }   
+                    }
+
+                    BundleHelper.LoadAllAssetsFromBundle(bun);
                 }
 
                 bun.Close();
@@ -152,7 +211,7 @@ namespace UABEAvalonia
                 Console.WriteLine("Done.");
             }
         }
-
+        
         private static void BatchImportBundle(string[] args)
         {
             string importDirectory = GetMainFileName(args);
@@ -348,6 +407,13 @@ namespace UABEAvalonia
 
         public static void CLHMain(string[] args)
         {
+            BatchExportBundle(new []
+            {
+                "batchexportbundle",
+                "-md",
+                @"C:\Users\Alpa\AppData\Local\Ankama\Dofus-beta\Dofus_Data\StreamingAssets\Content\Map"
+            });
+            
             if (args.Length < 2)
             {
                 PrintHelp();

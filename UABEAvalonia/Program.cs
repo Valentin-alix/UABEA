@@ -21,7 +21,7 @@ namespace UABEAvalonia
         public static void Main(string[] args)
         {
             bool usesConsole = false;
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            /*if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
                 usesConsole = AttachConsole(-1);
 
@@ -37,10 +37,11 @@ namespace UABEAvalonia
             {
                 //outputs fine to console already with dotnet in my testing
                 usesConsole = true;
-            }
+            }*/
 
             AppDomain currentDomain = AppDomain.CurrentDomain;
             currentDomain.UnhandledException += new UnhandledExceptionEventHandler(UABEAExceptionHandler);
+            CommandLineHandler.CLHMain(args);
 
             if (args.Length > 0)
             {

@@ -16,7 +16,7 @@ namespace UABEAvalonia
         private StreamWriter sw;
         private StreamReader sr;
         private AssetsFileWriter aw;
-
+        
         public void DumpRawAsset(FileStream wfs, AssetsFileReader reader, long position, uint size)
         {
             Stream assetFs = reader.BaseStream;
