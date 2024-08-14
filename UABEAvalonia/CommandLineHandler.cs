@@ -407,12 +407,12 @@ namespace UABEAvalonia
 
         public static void CLHMain(string[] args)
         {
-            BatchExportBundle(new []
+            /*BatchExportBundle(new []
             {
                 "batchexportbundle",
                 "-md",
                 @"C:\Users\Alpa\AppData\Local\Ankama\Dofus-beta\Dofus_Data\StreamingAssets\Content\Map"
-            });
+            });*/
             
             if (args.Length < 2)
             {
