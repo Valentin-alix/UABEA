@@ -171,7 +171,7 @@ namespace UABEAvalonia
                     AssetsFileInstance fileInst = am.LoadAssetsFile(outName, true);
                     ass.LoadedFiles.Add(fileInst);
 
-                    Directory.CreateDirectory(Path.Combine(outDir, name));
+                    // Directory.CreateDirectory(Path.Combine(outDir, name));
                     
                     string uVer = fileInst.file.Metadata.UnityVersion;
                     if (uVer == "0.0.0" && fileInst.parentBundle != null)
@@ -191,8 +191,12 @@ namespace UABEAvalonia
                     {
                         AssetImportExport dumper = new AssetImportExport();
                         AssetNameUtils.GetDisplayNameFast(ass, asset.Value, false, out var assetName, out var type);
-                        
-                        using (FileStream fs = File.Open(Path.Combine(outDir, name,  assetName+ ".json"), FileMode.Create))
+                        if (type == "AssetBundle" || type == "MonoScript")
+                            {
+                                continue;
+                            }
+
+                        using (FileStream fs = File.Open(Path.Combine(outDir,  assetName+ ".json"), FileMode.Create))
                         using (StreamWriter sw = new StreamWriter(fs))
                         {
                             AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
