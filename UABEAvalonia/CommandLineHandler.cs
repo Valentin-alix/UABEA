@@ -145,30 +145,34 @@ namespace UABEAvalonia
 
             for (int i = 0; i < entryCount; i++)
             {
-                var ass = new AssetWorkspace(am, true);
-
-                string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
-                byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
-
-                string outName;
-                if (flags.Contains("-keepnames"))
-                    outName = Path.Combine(exportDirectory, name);
-                else
-                    outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
-
-                Console.WriteLine($"Exporting {outName}...");
-                File.WriteAllBytes(outName, data);
-
-                DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
-
-                AssetsFileInstance fileInst;
                 try
                 {
+
+                    var ass = new AssetWorkspace(am, true);
+
+                    string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
+                    byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
+
+                    string outName;
+                    if (flags.Contains("-keepnames"))
+                        outName = Path.Combine(exportDirectory, name);
+                    else
+                        outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
+
+                    Console.WriteLine($"Exporting {outName}...");
+                    File.WriteAllBytes(outName, data);
+
+                    DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
+
+                    AssetsFileInstance fileInst;
+
+
                     fileInst = am.LoadAssetsFile(outName, true);
-                
+
+
                     ass.LoadedFiles.Add(fileInst);
 
-                    // Directory.CreateDirectory(Path.Combine(outDir, name));
+                    //Directory.CreateDirectory(Path.Combine(outDir, name));
 
                     string uVer = fileInst.file.Metadata.UnityVersion;
                     if (uVer == "0.0.0" && fileInst.parentBundle != null)
@@ -193,16 +197,18 @@ namespace UABEAvalonia
                             continue;
                         }
                         FileStream fs;
-                        using (fs = File.Open(Path.Combine(outDir, assetName + ".json"), FileMode.Create)) ;
-                        using (StreamWriter sw = new StreamWriter(fs))
+                        using (fs = File.Open(Path.Combine(outDir, assetName + ".json"), FileMode.Create))
                         {
-                            AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
-                            dumper.DumpJsonAsset(sw, baseField);
+                            using (StreamWriter sw = new StreamWriter(fs))
+                            {
+                                AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
+                                dumper.DumpJsonAsset(sw, baseField);
+                            }
                         }
-                    }
 
+                    }
                 }
-                catch (Exception ex)
+                catch
                 {
                     continue;
                 }
@@ -227,6 +233,7 @@ namespace UABEAvalonia
 
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             { 
+                //export all file in directory
                 exportDirectory = argPath;
                 foreach (string file in Directory.EnumerateFiles(exportDirectory))
                 {
@@ -235,6 +242,7 @@ namespace UABEAvalonia
             } 
             else
             {
+                // export file
                 exportDirectory = Path.GetDirectoryName(argPath);
                 ExportBundleFile(args, argPath, exportDirectory);
             }
