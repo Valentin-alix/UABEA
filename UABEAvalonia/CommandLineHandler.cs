@@ -1,5 +1,6 @@
 ﻿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
+using Avalonia.Controls.Documents;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -106,73 +107,69 @@ namespace UABEAvalonia
             return null;
         }
 
-        private static void BatchExportBundle(string[] args)
+        private static void ExportBundleFile(string[] args, string file, string exportDirectory)
         {
-            string exportDirectory = GetMainFileName(args);
-            if (!Directory.Exists(exportDirectory))
+            HashSet<string> flags = GetFlags(args);
+
+            string decompFile = $"{file}.decomp";
+            if (flags.Contains("-md"))
+                decompFile = null;
+
+            if (!File.Exists(file))
             {
-                Console.WriteLine("Directory does not exist!");
+                Console.WriteLine($"File {file} does not exist!");
                 return;
             }
-            
-            HashSet<string> flags = GetFlags(args);
-            foreach (string file in Directory.EnumerateFiles(exportDirectory))
+
+            DetectedFileType fileType = FileTypeDetector.DetectFileType(file);
+            if (fileType != DetectedFileType.BundleFile)
             {
-                string decompFile = $"{file}.decomp";
+                return;
+            }
 
-                if (flags.Contains("-md"))
-                    decompFile = null;
+            Console.WriteLine($"Decompressing {file}...");
+            AssetBundleFile bun = DecompressBundle(file, decompFile);
 
-                if (!File.Exists(file))
+            var am = new AssetsManager();
+
+            string classDataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "classdata.tpk");
+            if (File.Exists(classDataPath))
+            {
+                am.LoadClassPackage(classDataPath);
+            }
+
+            int entryCount = bun.BlockAndDirInfo.DirectoryInfos.Length;
+
+            var outDir = Path.Combine(exportDirectory, "exported");
+            Directory.CreateDirectory(outDir);
+
+            for (int i = 0; i < entryCount; i++)
+            {
+                var ass = new AssetWorkspace(am, true);
+
+                string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
+                byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
+
+                string outName;
+                if (flags.Contains("-keepnames"))
+                    outName = Path.Combine(exportDirectory, name);
+                else
+                    outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
+
+                Console.WriteLine($"Exporting {outName}...");
+                File.WriteAllBytes(outName, data);
+
+                DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
+
+                AssetsFileInstance fileInst;
+                try
                 {
-                    Console.WriteLine($"File {file} does not exist!");
-                    return;
-                }
-
-                DetectedFileType fileType = FileTypeDetector.DetectFileType(file);
-                if (fileType != DetectedFileType.BundleFile)
-                {
-                    continue;
-                }
-
-                Console.WriteLine($"Decompressing {file}...");
-                AssetBundleFile bun = DecompressBundle(file, decompFile);
-
-                var am = new AssetsManager();
+                    fileInst = am.LoadAssetsFile(outName, true);
                 
-                string classDataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "classdata.tpk");
-                if (File.Exists(classDataPath))
-                {
-                    am.LoadClassPackage(classDataPath);
-                }
-                
-                int entryCount = bun.BlockAndDirInfo.DirectoryInfos.Length;
-                
-                var outDir = Path.Combine(exportDirectory, "exported");
-                Directory.CreateDirectory(outDir);
-
-                for (int i = 0; i < entryCount; i++)
-                {
-                    var ass = new AssetWorkspace(am, true);
-
-                    string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
-                    byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
-                    
-                    string outName;
-                    if (flags.Contains("-keepnames"))
-                        outName = Path.Combine(exportDirectory, name);
-                    else
-                        outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
-                    
-                    Console.WriteLine($"Exporting {outName}...");
-                    File.WriteAllBytes(outName, data);
-                    
-                    DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
-                    AssetsFileInstance fileInst = am.LoadAssetsFile(outName, true);
                     ass.LoadedFiles.Add(fileInst);
 
                     // Directory.CreateDirectory(Path.Combine(outDir, name));
-                    
+
                     string uVer = fileInst.file.Metadata.UnityVersion;
                     if (uVer == "0.0.0" && fileInst.parentBundle != null)
                     {
@@ -184,7 +181,7 @@ namespace UABEAvalonia
                     {
                         AssetContainer cont = new AssetContainer(info, fileInst);
                         ass.LoadedAssets.Add(cont.AssetId, cont);
-                        
+
                     }
 
                     foreach (var asset in ass.LoadedAssets)
@@ -192,30 +189,58 @@ namespace UABEAvalonia
                         AssetImportExport dumper = new AssetImportExport();
                         AssetNameUtils.GetDisplayNameFast(ass, asset.Value, false, out var assetName, out var type);
                         if (type == "AssetBundle" || type == "MonoScript")
-                            {
-                                continue;
-                            }
-
-                        using (FileStream fs = File.Open(Path.Combine(outDir,  assetName+ ".json"), FileMode.Create))
+                        {
+                            continue;
+                        }
+                        FileStream fs;
+                        using (fs = File.Open(Path.Combine(outDir, assetName + ".json"), FileMode.Create)) ;
                         using (StreamWriter sw = new StreamWriter(fs))
                         {
                             AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
                             dumper.DumpJsonAsset(sw, baseField);
-                        }   
+                        }
                     }
 
-                    BundleHelper.LoadAllAssetsFromBundle(bun);
+                }
+                catch (Exception ex)
+                {
+                    continue;
                 }
 
-                bun.Close();
+                BundleHelper.LoadAllAssetsFromBundle(bun);
+            }
 
-                if (!flags.Contains("-kd") && !flags.Contains("-md") && File.Exists(decompFile))
-                    File.Delete(decompFile);
+            bun.Close();
 
-                Console.WriteLine("Done.");
+            if (!flags.Contains("-kd") && !flags.Contains("-md") && File.Exists(decompFile))
+                File.Delete(decompFile);
+
+            Console.WriteLine("Done.");
+        }
+
+        private static void BatchExportBundle(string[] args)
+        {
+            string argPath = GetMainFileName(args);
+            HashSet<string> flags = GetFlags(args);
+            FileAttributes attr = File.GetAttributes(argPath);
+            string exportDirectory;
+
+            if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
+            { 
+                exportDirectory = argPath;
+                foreach (string file in Directory.EnumerateFiles(exportDirectory))
+                {
+                    ExportBundleFile(args, file, exportDirectory);
+                }
+            } 
+            else
+            {
+                exportDirectory = Path.GetDirectoryName(argPath);
+                ExportBundleFile(args, argPath, exportDirectory);
             }
         }
-        
+
+
         private static void BatchImportBundle(string[] args)
         {
             string importDirectory = GetMainFileName(args);
