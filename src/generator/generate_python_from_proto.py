@@ -20,7 +20,7 @@ def gen_python_from_protoc(
 
     for file_path in file_paths:
         os.system(
-            f"protoc --proto_path={Path(PROTO_ROOT_PATH).parent} --python_out={output_folder} {file_path} --pyi_out={output_folder}"
+            f"protoc --proto_path={Path(input_folder).parent} --python_out={output_folder} {file_path} --pyi_out={output_folder}"
         )
 
 

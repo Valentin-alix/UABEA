@@ -1,18 +1,21 @@
 import os
+from pathlib import Path
+import sys
 
+sys.path.append(os.path.join(Path(__file__).parent.parent))
+
+from src.consts import DOFUS_PATH, OBFUSCATED_PROTO_CONNECTION, OBFUSCATED_PROTO_GAME
 from src.generator.generate_python_from_datas import gen_all_python_class_datas
 
-GAME_PATH = os.path.join(
-    os.environ["USERPROFILE"], "AppData", "Local", "Ankama", "Dofus-beta"
-)
-ASSEMBLIES_PATH = os.path.join(GAME_PATH, "assemblies")
+
+ASSEMBLIES_PATH = os.path.join(DOFUS_PATH, "assemblies")
 
 
 def get_assemblies():
     os.makedirs(ASSEMBLIES_PATH, exist_ok=True)
-    GAME_ASSEMBLY_PATH = os.path.join(GAME_PATH, "GameAssembly.dll")
+    GAME_ASSEMBLY_PATH = os.path.join(DOFUS_PATH, "GameAssembly.dll")
     GLOBAL_METADATA_PATH = os.path.join(
-        GAME_PATH, "Dofus_Data", "il2cpp_data", "Metadata", "global-metadata.dat"
+        DOFUS_PATH, "Dofus_Data", "il2cpp_data", "Metadata", "global-metadata.dat"
     )
     IL2CPPDUMPER_PATH_EXE = os.path.join(
         os.environ["USERPROFILE"],
@@ -44,16 +47,13 @@ def get_protos():
         "net8.0",
         "protodec.exe",
     )
-    PROTO_PATH = os.path.join(GAME_PATH, "protocol")
-    PROTO_CONNECTION_PATH = os.path.join(PROTO_PATH, "connection")
-    PROTO_GAME_PATH = os.path.join(PROTO_PATH, "game")
-    os.makedirs(PROTO_CONNECTION_PATH, exist_ok=True)
-    os.makedirs(PROTO_GAME_PATH, exist_ok=True)
+    os.makedirs(OBFUSCATED_PROTO_CONNECTION, exist_ok=True)
+    os.makedirs(OBFUSCATED_PROTO_GAME, exist_ok=True)
 
     os.system(
-        f"{PROTODEC_PATH_EXE} {PROTO_CONNECTION_ASSEMBLY_PATH} {PROTO_CONNECTION_PATH}"
+        f"{PROTODEC_PATH_EXE} {PROTO_CONNECTION_ASSEMBLY_PATH} {OBFUSCATED_PROTO_CONNECTION}"
     )
-    os.system(f"{PROTODEC_PATH_EXE} {PROTO_GAME_ASSEMBLY_PATH} {PROTO_GAME_PATH}")
+    os.system(f"{PROTODEC_PATH_EXE} {PROTO_GAME_ASSEMBLY_PATH} {OBFUSCATED_PROTO_GAME}")
 
 
 def get_datas():
@@ -70,13 +70,13 @@ def get_datas():
     )
 
     os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(GAME_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map")}"
+        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map")}"
     )
     os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(GAME_PATH, "Dofus_Data", "StreamingAssets", "aa", "StandaloneWindows64")}"
+        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "aa", "StandaloneWindows64")}"
     )
     os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(GAME_PATH, "Dofus_Data", "StreamingAssets", "Content", "Data")}"
+        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Data")}"
     )
 
 

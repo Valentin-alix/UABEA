@@ -7,8 +7,8 @@ from tempfile import NamedTemporaryFile
 sys.path.append(str(Path(__file__).parent.parent.parent))
 
 from src.consts import (
+    DOFUS_PATH,
     WORLD_GRAPH_FILENAME,
-    DOFUS_FOLDER,
     OUTPUT_CLASS_DATAS,
     DOFUS_DATA_PATH,
     DOFUS_MAP_PATH,
@@ -79,8 +79,8 @@ def gen_world_graph_datas(
 
 
 def gen_all_python_class_datas():
-    gen_datas(DOFUS_FOLDER, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
-    gen_world_graph_datas(DOFUS_FOLDER, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
+    gen_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
+    gen_world_graph_datas(DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
     gen_map_datas(DOFUS_MAP_PATH, OUTPUT_CLASS_MAPS)
 
 

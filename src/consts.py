@@ -1,11 +1,16 @@
 import os
 from pathlib import Path
 
-PROTO_ROOT_PATH = os.path.join(Path(__file__).parent.parent, "com")
-DOFUS_FOLDER = os.path.join(os.environ["LOCALAPPDATA"], "Ankama", "Dofus-beta")
-DESCRIPTOR_FOLDER = os.path.join(DOFUS_FOLDER, "descriptors")
+DOFUS_PATH = os.path.join(
+    os.environ["USERPROFILE"], "AppData", "Local", "Ankama", "Dofus-beta"
+)
 
-DOFUS_ASSETS_FOLDER = os.path.join(DOFUS_FOLDER, "Dofus_Data", "StreamingAssets")
+OBFUSCATED_PROTOS = os.path.join(DOFUS_PATH, "protocol")
+OBFUSCATED_PROTO_CONNECTION = os.path.join(OBFUSCATED_PROTOS, "connection")
+OBFUSCATED_PROTO_GAME = os.path.join(OBFUSCATED_PROTOS, "game")
+
+
+DOFUS_ASSETS_FOLDER = os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets")
 DOFUS_CONTENT_FOLDER = os.path.join(DOFUS_ASSETS_FOLDER, "Content")
 
 DOFUS_DATA_PATH = os.path.join(DOFUS_CONTENT_FOLDER, "Data", "exported")
@@ -16,8 +21,15 @@ DOFUS_STANDALONE_PATH = os.path.join(
 I18N_PATH = os.path.join(DOFUS_CONTENT_FOLDER, "I18n", "fr.bin")
 WORLD_GRAPH_FILENAME = "worldgraph.json"
 
+OUTPUT_PATH = os.path.join(Path(__file__).parent.parent, "outputs")
 
-OUTPUT_CLASS_GEN = os.path.join(Path(__file__).parent.parent, "resources", "gen")
+PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos", "com")
+PROTO_CONNECTION_PATH = os.path.join(
+    PROTO_ROOT_PATH, "ankama", "dofus", "server", "connection"
+)
+PROTO_GAME_PATH = os.path.join(PROTO_ROOT_PATH, "ankama", "dofus", "server", "game")
+
+OUTPUT_CLASS_GEN = os.path.join(OUTPUT_PATH, "gen")
 OUTPUT_CLASS_DATAS = os.path.join(OUTPUT_CLASS_GEN, "gen_datas")
 OUTPUT_CLASS_MAPS = os.path.join(OUTPUT_CLASS_GEN, "gen_maps")
 OUTPUT_CLASS_STANDALONE = os.path.join(OUTPUT_CLASS_GEN, "gen_standalone")
