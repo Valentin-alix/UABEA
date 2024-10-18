@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 import sys
 
+from src.generator.generate_python_from_proto import gen_all_python_from_protoc
+
 sys.path.append(os.path.join(Path(__file__).parent.parent))
 
 from src.consts import DOFUS_PATH, OBFUSCATED_PROTO_CONNECTION, OBFUSCATED_PROTO_GAME
@@ -83,5 +85,5 @@ def get_datas():
 if __name__ == "__main__":
     get_assemblies()
     get_protos()
-    # gen_python_from_protoc()
-    gen_all_python_class_datas()
+    gen_all_python_from_protoc()
+    # gen_all_python_class_datas()

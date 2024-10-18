@@ -1,4 +1,4 @@
-from generator.proto_mapping.complexity.enum_complexity import get_enum_complexity
+from src.generator.proto_mapping.complexity.enum_complexity import get_enum_complexity
 
 
 from proto_schema_parser.ast import Enum, Message

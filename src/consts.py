@@ -23,11 +23,9 @@ WORLD_GRAPH_FILENAME = "worldgraph.json"
 
 OUTPUT_PATH = os.path.join(Path(__file__).parent.parent, "outputs")
 
-PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos", "com")
-PROTO_CONNECTION_PATH = os.path.join(
-    PROTO_ROOT_PATH, "ankama", "dofus", "server", "connection"
-)
-PROTO_GAME_PATH = os.path.join(PROTO_ROOT_PATH, "ankama", "dofus", "server", "game")
+PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos")
+PROTO_CONNECTION_PATH = os.path.join(PROTO_ROOT_PATH, "connection")
+PROTO_GAME_PATH = os.path.join(PROTO_ROOT_PATH, "game")
 
 OUTPUT_CLASS_GEN = os.path.join(OUTPUT_PATH, "gen")
 OUTPUT_CLASS_DATAS = os.path.join(OUTPUT_CLASS_GEN, "gen_datas")
