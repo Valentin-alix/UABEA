@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent.parent.parent))
-from src.consts import PROTO_ROOT_PATH, PROTO_CONNECTION_PATH, PROTO_GAME_PATH
+from src.consts import PROTO_CONNECTION_PATH, PROTO_GAME_PATH
 
 
 def gen_python_from_protoc(input_folder: str, output_folder: str):

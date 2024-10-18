@@ -27,6 +27,9 @@ PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos")
 PROTO_CONNECTION_PATH = os.path.join(PROTO_ROOT_PATH, "connection")
 PROTO_GAME_PATH = os.path.join(PROTO_ROOT_PATH, "game")
 
+MAPPING_CONN_PROTO_PATH = os.path.join(OUTPUT_PATH, "connection_mappings.json")
+MAPPING_GAME_PROTO_PATH = os.path.join(OUTPUT_PATH, "game_mappings.json")
+
 OUTPUT_CLASS_GEN = os.path.join(OUTPUT_PATH, "gen")
 OUTPUT_CLASS_DATAS = os.path.join(OUTPUT_CLASS_GEN, "gen_datas")
 OUTPUT_CLASS_MAPS = os.path.join(OUTPUT_CLASS_GEN, "gen_maps")

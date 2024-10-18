@@ -26,7 +26,7 @@ def run_cmd_codegen(
 ):
     cmd = f"datamodel-codegen --class-name {class_name} --input-file-type json --input {input_filename} --output {output_filename} --custom-template-dir template  --output-model-type msgspec.Struct"
     if base_dofus_folder:
-        extra_data = {class_name: {}, "#all#": {}}
+        extra_data: dict[str, dict] = {class_name: {}, "#all#": {}}
         filepath = os.path.relpath(input_filename, base_dofus_folder)
         extra_data[class_name]["filepath"] = filepath
         with NamedTemporaryFile(mode="r+", suffix=".json", delete=False) as file:
