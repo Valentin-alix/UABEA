@@ -1,14 +1,12 @@
 import os
-from pathlib import Path
 import sys
+from pathlib import Path
 
 from src.generator.generate_python_from_proto import gen_all_python_from_protoc
 
 sys.path.append(os.path.join(Path(__file__).parent.parent))
 
 from src.consts import DOFUS_PATH, OBFUSCATED_PROTO_CONNECTION, OBFUSCATED_PROTO_GAME
-from src.generator.generate_python_from_datas import gen_all_python_class_datas
-
 
 ASSEMBLIES_PATH = os.path.join(DOFUS_PATH, "assemblies")
 

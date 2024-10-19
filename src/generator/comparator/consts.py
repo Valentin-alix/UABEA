@@ -14,4 +14,5 @@ PROTO_BASE_FIELDS: list[str] = [
     "bool",
     "string",
     "bytes",
+    "google.protobuf.Any",
 ]
