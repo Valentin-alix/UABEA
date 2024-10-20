@@ -9,7 +9,6 @@ OBFUSCATED_PROTOS = os.path.join(DOFUS_PATH, "protocol")
 OBFUSCATED_PROTO_CONNECTION = os.path.join(OBFUSCATED_PROTOS, "connection")
 OBFUSCATED_PROTO_GAME = os.path.join(OBFUSCATED_PROTOS, "game")
 
-
 DOFUS_ASSETS_FOLDER = os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets")
 DOFUS_CONTENT_FOLDER = os.path.join(DOFUS_ASSETS_FOLDER, "Content")
 
@@ -21,7 +20,7 @@ DOFUS_STANDALONE_PATH = os.path.join(
 I18N_PATH = os.path.join(DOFUS_CONTENT_FOLDER, "I18n", "fr.bin")
 WORLD_GRAPH_FILENAME = "worldgraph.json"
 
-OUTPUT_PATH = os.path.join(Path(__file__).parent.parent, "outputs")
+OUTPUT_PATH = os.path.join(Path(__file__).parent, "outputs")
 
 PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos")
 PROTO_CONNECTION_PATH = os.path.join(PROTO_ROOT_PATH, "connection")

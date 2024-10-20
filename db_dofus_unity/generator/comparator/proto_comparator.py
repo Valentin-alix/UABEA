@@ -12,14 +12,14 @@ from proto_schema_parser.ast import (
     EnumValue,
 )
 
-from src.generator.comparator.consts import PROTO_BASE_FIELDS
-from src.generator.comparator.custom_types import Percentage
-from src.generator.comparator.models.comparator_context_info import (
+from db_dofus_unity.generator.comparator.consts import PROTO_BASE_FIELDS
+from db_dofus_unity.generator.comparator.custom_types import Percentage
+from db_dofus_unity.generator.comparator.models.comparator_context_info import (
     ComparatorContextInfo,
 )
-from src.generator.comparator.models.mapping_info import MappingInfo
-from src.generator.comparator.models.proto_file_info import ProtoFileInfo
-from src.generator.comparator.utils import (
+from db_dofus_unity.generator.comparator.models.mapping_info import MappingInfo
+from db_dofus_unity.generator.comparator.models.proto_file_info import ProtoFileInfo
+from db_dofus_unity.generator.comparator.utils import (
     get_sort_value_msg_element,
     get_related_struct,
 )

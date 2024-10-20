@@ -1,6 +1,6 @@
 from proto_schema_parser.ast import MessageElement, Field, Message, Enum
 
-from src.generator.comparator.models.proto_file_info import ProtoFileInfo
+from db_dofus_unity.generator.comparator.models.proto_file_info import ProtoFileInfo
 
 
 def get_sort_value_msg_element(msg_element: MessageElement) -> tuple:
@@ -15,12 +15,11 @@ def get_sort_value_msg_element(msg_element: MessageElement) -> tuple:
 
 
 def get_related_struct(
-    proto_file_info_by_filename: dict[str, ProtoFileInfo],
-    proto_file_info: ProtoFileInfo,
-    from_msg: Message,
-    type_name: str,
+        proto_file_info_by_filename: dict[str, ProtoFileInfo],
+        proto_file_info: ProtoFileInfo,
+        from_msg: Message,
+        type_name: str,
 ) -> tuple[ProtoFileInfo, Message | Enum] | None:
-
     if struct := find_struct_inside_message_by_type_name(from_msg, "", type_name):
         # search inside message
         return proto_file_info, struct
@@ -44,7 +43,7 @@ def get_related_struct(
             if sub_msg_full_name == type_name:
                 return reachable_file_info, sub_message
             if struct := find_struct_inside_message_by_type_name(
-                sub_message, prefix + sub_message.name + ".", type_name
+                    sub_message, prefix + sub_message.name + ".", type_name
             ):
                 return reachable_file_info, struct
 
@@ -57,7 +56,7 @@ def get_related_struct(
 
 
 def find_struct_inside_message_by_type_name(
-    message: Message, prefix: str, type_name: str
+        message: Message, prefix: str, type_name: str
 ) -> Message | Enum | None:
     for struct_elem in message.elements:
         if type(struct_elem) is Message or type(struct_elem) is Enum:

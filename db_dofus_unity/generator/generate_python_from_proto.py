@@ -1,6 +1,6 @@
 import os
 
-from src.consts import PROTO_CONNECTION_PATH, PROTO_GAME_PATH
+from db_dofus_unity.consts import PROTO_CONNECTION_PATH, PROTO_GAME_PATH
 
 
 def gen_python_from_protoc(input_folder: str, output_folder: str):

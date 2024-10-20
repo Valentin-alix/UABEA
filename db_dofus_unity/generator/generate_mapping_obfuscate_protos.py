@@ -5,7 +5,7 @@ from icecream import icecream
 from proto_schema_parser.ast import Message, Enum, File, Package, Import
 from proto_schema_parser.parser import Parser
 
-from src.consts import (
+from db_dofus_unity.consts import (
     PROTO_GAME_PATH,
     PROTO_CONNECTION_PATH,
     MAPPING_CONN_PROTO_PATH,
@@ -13,8 +13,8 @@ from src.consts import (
     OBFUSCATED_PROTO_CONNECTION,
     OBFUSCATED_PROTO_GAME,
 )
-from src.generator.comparator.models.proto_file_info import ProtoFileInfo
-from src.generator.comparator.proto_comparator import (
+from db_dofus_unity.generator.comparator.models.proto_file_info import ProtoFileInfo
+from db_dofus_unity.generator.comparator.proto_comparator import (
     ProtoComparator,
 )
 
