@@ -1,13 +1,13 @@
+import json
 import os
 import sys
 from pathlib import Path
-from typing import Iterator
 
-import icecream
+from icecream import icecream
 
+from src.generator.comparator.models.proto_file_info import ProtoFileInfo
 from src.generator.comparator.proto_comparator import (
     ProtoComparator,
-    ProtoInfo,
 )
 
 sys.path.append(str(Path(__file__).parent.parent.parent.parent))
@@ -18,96 +18,88 @@ from src.consts import (
     PROTO_GAME_PATH,
     PROTO_CONNECTION_PATH,
     OBFUSCATED_PROTO_CONNECTION,
+    MAPPING_CONN_PROTO_PATH,
+    MAPPING_GAME_PROTO_PATH,
 )
 from proto_schema_parser.parser import Parser
-from proto_schema_parser.ast import Message, Enum, File, Package
+from proto_schema_parser.ast import Message, Enum, File, Package, Import
 
 
-def iter_proto_file_from_dir(input_folder: str) -> Iterator[File]:
+def get_proto_info_by_filename(proto_path: str) -> dict[str, ProtoFileInfo]:
+    proto_info_by_filename: dict[str, ProtoFileInfo] = {}
+    for filename, proto_file in get_proto_file_by_filename_from_dir(proto_path).items():
+        proto_info_by_filename[filename] = get_proto_file_info(filename, proto_file)
+    return proto_info_by_filename
+
+
+def get_proto_file_by_filename_from_dir(input_folder: str) -> dict[str, File]:
+    proto_file_by_filename: dict[str, File] = {}
     for root, dirs, filenames in os.walk(input_folder):
         for filename in filenames:
             if not filename.endswith(".proto"):
                 continue
             with open(os.path.join(root, filename)) as file:
                 datas = file.read()
-                res = Parser().parse(datas)
-                yield res
+            proto_file_by_filename[filename] = Parser().parse(datas)
+    return proto_file_by_filename
 
 
-def get_complete_name(path: str | None, name: str) -> str:
-    if path is None:
-        return name
-    return f"{path}.{name}"
+def get_proto_file_info(filename: str, proto_file: File) -> ProtoFileInfo:
+    proto_file_info = ProtoFileInfo(filename=filename)
 
+    for file_elem in proto_file.file_elements:
+        if type(file_elem) is Import:
+            proto_file_info.imports.append(file_elem)
+        elif type(file_elem) is Package:
+            proto_file_info.package = file_elem
+        elif type(file_elem) is Message:
+            proto_file_info.messages.append(file_elem)
+        elif type(file_elem) is Enum:
+            proto_file_info.enums.append(file_elem)
 
-def get_proto_info_from_elem(path: str | None, elem: Message | Enum):
-    message_by_import_name: dict[str, Message] = {}
-    enum_by_import_name: dict[str, Enum] = {}
-
-    if type(elem) is Message:
-        message_by_import_name[get_complete_name(path, elem.name)] = elem
-        for sub_elem in elem.elements:
-            if not (type(sub_elem) is Message or type(sub_elem) is Enum):
-                continue
-            sub_path: str | None = f"{path}.{elem.name}" if path is not None else None
-            sub_message_by_import_name, sub_enum_by_import_name = (
-                get_proto_info_from_elem(sub_path, sub_elem)
-            )
-            message_by_import_name |= sub_message_by_import_name
-            enum_by_import_name |= sub_enum_by_import_name
-
-    elif type(elem) is Enum:
-        enum_by_import_name[get_complete_name(path, elem.name)] = elem
-
-    return message_by_import_name, enum_by_import_name
-
-
-def get_proto_info(proto_path: str) -> ProtoInfo:
-    root_messages: list[Message] = []
-    message_by_import_name: dict[str, Message] = {}
-    enum_by_import_name: dict[str, Enum] = {}
-    for proto_file in iter_proto_file_from_dir(proto_path):
-        package: str | None = None
-        for file_elem in proto_file.file_elements:
-            if type(file_elem) is Package:
-                package = file_elem.name
-
-            if type(file_elem) is Message:
-                root_messages.append(file_elem)
-
-            if type(file_elem) is Message or type(file_elem) is Enum:
-                sub_message_by_import_name, sub_enum_by_import_name = (
-                    get_proto_info_from_elem(package, file_elem)
-                )
-                message_by_import_name |= sub_message_by_import_name
-                enum_by_import_name |= sub_enum_by_import_name
-
-    return ProtoInfo(
-        root_messages=root_messages,
-        enum_by_import_name=enum_by_import_name,
-        message_by_import_name=message_by_import_name,
-    )
+    return proto_file_info
 
 
 def get_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
     mapping = ProtoComparator(
-        old_proto_info=get_proto_info(old_proto_path),
-        new_proto_info=get_proto_info(obfuscated_proto_path),
+        old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
+        new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
     ).get_messages_mapping()
 
-    icecream.ic(mapping)
-    # icecream.ic(sorted(mapping.items(), key=lambda elem: elem[1][1]))
+    icecream.ic(sorted(mapping.items(), key=lambda elem: elem[1].similarity)[:10])
 
     return mapping
 
 
-if __name__ == "__main__":
-    conn_mapping = get_mapping_protos(
+def get_most_probable_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
+    mapping = ProtoComparator(
+        old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
+        new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
+    ).get_most_probable_messages_mapping()
+
+    icecream.ic(mapping)
+
+    return mapping
+
+
+def main():
+    conn_mapping = get_most_probable_mapping_protos(
         PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION
     )
-    # with open(MAPPING_CONN_PROTO_PATH, "w+") as file:
-    #     json.dump(conn_mapping, file)
+    with open(MAPPING_CONN_PROTO_PATH, "w+") as file:
+        json.dump(conn_mapping, file)
 
-    game_mapping = get_mapping_protos(PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME)
-    # with open(MAPPING_GAME_PROTO_PATH, "w+") as file:
-    #     json.dump(game_mapping, file)
+    game_mapping = get_most_probable_mapping_protos(
+        PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME
+    )
+    with open(MAPPING_GAME_PROTO_PATH, "w+") as file:
+        json.dump(game_mapping, file)
+
+
+def main_debug():
+    get_mapping_protos(PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION)
+    get_mapping_protos(PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME)
+
+
+if __name__ == "__main__":
+    main()

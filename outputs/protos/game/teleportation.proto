@@ -102,7 +102,9 @@ message TeleportDestination {
 	int32 subarea_id = 3;
 	int32 level = 4;
 	int32 cost = 5;
-	optional .com.ankama.dofus.server.game.protocol.teleportation.TeleportDestination.Anomaly anomaly = 6;
+	oneof anomaly_one_of {
+		.com.ankama.dofus.server.game.protocol.teleportation.TeleportDestination.Anomaly anomaly = 6;
+	}
 	message Anomaly {
 		int32 bonus_pourcentage = 1;
 		int64 remaining_time = 2;
