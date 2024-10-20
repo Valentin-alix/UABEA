@@ -5,9 +5,6 @@ description = ""
 authors = ["Valentin Alix <valentin-alix.850@outlook.fr>"]
 readme = "README.md"
 
-[tool.poetry.packages]
-include = ["db_dofus_unity"]
-
 [tool.poetry.dependencies]
 python = ">3.11,<4.0"
 pydantic = ">2.9"
