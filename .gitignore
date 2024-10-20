@@ -3,3 +3,4 @@ poetry.lock
 old
 **/__pycache__/**
 dist
+.idea
