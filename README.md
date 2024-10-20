@@ -26,4 +26,4 @@ Get https://github.com/Valentin-alix/UABEA.git
 ### To Do Every Maj
 
 Update game then launch script to update data & code :
-`poetry run ./src/maj.py`
+`poetry run ./db_dofus_unity/__main__.py`
