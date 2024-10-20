@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "db-dofusunity"
+name = "db_dofus_unity"
 version = "0.1.0"
 description = ""
 authors = ["Valentin Alix <valentin-alix.850@outlook.fr>"]
