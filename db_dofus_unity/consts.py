@@ -20,16 +20,16 @@ DOFUS_STANDALONE_PATH = os.path.join(
 I18N_PATH = os.path.join(DOFUS_CONTENT_FOLDER, "I18n", "fr.bin")
 WORLD_GRAPH_FILENAME = "worldgraph.json"
 
-OUTPUT_PATH = os.path.join(Path(__file__).parent.parent, "db_dofus_unity")
+DB_DOFUS_UNITY = os.path.join(Path(__file__).parent)
 
-PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos")
+PROTO_ROOT_PATH = os.path.join(DB_DOFUS_UNITY, "protos")
 PROTO_CONNECTION_PATH = os.path.join(PROTO_ROOT_PATH, "connection")
 PROTO_GAME_PATH = os.path.join(PROTO_ROOT_PATH, "game")
 
-MAPPING_CONN_PROTO_PATH = os.path.join(OUTPUT_PATH, "connection_mappings.json")
-MAPPING_GAME_PROTO_PATH = os.path.join(OUTPUT_PATH, "game_mappings.json")
+MAPPING_CONN_PROTO_PATH = os.path.join(DB_DOFUS_UNITY, "connection_mappings.json")
+MAPPING_GAME_PROTO_PATH = os.path.join(DB_DOFUS_UNITY, "game_mappings.json")
 
-OUTPUT_CLASS_GEN = os.path.join(OUTPUT_PATH, "gen")
+OUTPUT_CLASS_GEN = os.path.join(DB_DOFUS_UNITY, "gen")
 OUTPUT_CLASS_DATAS = os.path.join(OUTPUT_CLASS_GEN, "gen_datas")
 OUTPUT_CLASS_MAPS = os.path.join(OUTPUT_CLASS_GEN, "gen_maps")
 OUTPUT_CLASS_STANDALONE = os.path.join(OUTPUT_CLASS_GEN, "gen_standalone")

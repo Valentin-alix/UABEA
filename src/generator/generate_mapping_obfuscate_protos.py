@@ -75,7 +75,7 @@ def get_most_probable_mapping_protos(old_proto_path: str, obfuscated_proto_path:
     return mapping
 
 
-def main():
+def generate_mapping_proto():
     conn_mapping = get_most_probable_mapping_protos(
         PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION
     )
@@ -95,4 +95,4 @@ def main_debug():
 
 
 if __name__ == "__main__":
-    main()
+    generate_mapping_proto()
