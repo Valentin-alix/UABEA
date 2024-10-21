@@ -11,6 +11,7 @@ from proto_schema_parser.ast import (
     EnumElement,
     EnumValue,
 )
+
 from src.generator.comparator.consts import PROTO_BASE_FIELDS
 from src.generator.comparator.custom_types import Percentage
 from src.generator.comparator.models.comparator_context_info import (
@@ -75,8 +76,13 @@ class ProtoComparator:
                     message=new_message,
                     parent_context=None,
                 )
-                mapping_by_sim[
-                    getattr(old_proto_file_info.package, "name", "") + old_message.name] = self.compare_message(
+
+                if old_proto_file_info.package:
+                    msg_full_name = old_proto_file_info.package.name + "." + old_message.name
+                else:
+                    msg_full_name = old_message.name
+
+                mapping_by_sim[msg_full_name] = self.compare_message(
                     old_comparator_info, new_comparator_info
                 )
 

@@ -2,7 +2,7 @@ import json
 import os
 from tempfile import NamedTemporaryFile
 
-from src.consts import (
+from db_dofus_unity.consts import (
     DOFUS_PATH,
     WORLD_GRAPH_FILENAME,
     OUTPUT_CLASS_DATAS,

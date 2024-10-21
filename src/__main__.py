@@ -1,8 +1,7 @@
 import os
 
+from db_dofus_unity.consts import DOFUS_PATH, OBFUSCATED_PROTO_CONNECTION, OBFUSCATED_PROTO_GAME
 from src.generator.generate_python_from_proto import gen_all_python_from_protoc
-
-from src.consts import DOFUS_PATH, OBFUSCATED_PROTO_CONNECTION, OBFUSCATED_PROTO_GAME
 
 ASSEMBLIES_PATH = os.path.join(DOFUS_PATH, "assemblies")
 
