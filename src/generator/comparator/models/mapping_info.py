@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from db_dofus_unity.generator.comparator.custom_types import Percentage
+from src.generator.comparator.custom_types import Percentage
 
 
 @dataclass

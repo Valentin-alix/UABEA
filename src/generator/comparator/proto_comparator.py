@@ -11,15 +11,14 @@ from proto_schema_parser.ast import (
     EnumElement,
     EnumValue,
 )
-
-from db_dofus_unity.generator.comparator.consts import PROTO_BASE_FIELDS
-from db_dofus_unity.generator.comparator.custom_types import Percentage
-from db_dofus_unity.generator.comparator.models.comparator_context_info import (
+from src.generator.comparator.consts import PROTO_BASE_FIELDS
+from src.generator.comparator.custom_types import Percentage
+from src.generator.comparator.models.comparator_context_info import (
     ComparatorContextInfo,
 )
-from db_dofus_unity.generator.comparator.models.mapping_info import MappingInfo
-from db_dofus_unity.generator.comparator.models.proto_file_info import ProtoFileInfo
-from db_dofus_unity.generator.comparator.utils import (
+from src.generator.comparator.models.mapping_info import MappingInfo
+from src.generator.comparator.models.proto_file_info import ProtoFileInfo
+from src.generator.comparator.utils import (
     get_sort_value_msg_element,
     get_related_struct,
 )
@@ -60,7 +59,7 @@ class ProtoComparator:
         return mapping_info_by_name
 
     def get_message_mapping(
-            self, new_proto_file_info: ProtoFileInfo, new_message: Message
+        self, new_proto_file_info: ProtoFileInfo, new_message: Message
     ) -> MappingInfo:
         mapping_by_sim: dict[str, float] = {}
 
@@ -76,7 +75,8 @@ class ProtoComparator:
                     message=new_message,
                     parent_context=None,
                 )
-                mapping_by_sim[old_message.name] = self.compare_message(
+                mapping_by_sim[
+                    getattr(old_proto_file_info.package, "name", "") + old_message.name] = self.compare_message(
                     old_comparator_info, new_comparator_info
                 )
 
@@ -87,12 +87,12 @@ class ProtoComparator:
         return MappingInfo(messages_name, similarity=most_sim)
 
     def compare_message(
-            self,
-            old_comparator_info: ComparatorContextInfo,
-            new_comparator_info: ComparatorContextInfo,
+        self,
+        old_comparator_info: ComparatorContextInfo,
+        new_comparator_info: ComparatorContextInfo,
     ) -> Percentage:
         if len(old_comparator_info.message.elements) != len(
-                new_comparator_info.message.elements
+            new_comparator_info.message.elements
         ):
             return 0
 
@@ -116,11 +116,11 @@ class ProtoComparator:
         )
 
     def compare_msg_elements(
-            self,
-            old_comparator_context: ComparatorContextInfo,
-            old_msg_element: MessageElement,
-            new_comparator_context: ComparatorContextInfo,
-            new_msg_element: MessageElement,
+        self,
+        old_comparator_context: ComparatorContextInfo,
+        old_msg_element: MessageElement,
+        new_comparator_context: ComparatorContextInfo,
+        new_msg_element: MessageElement,
     ) -> Percentage:
         if type(old_msg_element) is not type(new_msg_element):
             return 0
@@ -144,11 +144,11 @@ class ProtoComparator:
         return 1
 
     def compare_one_ofs(
-            self,
-            old_comparator_context: ComparatorContextInfo,
-            old_one_of: OneOf,
-            new_comparator_context: ComparatorContextInfo,
-            new_one_of: OneOf,
+        self,
+        old_comparator_context: ComparatorContextInfo,
+        old_one_of: OneOf,
+        new_comparator_context: ComparatorContextInfo,
+        new_one_of: OneOf,
     ) -> Percentage:
         if len(old_one_of.elements) != len(new_one_of.elements):
             return 0
@@ -168,11 +168,11 @@ class ProtoComparator:
         return Percentage(elements_similarity_score / len(old_one_of.elements))
 
     def compare_one_of_element(
-            self,
-            old_comparator_context: ComparatorContextInfo,
-            old_one_of_element: OneOfElement,
-            new_comparator_context: ComparatorContextInfo,
-            new_one_of_element: OneOfElement,
+        self,
+        old_comparator_context: ComparatorContextInfo,
+        old_one_of_element: OneOfElement,
+        new_comparator_context: ComparatorContextInfo,
+        new_one_of_element: OneOfElement,
     ) -> Percentage:
         if type(old_one_of_element) is not type(new_one_of_element):
             return 0
@@ -188,11 +188,11 @@ class ProtoComparator:
         return 1
 
     def compare_fields(
-            self,
-            old_comparator_context: ComparatorContextInfo,
-            old_field: Field,
-            new_comparator_context: ComparatorContextInfo,
-            new_field: Field,
+        self,
+        old_comparator_context: ComparatorContextInfo,
+        old_field: Field,
+        new_comparator_context: ComparatorContextInfo,
+        new_field: Field,
     ) -> Percentage:
         similarity_score: float = 1
         coeff_check_failed: float = 1
@@ -233,8 +233,8 @@ class ProtoComparator:
             related_new_file_info, related_new_struct = related_new_struct_info
 
             if (
-                    type(related_old_struct) is Message
-                    and type(related_new_struct) is Message
+                type(related_old_struct) is Message
+                and type(related_new_struct) is Message
             ):
                 old_depth = old_comparator_context.get_depth_in_parent(
                     related_old_struct.name
@@ -293,7 +293,7 @@ class ProtoComparator:
 
     @staticmethod
     def compare_enum_element(
-            old_enum_element: EnumElement, new_enum_element: EnumElement
+        old_enum_element: EnumElement, new_enum_element: EnumElement
     ) -> Percentage:
         if type(old_enum_element) is not type(new_enum_element):
             return 0

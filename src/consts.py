@@ -20,7 +20,7 @@ DOFUS_STANDALONE_PATH = os.path.join(
 I18N_PATH = os.path.join(DOFUS_CONTENT_FOLDER, "I18n", "fr.bin")
 WORLD_GRAPH_FILENAME = "worldgraph.json"
 
-OUTPUT_PATH = os.path.join(Path(__file__).parent, "outputs")
+OUTPUT_PATH = os.path.join(Path(__file__).parent.parent, "db_dofus_unity")
 
 PROTO_ROOT_PATH = os.path.join(OUTPUT_PATH, "protos")
 PROTO_CONNECTION_PATH = os.path.join(PROTO_ROOT_PATH, "connection")

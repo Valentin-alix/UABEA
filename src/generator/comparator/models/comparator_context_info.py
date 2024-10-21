@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 
 from proto_schema_parser import Message
-
-from db_dofus_unity.generator.comparator.models.proto_file_info import ProtoFileInfo
+from src.generator.comparator.models.proto_file_info import ProtoFileInfo
 
 
 @dataclass

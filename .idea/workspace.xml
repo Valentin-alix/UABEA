@@ -4,7 +4,468 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="remove dist" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="remove dist">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/connection/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mypy.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/custom_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/custom_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_maps/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/models/comparator_context_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/comparator_context_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/models/mapping_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/mapping_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/models/proto_file_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/proto_file_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/proto_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/proto_comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/comparator/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/generate_mapping_obfuscate_protos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/generate_python_from_datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_python_from_datas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/generate_python_from_proto.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_python_from_proto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/generator/template/msgspec.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/template/msgspec.jinja2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_standalone/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/connection_mappings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/game_mappings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AbuseReasonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AbuseReasonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementObjectivesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementObjectivesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementProgressRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementProgressRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementProgressStepsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementProgressStepsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementRewardsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementRewardsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AchievementsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AchievementsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ActivitySuggestionsCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ActivitySuggestionsCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ActivitySuggestionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ActivitySuggestionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentGiftRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentGiftRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentOrderRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentOrderRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentRankJntGiftRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentRankJntGiftRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentRankRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentRankRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentSidesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentSidesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlignmentTitlesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlignmentTitlesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceRankNameSuggestionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceRankNameSuggestionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceRanksRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceRanksRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceRightGroupsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceRightGroupsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceRightsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceRightsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceTagsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceTagsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AllianceTagsTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AllianceTagsTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlmanaxCalendarsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlmanaxCalendarsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlterationCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlterationCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AlterationsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AlterationsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AppearancesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AppearancesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/AreasRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/AreasRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ArenaLeagueRewardsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ArenaLeagueRewardsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ArenaLeagueSeasonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ArenaLeagueSeasonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ArenaLeaguesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ArenaLeaguesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BonusesCriterionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BonusesCriterionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BonusesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BonusesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachBossesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachBossesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachDungeonModificatorsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachDungeonModificatorsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachInfinityLevelsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachInfinityLevelsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachPrizesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachPrizesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachWorldMapCoordinatesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachWorldMapCoordinatesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreachWorldMapSectorsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreachWorldMapSectorsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreedRolesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreedRolesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/BreedsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/BreedsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CensoredContentsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CensoredContentsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ChallengesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ChallengesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CharacterXPMappingsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CharacterXPMappingsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CharacteristicCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CharacteristicCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CharacteristicsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CharacteristicsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ChatChannelsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ChatChannelsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ChoicesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ChoicesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CollectablesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CollectablesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CollectionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CollectionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CompanionCharacteristicsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CompanionCharacteristicsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CompanionSpellsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CompanionSpellsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CompanionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CompanionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CreatureBonesOverridesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CreatureBonesOverridesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CreatureBonesTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CreatureBonesTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/CustomModeBreedSpellsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/CustomModeBreedSpellsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/DocumentsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/DocumentsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/DungeonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/DungeonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EffectsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EffectsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EmblemBackgroundsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EmblemBackgroundsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EmblemSymbolCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EmblemSymbolCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EmblemSymbolsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EmblemSymbolsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EmoticonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EmoticonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EvolutiveEffectsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EvolutiveEffectsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/EvolutiveItemTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/EvolutiveItemTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ExpeditionSeasonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ExpeditionSeasonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ExternalNotificationsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ExternalNotificationsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/FeatureDescriptionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/FeatureDescriptionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/FightScenariosRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/FightScenariosRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/FinishMovesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/FinishMovesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ForgettableSpellsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ForgettableSpellsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildChestTabsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildChestTabsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildRankNameSuggestionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildRankNameSuggestionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildRanksRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildRanksRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildRightGroupsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildRightGroupsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildRightsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildRightsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildTagsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildTagsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/GuildTagsTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/GuildTagsTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HavenbagFurnituresRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HavenbagFurnituresRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HavenbagThemesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HavenbagThemesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HeadsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HeadsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HintCategoryRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HintCategoryRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HintsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HintsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/HousesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/HousesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/IncarnationLevelsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/IncarnationLevelsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/IncarnationRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/IncarnationRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/InfoMessagesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/InfoMessagesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/InteractivesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/InteractivesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ItemSetsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ItemSetsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ItemSuperTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ItemSuperTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ItemTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ItemTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ItemsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ItemsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/JobsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/JobsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/KothRolesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/KothRolesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/LegendaryPowersCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/LegendaryPowersCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/LegendaryTreasureHuntsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/LegendaryTreasureHuntsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/LivingObjectSkinJntMoodRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/LivingObjectSkinJntMoodRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/LuaFormulasRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/LuaFormulasRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MapCoordinatesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MapCoordinatesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MapPositionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MapPositionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MapReferencesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MapReferencesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MapScrollActionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MapScrollActionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ModstersRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ModstersRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MonsterMiniBossRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MonsterMiniBossRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MonsterRacesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MonsterRacesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MonsterSuperRacesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MonsterSuperRacesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MonstersRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MonstersRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MonthsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MonthsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MountBehaviorsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MountBehaviorsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MountBonesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MountBonesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MountFamilyRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MountFamilyRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/MountsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/MountsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/NotificationsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/NotificationsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/NpcActionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/NpcActionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/NpcMessagesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/NpcMessagesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/NpcsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/NpcsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/OptionalFeaturesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/OptionalFeaturesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/OrnamentsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/OrnamentsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PackRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PackRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PlaylistsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PlaylistsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PointOfInterestCategoryRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PointOfInterestCategoryRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PointOfInterestRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PointOfInterestRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PopupInformationsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PopupInformationsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/PresetIconsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/PresetIconsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestCategoryRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestCategoryRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestObjectiveTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestObjectiveTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestObjectivesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestObjectivesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestStepRewardsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestStepRewardsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestStepsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestStepsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/QuestsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/QuestsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/RandomDropGroupsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/RandomDropGroupsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/RecipesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/RecipesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/RideFoodRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/RideFoodRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServerCommunitiesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServerCommunitiesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServerGameTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServerGameTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServerLangsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServerLangsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServerPopulationsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServerPopulationsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServerSeasonsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServerSeasonsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/ServersRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/ServersRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SignsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SignsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SkillNamesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SkillNamesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SkillsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SkillsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SkinMappingsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SkinMappingsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SkinSlotsRulesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SkinSlotsRulesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SmileyCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SmileyCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SmileyPacksRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SmileyPacksRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SmileysRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SmileysRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SoundBonesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SoundBonesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SoundUiHookRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SoundUiHookRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SoundUiRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SoundUiRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpeakingItemsTextRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpeakingItemsTextRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpeakingItemsTriggersRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpeakingItemsTriggersRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellBombsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellBombsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellConversionsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellConversionsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellLevelsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellLevelsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellPairsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellPairsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellScriptsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellScriptsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellStatesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellStatesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellTypesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellTypesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SpellVariantsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SpellVariantsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/StealthBonesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/StealthBonesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SubAreasRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SubAreasRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SubhintsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SubhintsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/SuperAreasRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/SuperAreasRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TaxCollectorFirstnamesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TaxCollectorFirstnamesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TaxCollectorNamesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TaxCollectorNamesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TextIconReferencesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TextIconReferencesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TipsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TipsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TitleCategoriesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TitleCategoriesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/TitlesRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/TitlesRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/VeteranRewardsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/VeteranRewardsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/WaypointsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/WaypointsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/WorldMapsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_datas/WorldMapsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_datas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_maps/MapsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_maps/MapsRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_maps/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_standalone/WorldGraphRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/gen/gen_standalone/WorldGraphRoot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/gen/gen_standalone/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/connection/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/connection/login_message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/connection/login_message.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/connection/login_message_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/connection/login_message_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/connection/login_message_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/connection/login_message_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/account.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/account.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/account_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/account_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/account_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/account_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/achievement.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/achievement.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/achievement_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/achievement_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/achievement_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/achievement_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/admin_console.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/admin_console.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/admin_console_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/admin_console_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/admin_console_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/admin_console_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_conquest.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_conquest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_conquest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_conquest_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_conquest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_conquest_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_information.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_information.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_information_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_information_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_information_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_information_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_member.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_member.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_member_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_member_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_member_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_member_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_rank.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_rank.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_rank_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_rank_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_rank_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_rank_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_recruitment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_recruitment.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_recruitment_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_recruitment_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alliance_recruitment_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alliance_recruitment_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alteration.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alteration.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alteration_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alteration_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/alteration_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/alteration_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/anomaly.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/anomaly.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/anomaly_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/anomaly_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/anomaly_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/anomaly_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/appearance.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/appearance.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/appearance_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/appearance_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/appearance_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/appearance_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/area.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/area.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/area_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/area_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/area_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/area_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/arena.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/arena.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/arena_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/arena_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/arena_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/arena_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/atlas.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/atlas.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/atlas_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/atlas_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/atlas_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/atlas_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bak.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bak.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bak_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bak_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bak_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bak_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/basic.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/basic.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/basic_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/basic_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/basic_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/basic_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bid_activity.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bid_activity.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bid_activity_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bid_activity_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/bid_activity_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/bid_activity_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/breach.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/breach.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/breach_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/breach_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/breach_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/breach_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/challenge.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/challenge.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/challenge_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/challenge_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/challenge_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/challenge_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character_management.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_management.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character_management_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_management_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character_management_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_management_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/character_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/chat.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/chat.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/chat_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/chat_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/chat_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/chat_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/choice.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/choice.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/choice_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/choice_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/choice_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/choice_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/client_verification.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/client_verification.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/client_verification_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/client_verification_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/client_verification_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/client_verification_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/common.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/common_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/common_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/common_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/common_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/connection.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/connection.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/connection_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/connection_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/connection_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/connection_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/contact.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/contact.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/contact_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/contact_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/contact_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/contact_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/context.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/context.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/context_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/context_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/context_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/context_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/cosmetic.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/cosmetic.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/cosmetic_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/cosmetic_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/cosmetic_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/cosmetic_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debt.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debt.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debt_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debt_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debt_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debt_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debug.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debug.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debug_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debug_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/debug_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/debug_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/dialog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/dialog.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/dialog_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/dialog_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/dialog_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/dialog_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/document.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/document.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/document_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/document_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/document_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/document_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/element.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/element.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/element_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/element_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/element_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/element_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/emote.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/emote.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/emote_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/emote_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/emote_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/emote_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/exchange.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/exchange.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/exchange_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/exchange_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/exchange_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/exchange_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight_preparation.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight_preparation.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight_preparation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight_preparation_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/fight_preparation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight_preparation_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/finish_move.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/finish_move.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/finish_move_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/finish_move_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/finish_move_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/finish_move_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_action.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_action.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_action_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_action_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_action_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_action_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_message.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_message_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_message_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/game_message_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_message_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/gamemap.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/gamemap.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/gamemap_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/gamemap_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/gamemap_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/gamemap_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/google/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/google/protobuf/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/google/protobuf/any.proto" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/google/protobuf/any_pb2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/google/protobuf/any_pb2.pyi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_application.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_application.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_application_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_application_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_application_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_application_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_chest.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_chest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_chest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_chest_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_chest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_chest_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_house.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_house.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_house_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_house_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_house_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_house_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_information.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_information.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_information_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_information_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_information_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_information_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_member.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_member.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_member_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_member_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_member_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_member_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_rank.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_rank.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_rank_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_rank_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_rank_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_rank_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_recruitment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_recruitment.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_recruitment_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_recruitment_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/guild_recruitment_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/guild_recruitment_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haapi.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haapi.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haapi_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haapi_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haapi_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haapi_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haven_bag.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haven_bag.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haven_bag_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haven_bag_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/haven_bag_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/haven_bag_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/house.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/house.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/house_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/house_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/house_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/house_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/interactive_element.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/interactive_element.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/interactive_element_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/interactive_element_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/interactive_element_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/interactive_element_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/inventory.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/inventory.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/inventory_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/inventory_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/inventory_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/inventory_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/job.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/job.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/job_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/job_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/job_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/job_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/living_object.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/living_object.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/living_object_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/living_object_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/living_object_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/living_object_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/moderation.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/moderation.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/moderation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/moderation_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/moderation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/moderation_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/mount.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/mount.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/mount_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/mount_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/mount_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/mount_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/notification.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/notification.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/notification_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/notification_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/notification_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/notification_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/npc.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/npc.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/npc_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/npc_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/npc_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/npc_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/paddock.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/paddock.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/paddock_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/paddock_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/paddock_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/paddock_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/party.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/party.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/party_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/party_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/party_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/party_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/preset.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/preset.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/preset_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/preset_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/preset_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/preset_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/prism.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/prism.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/prism_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/prism_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/prism_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/prism_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/quest.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/quest.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/quest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/quest_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/quest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/quest_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/report.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/report.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/report_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/report_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/report_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/report_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/roleplay.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/roleplay.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/roleplay_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/roleplay_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/roleplay_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/roleplay_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/script.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/script.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/script_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/script_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/script_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/script_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/security.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/security.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/security_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/security_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/security_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/security_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/server.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/server.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/server_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/server_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/server_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/server_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/shop.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/shop.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/shop_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/shop_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/shop_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/shop_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/social.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/social.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/social_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/social_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/social_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/social_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/suggestion.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/suggestion.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/suggestion_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/suggestion_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/suggestion_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/suggestion_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/symbiont.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/symbiont.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/symbiont_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/symbiont_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/symbiont_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/symbiont_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tag_storage.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tag_storage.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tag_storage_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tag_storage_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tag_storage_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tag_storage_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/taxcollector.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/taxcollector.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/taxcollector_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/taxcollector_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/taxcollector_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/taxcollector_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/teleportation.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/teleportation.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/teleportation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/teleportation_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/teleportation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/teleportation_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tinsel.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tinsel.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tinsel_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tinsel_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/tinsel_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/tinsel_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/treasure_hunt.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/treasure_hunt.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/treasure_hunt_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/treasure_hunt_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/treasure_hunt_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/treasure_hunt_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/ui.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/ui.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/ui_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/ui_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/outputs/protos/game/ui_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/ui_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +514,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
     &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
     &quot;Python.maj.executor&quot;: &quot;Run&quot;,
@@ -60,43 +522,23 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/valen/Documents/Workspace/DB-DofusUnity&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/valen/Documents/Workspace/Bot-DofusUnity/DB-DofusUnity&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.leinardi.pycharm.mypy.MypyConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\Documents\Workspace\Bot-DofusUnity\DB-DofusUnity" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\old_protos" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\protos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\valen\Documents\Workspace\Bot-DofusUnity\DB-DofusUnity" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator\proto_mapping\similarity" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_mapping_obfuscate_protos (1)">
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.generate_mapping_obfuscate_protos (2)">
     <configuration name="generate_mapping_obfuscate_protos (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -111,6 +553,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_mapping_obfuscate_protos (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DB-DofusUnity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db_dofus_unity/generator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db_dofus_unity/generator/generate_mapping_obfuscate_protos.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -186,88 +650,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.generate_mapping_obfuscate_protos (2)" />
         <item itemvalue="Python.generate_mapping_obfuscate_protos (1)" />
         <item itemvalue="Python.generate_python_from_proto" />
         <item itemvalue="Python.maj" />

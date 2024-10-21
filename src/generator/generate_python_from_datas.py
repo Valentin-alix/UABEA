@@ -2,7 +2,7 @@ import json
 import os
 from tempfile import NamedTemporaryFile
 
-from db_dofus_unity.consts import (
+from src.consts import (
     DOFUS_PATH,
     WORLD_GRAPH_FILENAME,
     OUTPUT_CLASS_DATAS,
@@ -15,10 +15,10 @@ from db_dofus_unity.consts import (
 
 
 def run_cmd_codegen(
-        input_filename: str,
-        output_filename: str,
-        class_name: str,
-        base_dofus_folder: str | None = None,
+    input_filename: str,
+    output_filename: str,
+    class_name: str,
+    base_dofus_folder: str | None = None,
 ):
     cmd = f"datamodel-codegen --class-name {class_name} --input-file-type json --input {input_filename} --output {output_filename} --custom-template-dir template  --output-model-type msgspec.Struct"
     if base_dofus_folder:
@@ -61,7 +61,7 @@ def gen_map_datas(input_folder: str, output_folder: str):
 
 
 def gen_world_graph_datas(
-        base_dofus_folder: str, input_folder: str, output_folder: str
+    base_dofus_folder: str, input_folder: str, output_folder: str
 ):
     file_path = os.path.join(input_folder, WORLD_GRAPH_FILENAME)
     print("processing world graph")

@@ -1,6 +1,10 @@
 import os
+import sys
+from pathlib import Path
 
-from db_dofus_unity.consts import PROTO_CONNECTION_PATH, PROTO_GAME_PATH
+sys.path.append(str(Path(__file__).parent.parent.parent))
+
+from src.consts import PROTO_CONNECTION_PATH, PROTO_GAME_PATH
 
 
 def gen_python_from_protoc(input_folder: str, output_folder: str):
