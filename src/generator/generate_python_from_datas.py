@@ -3,14 +3,9 @@ import os
 from tempfile import NamedTemporaryFile
 
 from db_dofus_unity.consts import (
-    DOFUS_PATH,
     WORLD_GRAPH_FILENAME,
-    OUTPUT_CLASS_DATAS,
-    DOFUS_DATA_PATH,
     DOFUS_MAP_PATH,
-    DOFUS_STANDALONE_PATH,
     OUTPUT_CLASS_MAPS,
-    OUTPUT_CLASS_STANDALONE,
 )
 
 
@@ -48,7 +43,9 @@ def gen_datas(base_dofus_folder: str, input_folder: str, output_folder: str):
 
 
 def gen_map_datas(input_folder: str, output_folder: str):
-    for filename in os.listdir(input_folder):
+    sorted_by_size = sorted(os.listdir(input_folder),
+                            key=lambda filename: os.path.getsize(os.path.join(input_folder, filename)), reverse=True)
+    for filename in sorted_by_size:
         if not filename.startswith("map_") or not filename.endswith(".json"):
             continue
         print(f"processing map {filename}")
@@ -75,8 +72,8 @@ def gen_world_graph_datas(
 
 
 def gen_all_python_class_datas():
-    gen_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
-    gen_world_graph_datas(DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
+    # gen_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
+    # gen_world_graph_datas(DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
     gen_map_datas(DOFUS_MAP_PATH, OUTPUT_CLASS_MAPS)
 
 
