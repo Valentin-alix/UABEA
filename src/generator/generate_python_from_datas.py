@@ -1,11 +1,12 @@
 import json
 import os
+from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 from db_dofus_unity.consts import (
     WORLD_GRAPH_FILENAME,
-    DOFUS_MAP_PATH,
-    OUTPUT_CLASS_MAPS,
+    DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS, DOFUS_MAP_PATH, OUTPUT_CLASS_MAPS, DOFUS_STANDALONE_PATH,
+    OUTPUT_CLASS_STANDALONE,
 )
 
 
@@ -15,7 +16,7 @@ def run_cmd_codegen(
     class_name: str,
     base_dofus_folder: str | None = None,
 ):
-    cmd = f"datamodel-codegen --class-name {class_name} --input-file-type json --input {input_filename} --output {output_filename} --custom-template-dir template  --output-model-type msgspec.Struct"
+    cmd = f"datamodel-codegen --class-name {class_name} --input-file-type json --input {input_filename} --output {output_filename} --custom-template-dir {os.path.join(Path(__file__).parent, "template")}  --output-model-type msgspec.Struct"
     if base_dofus_folder:
         extra_data: dict[str, dict] = {class_name: {}, "#all#": {}}
         filepath = os.path.relpath(input_filename, base_dofus_folder)
@@ -72,8 +73,8 @@ def gen_world_graph_datas(
 
 
 def gen_all_python_class_datas():
-    # gen_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
-    # gen_world_graph_datas(DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
+    gen_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
+    gen_world_graph_datas(DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE)
     gen_map_datas(DOFUS_MAP_PATH, OUTPUT_CLASS_MAPS)
 
 
