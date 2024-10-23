@@ -10,7 +10,8 @@ from db_dofus_unity.consts import (
     PROTO_CONNECTION_PATH,
     MAPPING_CONN_PROTO_PATH,
     OBFUSCATED_PROTO_CONNECTION,
-    OBFUSCATED_PROTO_GAME, MAPPING_GAME_PROTO_PATH,
+    OBFUSCATED_PROTO_GAME,
+    MAPPING_GAME_PROTO_PATH,
 )
 from src.generator.comparator.models.proto_file_info import ProtoFileInfo
 from src.generator.comparator.proto_comparator import (
@@ -57,22 +58,29 @@ def get_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
     mapping = ProtoComparator(
         old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
         new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
-    ).get_messages_mapping()
+    ).get_all_messages_mapping()
 
     icecream.ic(sorted(mapping.items(), key=lambda elem: elem[1].similarity)[:10])
 
     return mapping
 
 
-def get_most_probable_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
+def get_most_probable_mapping_protos(
+    old_proto_path: str, obfuscated_proto_path: str
+) -> dict[str, str]:
     mapping = ProtoComparator(
         old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
         new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
-    ).get_most_probable_messages_mapping()
+    ).get_all_messages_mapping()
 
-    icecream.ic(mapping)
+    most_probable_mapping = {
+        old_msg_name: mapping_info.messages_name_with_index[0][0]
+        for old_msg_name, mapping_info in mapping.items()
+    }
 
-    return mapping
+    # icecream.ic(mapping)
+
+    return most_probable_mapping
 
 
 def generate_mapping_proto():

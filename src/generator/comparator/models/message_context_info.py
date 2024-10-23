@@ -1,19 +1,20 @@
 from dataclasses import dataclass
 
 from proto_schema_parser import Message
+
 from src.generator.comparator.models.proto_file_info import ProtoFileInfo
 
 
 @dataclass
-class ComparatorContextInfo:
-    parent_context: "ComparatorContextInfo | None"  # to avoid infinite recursion
+class MessageContextInfo:
+    parent_context: "MessageContextInfo | None"  # to avoid infinite recursion
     file_info: ProtoFileInfo
     message: Message
 
     def get_depth_in_parent(self, msg_name: str) -> int | None:
         depth = 0
         is_found: bool = False
-        context_info: ComparatorContextInfo | None = self
+        context_info: MessageContextInfo | None = self
         while context_info is not None:
             depth += 1
             if context_info.message.name == msg_name:
