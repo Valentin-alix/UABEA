@@ -74,7 +74,7 @@ def get_most_probable_mapping_protos(
     ).get_all_messages_mapping()
 
     most_probable_mapping = {
-        old_msg_name: mapping_info.messages_name_with_index[0][0]
+        mapping_info.messages_name_with_index[0][0]: old_msg_name
         for old_msg_name, mapping_info in mapping.items()
     }
 

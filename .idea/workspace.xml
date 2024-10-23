@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="ugly temp but working fix proto are better ordered, better matching">
-      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/spell.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/spell_pb2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/spell_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/comparator/models/comparator_context_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/message_context_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/comparator/models/mapping_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/mapping_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/comparator/proto_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/proto_comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/comparator/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" afterDir="false" />
-    </list>
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="ugly temp but working fix proto are better ordered, better matching" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +59,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/valen/Documents/Workspace/DB-DofusUnity",
+    "last_opened_file_path": "C:/Users/valen/Documents/Workspace/Bot-DofusUnity",
     "settings.editor.selected.configurable": "actions.on.save"
   }
 }]]></component>
@@ -361,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729714498694</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ugly temp but working fix proto are better ordered, better matching">
+      <option name="closed" value="true" />
+      <created>1729714508444</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729714508444</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
