@@ -143,9 +143,9 @@ class ProtoComparator:
                 )
                 mapping_by_sim[(msg_full_name, new_file_index)] = similarity
                 if similarity == 1:
-                    # new_proto_files_infos[new_proto_file_info.filename].messages.remove(
-                    #     new_message
-                    # )
+                    new_proto_files_infos[new_proto_file_info.filename].messages.remove(
+                        new_message
+                    )
                     is_found = True
                     break
 

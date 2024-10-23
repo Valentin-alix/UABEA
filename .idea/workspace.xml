@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="ugly temp but working fix proto are better ordered, better matching" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="fix switch key value mapping">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +61,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/valen/Documents/Workspace/Bot-DofusUnity",
+    "last_opened_file_path": "C:/Users/valen/Documents/Workspace/DB-DofusUnity",
     "settings.editor.selected.configurable": "actions.on.save"
   }
 }]]></component>
@@ -355,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729714508444</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix switch key value mapping">
+      <option name="closed" value="true" />
+      <created>1729714792566</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729714792566</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -371,7 +381,8 @@
     <MESSAGE value="move folders, better mapping display" />
     <MESSAGE value="more precise maps root" />
     <MESSAGE value="ugly temp but working fix proto are better ordered, better matching" />
-    <option name="LAST_COMMIT_MESSAGE" value="ugly temp but working fix proto are better ordered, better matching" />
+    <MESSAGE value="fix switch key value mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix switch key value mapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

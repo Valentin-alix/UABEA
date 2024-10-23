@@ -76,6 +76,7 @@ def get_most_probable_mapping_protos(
     most_probable_mapping = {
         mapping_info.messages_name_with_index[0][0]: old_msg_name
         for old_msg_name, mapping_info in mapping.items()
+        if len(mapping_info.messages_name_with_index) > 0
     }
 
     # icecream.ic(mapping)
