@@ -23,7 +23,6 @@ It generates catalog_1.0.json.patched, you can then rename this to catalog_1.0.j
 
 Get https://github.com/Valentin-alix/UABEA.git
 
-### To Do Every Maj
+First launch : `poetry run python src/on_init.py`
 
-Update game then launch script to update data & code :
-`poetry run ./db_dofus_unity/__main__.py`
+To do every maj : `poetry run python src/on_maj.py`

@@ -10,7 +10,6 @@ from db_dofus_unity.consts import (
     OBFUSCATED_PROTO_GAME,
 )
 from src.generator.generate_mapping_obfuscate_protos import generate_mapping_proto
-from src.generator.generate_python_from_datas import gen_all_python_class_datas
 from src.generator.generate_python_from_proto import gen_all_python_from_protoc
 
 ASSEMBLIES_PATH = os.path.join(DOFUS_PATH, "assemblies")
@@ -60,33 +59,12 @@ def get_protos():
     os.system(f"{PROTODEC_PATH_EXE} {PROTO_GAME_ASSEMBLY_PATH} {OBFUSCATED_PROTO_GAME}")
 
 
-def get_datas():
-    UABEA_PATH_EXE = os.path.join(
-        "D:\\",
-        "Workspace",
-        "UABEA",
-        "UABEAvalonia",
-        "bin",
-        "Debug",
-        "net6.0",
-        "UABEAvalonia.exe",
-    )
-
-    os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map")}"
-    )
-    os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "aa", "StandaloneWindows64")}"
-    )
-    os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Data")}"
-    )
-
-
-if __name__ == "__main__":
+def on_maj():
     get_assemblies()
     get_protos()
     generate_mapping_proto()
     gen_all_python_from_protoc()
-    get_datas()
-    gen_all_python_class_datas()
+
+
+if __name__ == "__main__":
+    on_maj()

@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 
-DOFUS_PATH = os.path.join("D:", "Programmes", "Dofus-beta")
+DOFUS_PATH = os.path.join("D:\\", "Programmes", "Dofus-beta")
 
 OBFUSCATED_PROTOS = os.path.join(DOFUS_PATH, "protocol")
 OBFUSCATED_PROTO_CONNECTION = os.path.join(OBFUSCATED_PROTOS, "connection")

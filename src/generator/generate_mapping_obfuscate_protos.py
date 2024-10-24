@@ -74,7 +74,7 @@ def get_most_probable_mapping_protos(
     ).get_all_messages_mapping()
 
     most_probable_mapping = {
-        mapping_info.messages_index_with_name[0][0]: old_msg_name
+        mapping_info.messages_index_with_name[0][1]: old_msg_name
         for old_msg_name, mapping_info in mapping.items()
         if len(mapping_info.messages_index_with_name) > 0
     }
@@ -104,4 +104,4 @@ def main_debug():
 
 
 if __name__ == "__main__":
-    main_debug()
+    generate_mapping_proto()
