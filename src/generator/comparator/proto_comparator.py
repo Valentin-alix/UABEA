@@ -62,7 +62,7 @@ class ProtoComparator:
                 message=old_most_complex_msg,
             )
             mapping_info_most_complex_msg = self.get_message_mapping(
-                old_most_complex_msg_info, 0
+                old_most_complex_msg_info, 0, False
             )
             mapping_info_by_name[
                 get_full_name_msg(
@@ -94,7 +94,10 @@ class ProtoComparator:
         return mapping_info_by_name
 
     def get_message_mapping(
-        self, old_msg_info: MessageContextInfo, new_index_start_search: int
+        self,
+        old_msg_info: MessageContextInfo,
+        new_index_start_search: int,
+        trust_index: bool = True,
     ) -> MappingInfo:
         mapping_by_sim: dict[tuple[int, str], float] = {}
 
@@ -108,7 +111,6 @@ class ProtoComparator:
 
         while not is_found:
             new_file_index = open_proto_files_index.pop()
-
             new_proto_file_info = list(self.new_proto_files_infos.values())[
                 new_file_index
             ]
@@ -125,7 +127,7 @@ class ProtoComparator:
                 )
                 # we just need new file index because 1 file = 1 enum or 1 message in new protos
                 mapping_by_sim[(new_file_index, new_msg_full_name)] = similarity
-                if similarity == 1:
+                if similarity == 1 or (trust_index and similarity > 0.9):
                     is_found = True
                     break
 

@@ -8,9 +8,9 @@ package-mode = true
 
 [tool.poetry.dependencies]
 python = ">3.11,<4.0"
-protobuf = "5.28.0"
 msgspec = "^0.18.6"
 black = "^24.10.0"
+protobuf = "5.28.3"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.12.1"
