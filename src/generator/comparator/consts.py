@@ -16,3 +16,6 @@ PROTO_BASE_FIELDS: list[str] = [
     "bytes",
     "google.protobuf.Any",
 ]
+
+
+BLACKLIST_IMPORT_URLS = ["google/protobuf/any.proto"]

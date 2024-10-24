@@ -1,16 +1,13 @@
-from copy import deepcopy
 from dataclasses import dataclass
 
 from proto_schema_parser.ast import (
     MessageElement,
     Field,
-    Message,
     OneOf,
     OneOfElement,
     Enum,
     EnumElement,
     EnumValue,
-    Package,
 )
 
 from src.generator.comparator.consts import PROTO_BASE_FIELDS
@@ -20,11 +17,7 @@ from src.generator.comparator.models.message_context_info import (
     MessageContextInfo,
 )
 from src.generator.comparator.models.proto_file_info import ProtoFileInfo
-from src.generator.comparator.utils import (
-    get_sort_value_msg_element,
-    get_related_struct,
-    get_complexity_struct,
-)
+from src.generator.comparator.utils import get_sort_value_msg_element, get_full_name_msg
 
 
 @dataclass
@@ -32,163 +25,150 @@ class ProtoComparator:
     new_proto_files_infos: dict[str, ProtoFileInfo]
     old_proto_files_infos: dict[str, ProtoFileInfo]
 
-    def get_full_name_msg(self, package: Package | None, name: str) -> str:
-        if package:
-            msg_full_name = package.name + "." + name
-        else:
-            msg_full_name = name
-
-        return msg_full_name
-
     def get_all_messages_mapping(self) -> dict[str, MappingInfo]:
         mapping_info_by_name: dict[str, MappingInfo] = {}
-
-        # deepcopy to keep context for retrieving element but to get rid of matching possibility
-        new_proto_files_infos = deepcopy(self.new_proto_files_infos)
 
         # here we sort proto file by most complex msg
         old_proto_files_infos_sorted_complexity = sorted(
             self.old_proto_files_infos.items(),
-            key=lambda item: max(
+            key=lambda filename_with_file_info: max(
                 (
-                    get_complexity_struct(self.old_proto_files_infos, msg)
-                    for msg in item[1].messages
+                    MessageContextInfo(
+                        message=msg,
+                        file_info=filename_with_file_info[1],
+                        parent_context=None,
+                        file_info_by_name=self.old_proto_files_infos,
+                    ).get_complexity()
+                    for msg in filename_with_file_info[1].messages
                 )
             ),
             reverse=True,
         )
 
         for filename, old_proto_file_info in old_proto_files_infos_sorted_complexity:
-
-            old_msg_sorted_complexity = sorted(
+            old_most_complex_msg_index, old_most_complex_msg = max(
                 enumerate(old_proto_file_info.messages),
-                key=lambda elem: get_complexity_struct(
-                    self.old_proto_files_infos, elem[1]
-                ),
-                reverse=True,
+                key=lambda index_with_msg: MessageContextInfo(
+                    message=index_with_msg[1],
+                    file_info=old_proto_file_info,
+                    parent_context=None,
+                    file_info_by_name=self.old_proto_files_infos,
+                ).get_complexity(),
             )
-
-            old_most_complex_msg_index, old_most_complex_msg = (
-                old_msg_sorted_complexity[0]
+            old_most_complex_msg_info = MessageContextInfo(
+                file_info_by_name=self.old_proto_files_infos,
+                parent_context=None,
+                file_info=old_proto_file_info,
+                message=old_most_complex_msg,
             )
             mapping_info_most_complex_msg = self.get_message_mapping(
-                new_proto_files_infos, old_proto_file_info, old_most_complex_msg
+                old_most_complex_msg_info, 0
             )
-
             mapping_info_by_name[
-                self.get_full_name_msg(
+                get_full_name_msg(
                     old_proto_file_info.package, old_most_complex_msg.name
                 )
             ] = mapping_info_most_complex_msg
 
-            for old_msg_index, old_msg in old_msg_sorted_complexity:
+            for old_msg_index, old_msg in enumerate(old_proto_file_info.messages):
                 if old_msg_index == old_most_complex_msg_index:
                     continue
 
+                old_msg_info = MessageContextInfo(
+                    file_info_by_name=self.old_proto_files_infos,
+                    parent_context=None,
+                    file_info=old_proto_file_info,
+                    message=old_msg,
+                )
+
                 # index for new protos to start searching
                 new_index_start_search = (
-                    mapping_info_most_complex_msg.messages_name_with_index[0][1]
+                    mapping_info_most_complex_msg.messages_index_with_name[0][0]
                     + (old_msg_index - old_most_complex_msg_index)
                 )
 
-                sliced_by_index_new_proto_files = {
-                    key: value
-                    for key, value in list(new_proto_files_infos.items())[
-                        new_index_start_search:
-                    ]
-                }
                 mapping_info_by_name[
-                    self.get_full_name_msg(old_proto_file_info.package, old_msg.name)
-                ] = self.get_message_mapping(
-                    sliced_by_index_new_proto_files, old_proto_file_info, old_msg
-                )
+                    get_full_name_msg(old_proto_file_info.package, old_msg.name)
+                ] = self.get_message_mapping(old_msg_info, new_index_start_search)
 
         return mapping_info_by_name
 
     def get_message_mapping(
-        self,
-        new_proto_files_infos: dict[str, ProtoFileInfo],
-        old_proto_file_info: ProtoFileInfo,
-        old_message: Message,
+        self, old_msg_info: MessageContextInfo, new_index_start_search: int
     ) -> MappingInfo:
-        mapping_by_sim: dict[tuple[str, int], float] = {}
+        mapping_by_sim: dict[tuple[int, str], float] = {}
+
         is_found: bool = False
 
-        for new_file_index, new_proto_file_info in enumerate(
-            new_proto_files_infos.values()
-        ):
-            if is_found:
-                break
-            for new_message in new_proto_file_info.messages:
-                old_comparator_info = MessageContextInfo(
-                    file_info=old_proto_file_info,
-                    message=old_message,
-                    parent_context=None,
-                )
-                new_comparator_info = MessageContextInfo(
+        open_proto_files_index = sorted(
+            range(len(self.new_proto_files_infos.values())),
+            key=lambda index: abs(index - new_index_start_search),
+            reverse=True,
+        )
+
+        while not is_found:
+            new_file_index = open_proto_files_index.pop()
+
+            new_proto_file_info = list(self.new_proto_files_infos.values())[
+                new_file_index
+            ]
+            for new_msg in new_proto_file_info.messages:
+                new_msg_info = MessageContextInfo(
+                    file_info_by_name=self.new_proto_files_infos,
                     file_info=new_proto_file_info,
-                    message=new_message,
+                    message=new_msg,
                     parent_context=None,
                 )
-
-                if new_proto_file_info.package:
-                    msg_full_name = (
-                        new_proto_file_info.package.name + "." + new_message.name
-                    )
-                else:
-                    msg_full_name = new_message.name
-
-                similarity = self.compare_message(
-                    old_comparator_info, new_comparator_info
+                similarity = self.compare_message(old_msg_info, new_msg_info)
+                new_msg_full_name = get_full_name_msg(
+                    new_proto_file_info.package, new_msg.name
                 )
-                mapping_by_sim[(msg_full_name, new_file_index)] = similarity
+                # we just need new file index because 1 file = 1 enum or 1 message in new protos
+                mapping_by_sim[(new_file_index, new_msg_full_name)] = similarity
                 if similarity == 1:
-                    new_proto_files_infos[new_proto_file_info.filename].messages.remove(
-                        new_message
-                    )
                     is_found = True
                     break
 
         most_sim = max(mapping_by_sim.values(), default=0.0)
-        messages_name_with_index = [
-            key for key, value in mapping_by_sim.items() if value == most_sim
+        messages_index_with_name = [
+            index_with_name
+            for index_with_name, sim in mapping_by_sim.items()
+            if sim == most_sim
         ]
-        return MappingInfo(messages_name_with_index, similarity=most_sim)
+        return MappingInfo(messages_index_with_name, similarity=most_sim)
 
     def compare_message(
         self,
-        old_comparator_info: MessageContextInfo,
-        new_comparator_info: MessageContextInfo,
+        old_msg_info: MessageContextInfo,
+        new_msg_info: MessageContextInfo,
     ) -> Percentage:
-        if len(old_comparator_info.message.elements) != len(
-            new_comparator_info.message.elements
-        ):
+        if len(old_msg_info.message.elements) != len(new_msg_info.message.elements):
             return 0
 
-        if len(old_comparator_info.message.elements) == 0:
+        if len(old_msg_info.message.elements) == 0:
             return 1
 
-        old_comparator_info.message.elements.sort(key=get_sort_value_msg_element)
-        new_comparator_info.message.elements.sort(key=get_sort_value_msg_element)
+        old_msg_info.message.elements.sort(key=get_sort_value_msg_element)
+        new_msg_info.message.elements.sort(key=get_sort_value_msg_element)
 
         elements_similarity_score: float = 0
-        for index in range(len(old_comparator_info.message.elements)):
+        for index in range(len(old_msg_info.message.elements)):
             elements_similarity_score += self.compare_msg_elements(
-                old_comparator_info,
-                old_comparator_info.message.elements[index],
-                new_comparator_info,
-                new_comparator_info.message.elements[index],
+                old_msg_info,
+                old_msg_info.message.elements[index],
+                new_msg_info,
+                new_msg_info.message.elements[index],
             )
 
         return Percentage(
-            elements_similarity_score / len(old_comparator_info.message.elements)
+            elements_similarity_score / len(old_msg_info.message.elements)
         )
 
     def compare_msg_elements(
         self,
-        old_comparator_context: MessageContextInfo,
+        old_msg_context: MessageContextInfo,
         old_msg_element: MessageElement,
-        new_comparator_context: MessageContextInfo,
+        new_msg_context: MessageContextInfo,
         new_msg_element: MessageElement,
     ) -> Percentage:
         if type(old_msg_element) is not type(new_msg_element):
@@ -196,17 +176,17 @@ class ProtoComparator:
 
         if type(old_msg_element) is OneOf and type(new_msg_element) is OneOf:
             return self.compare_one_ofs(
-                old_comparator_context,
+                old_msg_context,
                 old_msg_element,
-                new_comparator_context,
+                new_msg_context,
                 new_msg_element,
             )
 
         if type(old_msg_element) is Field and type(new_msg_element) is Field:
             return self.compare_fields(
-                old_comparator_context,
+                old_msg_context,
                 old_msg_element,
-                new_comparator_context,
+                new_msg_context,
                 new_msg_element,
             )
 
@@ -214,9 +194,9 @@ class ProtoComparator:
 
     def compare_one_ofs(
         self,
-        old_comparator_context: MessageContextInfo,
+        old_msg_context: MessageContextInfo,
         old_one_of: OneOf,
-        new_comparator_context: MessageContextInfo,
+        new_msg_context: MessageContextInfo,
         new_one_of: OneOf,
     ) -> Percentage:
         if len(old_one_of.elements) != len(new_one_of.elements):
@@ -228,9 +208,9 @@ class ProtoComparator:
         elements_similarity_score: float = 0
         for index in range(len(old_one_of.elements)):
             elements_similarity_score += self.compare_one_of_element(
-                old_comparator_context,
+                old_msg_context,
                 old_one_of.elements[index],
-                new_comparator_context,
+                new_msg_context,
                 new_one_of.elements[index],
             )
 
@@ -238,9 +218,9 @@ class ProtoComparator:
 
     def compare_one_of_element(
         self,
-        old_comparator_context: MessageContextInfo,
+        old_msg_context: MessageContextInfo,
         old_one_of_element: OneOfElement,
-        new_comparator_context: MessageContextInfo,
+        new_msg_context: MessageContextInfo,
         new_one_of_element: OneOfElement,
     ) -> Percentage:
         if type(old_one_of_element) is not type(new_one_of_element):
@@ -248,9 +228,9 @@ class ProtoComparator:
 
         if type(old_one_of_element) is Field and type(new_one_of_element) is Field:
             return self.compare_fields(
-                old_comparator_context,
+                old_msg_context,
                 old_one_of_element,
-                new_comparator_context,
+                new_msg_context,
                 new_one_of_element,
             )
 
@@ -258,9 +238,9 @@ class ProtoComparator:
 
     def compare_fields(
         self,
-        old_comparator_context: MessageContextInfo,
+        old_msg_context: MessageContextInfo,
         old_field: Field,
-        new_comparator_context: MessageContextInfo,
+        new_msg_context: MessageContextInfo,
         new_field: Field,
     ) -> Percentage:
         similarity_score: float = 1
@@ -277,60 +257,47 @@ class ProtoComparator:
             if new_field.type in PROTO_BASE_FIELDS:
                 return 0
 
-            related_old_struct_info = get_related_struct(
-                self.old_proto_files_infos,
-                old_comparator_context,
-                old_field.type,
+            related_old_struct_info = (
+                old_msg_context.get_msg_info_or_enum_from_type_name(old_field.type)
             )
             if related_old_struct_info is None:
                 raise ValueError(f"Did not found struct {old_field.type}")
 
-            related_old_file_info, related_old_struct = related_old_struct_info
-
-            related_new_struct_info = get_related_struct(
-                self.new_proto_files_infos,
-                new_comparator_context,
-                new_field.type,
+            related_new_struct_info = (
+                new_msg_context.get_msg_info_or_enum_from_type_name(
+                    new_field.type,
+                )
             )
-
             if related_new_struct_info is None:
                 raise ValueError(
-                    f"Did not found struct {new_field.type} at file info {new_comparator_context}"
+                    f"Did not found struct {new_field.type} at file info {new_msg_context}"
                 )
-            related_new_file_info, related_new_struct = related_new_struct_info
-
             if (
-                type(related_old_struct) is Message
-                and type(related_new_struct) is Message
+                type(related_old_struct_info) is MessageContextInfo
+                and type(related_new_struct_info) is MessageContextInfo
             ):
-                old_depth = old_comparator_context.get_depth_in_parent(
-                    related_old_struct.name
+                old_depth = old_msg_context.get_depth_in_parent(
+                    related_old_struct_info.message.name
                 )
                 # to avoid infinite recursion
                 if old_depth is not None:
-                    new_depth = new_comparator_context.get_depth_in_parent(
-                        related_new_struct.name
+                    new_depth = new_msg_context.get_depth_in_parent(
+                        related_new_struct_info.message.name
                     )
                     if new_depth == old_depth:
                         return 1
                     return 0
 
                 return self.compare_message(
-                    MessageContextInfo(
-                        file_info=related_old_file_info,
-                        message=related_old_struct,
-                        parent_context=old_comparator_context,
-                    ),
-                    MessageContextInfo(
-                        file_info=related_new_file_info,
-                        message=related_new_struct,
-                        parent_context=new_comparator_context,
-                    ),
+                    related_old_struct_info, related_new_struct_info
                 )
 
-            if type(related_old_struct) is Enum and type(related_new_struct) is Enum:
-                return ProtoComparator.compare_enum(
-                    related_old_struct, related_new_struct
+            if (
+                type(related_old_struct_info) is Enum
+                and type(related_new_struct_info) is Enum
+            ):
+                return self.compare_enum(
+                    related_old_struct_info, related_new_struct_info
                 )
 
             return 0
