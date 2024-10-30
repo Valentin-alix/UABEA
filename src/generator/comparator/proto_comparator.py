@@ -99,6 +99,7 @@ class ProtoComparator:
     def get_new_file_generated(
         self, mapping_info_by_name: dict[str, MappingInfo]
     ) -> dict[str, str]:
+        # FIXME found related message and replace import
         generated_file_by_name: dict[str, str] = {}
         new_mapping_name_found = [
             name

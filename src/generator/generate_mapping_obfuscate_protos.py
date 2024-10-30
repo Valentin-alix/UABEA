@@ -91,9 +91,9 @@ def generate_mapping_proto():
             PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION
         )
     )
-    for name, file_content in conn_generated_file_by_name.items():
-        with open(os.path.join(PROTO_CONNECTION_PATH, "generated", name), "w+") as file:
-            file.write(file_content)
+    # for name, file_content in conn_generated_file_by_name.items():
+    #     with open(os.path.join(PROTO_CONNECTION_PATH, "generated", name), "w+") as file:
+    #         file.write(file_content)
     with open(MAPPING_CONN_PROTO_PATH, "w+") as file:
         json.dump(conn_mapping, file, indent=2)
 
@@ -102,9 +102,9 @@ def generate_mapping_proto():
             PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME
         )
     )
-    for name, file_content in game_generated_file_by_name.items():
-        with open(os.path.join(PROTO_GAME_PATH, "generated", name), "w+") as file:
-            file.write(file_content)
+    # for name, file_content in game_generated_file_by_name.items():
+    #     with open(os.path.join(PROTO_GAME_PATH, "generated", name), "w+") as file:
+    #         file.write(file_content)
     with open(MAPPING_GAME_PROTO_PATH, "w+") as file:
         json.dump(game_mapping, file, indent=2)
 
@@ -115,4 +115,4 @@ def main_debug():
 
 
 if __name__ == "__main__":
-    main_debug()
+    generate_mapping_proto()
