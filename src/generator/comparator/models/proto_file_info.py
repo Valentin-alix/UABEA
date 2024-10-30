@@ -1,10 +1,11 @@
 from dataclasses import dataclass, field
 
-from proto_schema_parser.ast import Import, Package, Enum, Message
+from proto_schema_parser.ast import Import, Package, Enum, Message, File
 
 
 @dataclass
 class ProtoFileInfo:
+    origin_file: File
     filename: str
     imports: list[Import] = field(default_factory=lambda: [])
     package: Package | None = field(default=None)

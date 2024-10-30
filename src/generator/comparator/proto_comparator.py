@@ -9,6 +9,7 @@ from proto_schema_parser.ast import (
     EnumElement,
     EnumValue,
 )
+from proto_schema_parser.generator import Generator
 
 from src.generator.comparator.consts import PROTO_BASE_FIELDS
 from src.generator.comparator.custom_types import Percentage
@@ -25,7 +26,7 @@ class ProtoComparator:
     new_proto_files_infos: dict[str, ProtoFileInfo]
     old_proto_files_infos: dict[str, ProtoFileInfo]
 
-    def get_all_messages_mapping(self) -> dict[str, MappingInfo]:
+    def get_all_messages_mapping(self) -> tuple[dict[str, MappingInfo], dict[str, str]]:
         mapping_info_by_name: dict[str, MappingInfo] = {}
 
         # here we sort proto file by most complex msg
@@ -91,7 +92,38 @@ class ProtoComparator:
                     get_full_name_msg(old_proto_file_info.package, old_msg.name)
                 ] = self.get_message_mapping(old_msg_info, new_index_start_search)
 
-        return mapping_info_by_name
+        generated_file_by_name = self.get_new_file_generated(mapping_info_by_name)
+
+        return mapping_info_by_name, generated_file_by_name
+
+    def get_new_file_generated(
+        self, mapping_info_by_name: dict[str, MappingInfo]
+    ) -> dict[str, str]:
+        generated_file_by_name: dict[str, str] = {}
+        new_mapping_name_found = [
+            name
+            for map_info in mapping_info_by_name.values()
+            for index, name in map_info.messages_index_with_name
+        ]
+
+        for index, new_proto_file_info in enumerate(
+            self.new_proto_files_infos.values()
+        ):
+            found_unknown_msg: bool = False
+            for new_msg in new_proto_file_info.messages:
+                if new_msg.name in new_mapping_name_found:
+                    continue
+                found_unknown_msg = True
+                mapping_info_by_name[new_msg.name] = MappingInfo(
+                    messages_index_with_name=[(index, new_msg.name)], similarity=1
+                )
+            if found_unknown_msg:
+                generated_file_by_name[new_proto_file_info.filename] = (
+                    Generator().generate(new_proto_file_info.origin_file)
+                )
+                print(f"New file wille be generated : {new_proto_file_info.filename}")
+
+        return generated_file_by_name
 
     def get_message_mapping(
         self,

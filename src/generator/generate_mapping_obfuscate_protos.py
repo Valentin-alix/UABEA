@@ -39,7 +39,7 @@ def get_proto_file_by_filename_from_dir(input_folder: str) -> dict[str, File]:
 
 
 def get_proto_file_info(filename: str, proto_file: File) -> ProtoFileInfo:
-    proto_file_info = ProtoFileInfo(filename=filename)
+    proto_file_info = ProtoFileInfo(origin_file=proto_file, filename=filename)
 
     for file_elem in proto_file.file_elements:
         if type(file_elem) is Import:
@@ -55,7 +55,7 @@ def get_proto_file_info(filename: str, proto_file: File) -> ProtoFileInfo:
 
 
 def get_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
-    mapping = ProtoComparator(
+    mapping, _ = ProtoComparator(
         old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
         new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
     ).get_all_messages_mapping()
@@ -65,10 +65,10 @@ def get_mapping_protos(old_proto_path: str, obfuscated_proto_path: str):
     return mapping
 
 
-def get_most_probable_mapping_protos(
+def get_most_probable_mapping_protos_with_generated_file(
     old_proto_path: str, obfuscated_proto_path: str
-) -> dict[str, str]:
-    mapping = ProtoComparator(
+) -> tuple[dict[str, str], dict[str, str]]:
+    mapping, generated_file_by_name = ProtoComparator(
         old_proto_files_infos=get_proto_info_by_filename(old_proto_path),
         new_proto_files_infos=get_proto_info_by_filename(obfuscated_proto_path),
     ).get_all_messages_mapping()
@@ -82,21 +82,29 @@ def get_most_probable_mapping_protos(
         for old_msg_name, mapping_info in mapping.items()
     }
 
-    # icecream.ic(mapping)
-
-    return most_probable_mapping
+    return most_probable_mapping, generated_file_by_name
 
 
 def generate_mapping_proto():
-    conn_mapping = get_most_probable_mapping_protos(
-        PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION
+    conn_mapping, conn_generated_file_by_name = (
+        get_most_probable_mapping_protos_with_generated_file(
+            PROTO_CONNECTION_PATH, OBFUSCATED_PROTO_CONNECTION
+        )
     )
+    for name, file_content in conn_generated_file_by_name.items():
+        with open(os.path.join(PROTO_CONNECTION_PATH, "generated", name), "w+") as file:
+            file.write(file_content)
     with open(MAPPING_CONN_PROTO_PATH, "w+") as file:
         json.dump(conn_mapping, file, indent=2)
 
-    game_mapping = get_most_probable_mapping_protos(
-        PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME
+    game_mapping, game_generated_file_by_name = (
+        get_most_probable_mapping_protos_with_generated_file(
+            PROTO_GAME_PATH, OBFUSCATED_PROTO_GAME
+        )
     )
+    for name, file_content in game_generated_file_by_name.items():
+        with open(os.path.join(PROTO_GAME_PATH, "generated", name), "w+") as file:
+            file.write(file_content)
     with open(MAPPING_GAME_PROTO_PATH, "w+") as file:
         json.dump(game_mapping, file, indent=2)
 
@@ -107,4 +115,4 @@ def main_debug():
 
 
 if __name__ == "__main__":
-    generate_mapping_proto()
+    main_debug()
