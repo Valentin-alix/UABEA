@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
 from proto_schema_parser.ast import (
-    MessageElement,
     Field,
     OneOf,
     OneOfElement,
@@ -9,8 +8,6 @@ from proto_schema_parser.ast import (
     EnumElement,
     EnumValue,
 )
-from proto_schema_parser.generator import Generator
-
 from src.generator.comparator.consts import PROTO_BASE_FIELDS
 from src.generator.comparator.custom_types import Percentage
 from src.generator.comparator.models.mapping_info import MappingInfo
@@ -26,7 +23,7 @@ class ProtoComparator:
     new_proto_files_infos: dict[str, ProtoFileInfo]
     old_proto_files_infos: dict[str, ProtoFileInfo]
 
-    def get_all_messages_mapping(self) -> tuple[dict[str, MappingInfo], dict[str, str]]:
+    def get_all_messages_mapping(self) -> dict[str, MappingInfo]:
         mapping_info_by_name: dict[str, MappingInfo] = {}
 
         # here we sort proto file by most complex msg
@@ -47,7 +44,10 @@ class ProtoComparator:
         )
 
         for filename, old_proto_file_info in old_proto_files_infos_sorted_complexity:
-            old_most_complex_msg_index, old_most_complex_msg = max(
+            _old_complex_index_found: int | None = None
+            _new_related_index_found: int | None = None
+
+            for _old_index, _old_msg in sorted(
                 enumerate(old_proto_file_info.messages),
                 key=lambda index_with_msg: MessageContextInfo(
                     message=index_with_msg[1],
@@ -55,24 +55,28 @@ class ProtoComparator:
                     parent_context=None,
                     file_info_by_name=self.old_proto_files_infos,
                 ).get_complexity(),
-            )
-            old_most_complex_msg_info = MessageContextInfo(
-                file_info_by_name=self.old_proto_files_infos,
-                parent_context=None,
-                file_info=old_proto_file_info,
-                message=old_most_complex_msg,
-            )
-            mapping_info_most_complex_msg = self.get_message_mapping(
-                old_most_complex_msg_info, 0, False
-            )
-            mapping_info_by_name[
-                get_full_name_msg(
-                    old_proto_file_info.package, old_most_complex_msg.name
+                reverse=True,
+            ):
+                _old_msg_info = MessageContextInfo(
+                    file_info_by_name=self.old_proto_files_infos,
+                    parent_context=None,
+                    file_info=old_proto_file_info,
+                    message=_old_msg,
                 )
-            ] = mapping_info_most_complex_msg
+                _old_mapping_info_msg = self.get_message_mapping(_old_msg_info, 0)
+                if _old_mapping_info_msg is not None:
+                    _old_complex_index_found = _old_index
+                    _new_related_index_found = _old_mapping_info_msg.name_with_index[0]
+                    mapping_info_by_name[
+                        get_full_name_msg(old_proto_file_info.package, _old_msg.name)
+                    ] = _old_mapping_info_msg
+                    break
+
+            if _old_complex_index_found is None or _new_related_index_found is None:
+                continue
 
             for old_msg_index, old_msg in enumerate(old_proto_file_info.messages):
-                if old_msg_index == old_most_complex_msg_index:
+                if old_msg_index == _old_complex_index_found:
                     continue
 
                 old_msg_info = MessageContextInfo(
@@ -83,58 +87,29 @@ class ProtoComparator:
                 )
 
                 # index for new protos to start searching
-                new_index_start_search = (
-                    mapping_info_most_complex_msg.messages_index_with_name[0][0]
-                    + (old_msg_index - old_most_complex_msg_index)
+                new_index_start_search = _new_related_index_found + (
+                    old_msg_index - _old_complex_index_found
                 )
 
+                new_msg_mapping = self.get_message_mapping(
+                    old_msg_info, new_index_start_search
+                )
+                if new_msg_mapping is None:
+                    raise ValueError(
+                        f"Did not found mapping for {old_msg_info.message.name}"
+                    )
                 mapping_info_by_name[
                     get_full_name_msg(old_proto_file_info.package, old_msg.name)
-                ] = self.get_message_mapping(old_msg_info, new_index_start_search)
+                ] = new_msg_mapping
 
-        generated_file_by_name = self.get_new_file_generated(mapping_info_by_name)
-
-        return mapping_info_by_name, generated_file_by_name
-
-    def get_new_file_generated(
-        self, mapping_info_by_name: dict[str, MappingInfo]
-    ) -> dict[str, str]:
-        # FIXME found related message and replace import
-        generated_file_by_name: dict[str, str] = {}
-        new_mapping_name_found = [
-            name
-            for map_info in mapping_info_by_name.values()
-            for index, name in map_info.messages_index_with_name
-        ]
-
-        for index, new_proto_file_info in enumerate(
-            self.new_proto_files_infos.values()
-        ):
-            found_unknown_msg: bool = False
-            for new_msg in new_proto_file_info.messages:
-                if new_msg.name in new_mapping_name_found:
-                    continue
-                found_unknown_msg = True
-                mapping_info_by_name[new_msg.name] = MappingInfo(
-                    messages_index_with_name=[(index, new_msg.name)], similarity=1
-                )
-            if found_unknown_msg:
-                generated_file_by_name[new_proto_file_info.filename] = (
-                    Generator().generate(new_proto_file_info.origin_file)
-                )
-                print(f"New file wille be generated : {new_proto_file_info.filename}")
-
-        return generated_file_by_name
+        return mapping_info_by_name
 
     def get_message_mapping(
         self,
         old_msg_info: MessageContextInfo,
         new_index_start_search: int,
-        trust_index: bool = True,
-    ) -> MappingInfo:
-        mapping_by_sim: dict[tuple[int, str], float] = {}
-
-        is_found: bool = False
+    ) -> MappingInfo | None:
+        mapping_info: MappingInfo | None = None
 
         open_proto_files_index = sorted(
             range(len(self.new_proto_files_infos.values())),
@@ -142,7 +117,11 @@ class ProtoComparator:
             reverse=True,
         )
 
+        is_found: bool = False
         while not is_found:
+            if len(open_proto_files_index) == 0:
+                break
+            # we just need new file index because 1 file = 1 enum or 1 message in new protos
             new_file_index = open_proto_files_index.pop()
             new_proto_file_info = list(self.new_proto_files_infos.values())[
                 new_file_index
@@ -155,56 +134,59 @@ class ProtoComparator:
                     parent_context=None,
                 )
                 similarity = self.compare_message(old_msg_info, new_msg_info)
-                new_msg_full_name = get_full_name_msg(
-                    new_proto_file_info.package, new_msg.name
-                )
-                # we just need new file index because 1 file = 1 enum or 1 message in new protos
-                mapping_by_sim[(new_file_index, new_msg_full_name)] = similarity
-                if similarity == 1 or (trust_index and similarity > 0.9):
-                    is_found = True
-                    break
+                if mapping_info is None or mapping_info.similarity < similarity:
+                    new_msg_full_name = get_full_name_msg(
+                        new_proto_file_info.package, new_msg.name
+                    )
+                    mapping_info = MappingInfo(
+                        name_with_index=(new_file_index, new_msg_full_name),
+                        similarity=similarity,
+                    )
+                    if similarity == 1:
+                        is_found = True
+                        break
 
-        most_sim = max(mapping_by_sim.values(), default=0.0)
-        messages_index_with_name = [
-            index_with_name
-            for index_with_name, sim in mapping_by_sim.items()
-            if sim == most_sim
-        ]
-        return MappingInfo(messages_index_with_name, similarity=most_sim)
+        return mapping_info if mapping_info and mapping_info.similarity > 0.75 else None
 
     def compare_message(
         self,
         old_msg_info: MessageContextInfo,
         new_msg_info: MessageContextInfo,
     ) -> Percentage:
-        if len(old_msg_info.message.elements) != len(new_msg_info.message.elements):
+
+        old_msg_fields: list[Field | OneOf] = [
+            elem
+            for elem in old_msg_info.message.elements
+            if type(elem) is Field or type(elem) is OneOf
+        ]
+        new_msg_fields: list[Field | OneOf] = [
+            elem
+            for elem in new_msg_info.message.elements
+            if type(elem) is Field or type(elem) is OneOf
+        ]
+        if len(old_msg_fields) != len(new_msg_fields):
             return 0
 
-        if len(old_msg_info.message.elements) == 0:
+        if len(old_msg_fields) == 0:
             return 1
 
-        old_msg_info.message.elements.sort(key=get_sort_value_msg_element)
-        new_msg_info.message.elements.sort(key=get_sort_value_msg_element)
+        old_msg_fields.sort(key=get_sort_value_msg_element)
+        new_msg_fields.sort(key=get_sort_value_msg_element)
 
         elements_similarity_score: float = 0
-        for index in range(len(old_msg_info.message.elements)):
+        for index in range(len(old_msg_fields)):
             elements_similarity_score += self.compare_msg_elements(
-                old_msg_info,
-                old_msg_info.message.elements[index],
-                new_msg_info,
-                new_msg_info.message.elements[index],
+                old_msg_info, old_msg_fields[index], new_msg_info, new_msg_fields[index]
             )
 
-        return Percentage(
-            elements_similarity_score / len(old_msg_info.message.elements)
-        )
+        return Percentage(elements_similarity_score / len(old_msg_fields))
 
     def compare_msg_elements(
         self,
         old_msg_context: MessageContextInfo,
-        old_msg_element: MessageElement,
+        old_msg_element: OneOf | Field,
         new_msg_context: MessageContextInfo,
-        new_msg_element: MessageElement,
+        new_msg_element: OneOf | Field,
     ) -> Percentage:
         if type(old_msg_element) is not type(new_msg_element):
             return 0
@@ -305,7 +287,7 @@ class ProtoComparator:
             )
             if related_new_struct_info is None:
                 raise ValueError(
-                    f"Did not found struct {new_field.type} at file info {new_msg_context}"
+                    f"Did not found struct {new_field.type} at file info {new_msg_context.message.name}"
                 )
             if (
                 type(related_old_struct_info) is MessageContextInfo
@@ -347,18 +329,15 @@ class ProtoComparator:
 
     @staticmethod
     def compare_enum(old_enum: Enum, new_enum: Enum) -> Percentage:
-        if len(old_enum.elements) != len(new_enum.elements):
-            return 0
-
-        elements_similarity_score: float = 0
-        for index in range(len(old_enum.elements)):
-            old_enum_element = old_enum.elements[index]
-            new_enum_element = new_enum.elements[index]
-            elements_similarity_score += ProtoComparator.compare_enum_element(
-                old_enum_element, new_enum_element
-            )
-
-        return Percentage(elements_similarity_score / len(old_enum.elements))
+        old_enum_names = [
+            element.name for element in old_enum.elements if type(element) is EnumValue
+        ]
+        new_enum_names = [
+            element.name for element in new_enum.elements if type(element) is EnumValue
+        ]
+        return Percentage(
+            len(set(old_enum_names) & set(new_enum_names)) / len(old_enum_names)
+        )
 
     @staticmethod
     def compare_enum_element(

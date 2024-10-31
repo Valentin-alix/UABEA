@@ -1,4 +1,4 @@
-from proto_schema_parser.ast import MessageElement, Field, Package
+from proto_schema_parser.ast import Field, Package, OneOf
 
 
 def get_full_name_msg(package: Package | None, msg_name: str) -> str:
@@ -10,7 +10,7 @@ def get_full_name_msg(package: Package | None, msg_name: str) -> str:
     return msg_full_name
 
 
-def get_sort_value_msg_element(msg_element: MessageElement) -> tuple:
+def get_sort_value_msg_element(msg_element: Field | OneOf) -> tuple:
     sort_by_type = str(type(msg_element))
 
     if type(msg_element) is Field:

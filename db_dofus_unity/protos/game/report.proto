@@ -8,15 +8,13 @@ message ReportRequest {
 	string description = 3;
 	enum Category {
 		CHEATING = 0;
-		ILLEGAL_TRADE = 1;
-		ILLEGAL_PROMOTE = 2;
-		EXPLOITING = 3;
-		OFFENSIVE_NAME = 4;
-		VERBAL_ABUSE = 5;
-		PHISHING = 6;
-		MONO_ACCOUNT = 7;
+    ILLEGAL_TRADE = 1;
+    ILLEGAL_PROMOTE = 2;
+    EXPLOITING = 3;
+    OFFENSIVE_NAME = 4;
+    VERBAL_ABUSE = 5;
+    PHISHING = 6;
 	}
-
 }
 
 message ReportResponse {
