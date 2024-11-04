@@ -1,5 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
+import icecream
 from proto_schema_parser.ast import (
     Field,
     OneOf,
@@ -8,6 +9,7 @@ from proto_schema_parser.ast import (
     EnumElement,
     EnumValue,
 )
+
 from src.generator.comparator.consts import PROTO_BASE_FIELDS
 from src.generator.comparator.custom_types import Percentage
 from src.generator.comparator.models.mapping_info import MappingInfo
@@ -22,8 +24,10 @@ from src.generator.comparator.utils import get_sort_value_msg_element, get_full_
 class ProtoComparator:
     new_proto_files_infos: dict[str, ProtoFileInfo]
     old_proto_files_infos: dict[str, ProtoFileInfo]
+    new_filenames_found: list[str] = field(init=False, default_factory=list)
 
     def get_all_messages_mapping(self) -> dict[str, MappingInfo]:
+        self.new_filenames_found.clear()
         mapping_info_by_name: dict[str, MappingInfo] = {}
 
         # here we sort proto file by most complex msg
@@ -102,6 +106,13 @@ class ProtoComparator:
                     get_full_name_msg(old_proto_file_info.package, old_msg.name)
                 ] = new_msg_mapping
 
+        count_new_proto_not_found = len(
+            set(self.new_proto_files_infos.keys() ^ self.new_filenames_found)
+        )
+        icecream.ic(
+            f"ratio not found : {count_new_proto_not_found / len(self.new_filenames_found)}"
+        )
+
         return mapping_info_by_name
 
     def get_message_mapping(
@@ -142,7 +153,11 @@ class ProtoComparator:
                         name_with_index=(new_file_index, new_msg_full_name),
                         similarity=similarity,
                     )
-                    if similarity == 1:
+                    if (
+                        similarity == 1
+                        and new_proto_file_info.filename not in self.new_filenames_found
+                    ):
+                        self.new_filenames_found.append(new_proto_file_info.filename)
                         is_found = True
                         break
 

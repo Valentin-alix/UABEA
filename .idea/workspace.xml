@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="better python generator" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="fix protos">
+      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/user.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,11 +60,12 @@
     "Python.generate_python_from_proto.executor": "Run",
     "Python.maj.executor": "Run",
     "Python.on_init.executor": "Run",
+    "Python.on_maj.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/Bot-DofusUnity",
+    "last_opened_file_path": "D:/Workspace/DB-DofusUnity",
     "settings.editor.selected.configurable": "actions.on.save"
   }
 }]]></component>
@@ -70,34 +75,14 @@
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\protos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\DB-DofusUnity\db_dofus_unity\protos\game" />
+      <recent name="D:\Workspace\DB-DofusUnity\src\generator" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\db_dofus_unity" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator\proto_mapping\similarity" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_python_from_datas">
-    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/__main__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.generate_mapping_obfuscate_protos (1)">
     <configuration name="generate_mapping_obfuscate_protos (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -186,13 +171,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="on_maj" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DB-DofusUnity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/on_maj.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.generate_mapping_obfuscate_protos (1)" />
+        <item itemvalue="Python.on_maj" />
         <item itemvalue="Python.generate_python_from_datas" />
         <item itemvalue="Python.on_init" />
-        <item itemvalue="Python.generate_mapping_obfuscate_protos (1)" />
         <item itemvalue="Python.generate_python_from_proto" />
-        <item itemvalue="Python.__main__" />
       </list>
     </recent_temporary>
   </component>
@@ -428,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730374464164</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix protos">
+      <option name="closed" value="true" />
+      <created>1730388552386</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730388552386</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -453,7 +468,8 @@
     <MESSAGE value="temp add generator" />
     <MESSAGE value="remove auto generator (not stable)" />
     <MESSAGE value="better python generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="better python generator" />
+    <MESSAGE value="fix protos" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix protos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
