@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="fix protos">
-      <change afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/user.proto" afterDir="false" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add debug msg">
+      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/consts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/factories/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_enum_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_file_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_folder_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_message_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/models/p_enum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/models/p_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/models/p_folder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/models/p_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/p_comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generator/p_comparator/temp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_management.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/character_management.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_message.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/game_message.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/preset.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/preset.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/comparator/generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/generation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/comparator/models/message_context_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/message_context_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/comparator/models/proto_file_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/models/proto_file_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/comparator/proto_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/comparator/proto_comparator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +73,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2nZujlJZzr5rHD7AbIHUt4unt1V" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -61,28 +91,30 @@
     "Python.maj.executor": "Run",
     "Python.on_init.executor": "Run",
     "Python.on_maj.executor": "Run",
+    "Python.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/DB-DofusUnity",
-    "settings.editor.selected.configurable": "actions.on.save"
+    "last_opened_file_path": "D:/Workspace/DB-DofusUnity/src/generator/p_comparator",
+    "settings.editor.selected.configurable": "Errors"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\old_protos" />
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\protos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator\models" />
+      <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator" />
+      <recent name="D:\Workspace\DB-DofusUnity\src\generator\comparator" />
       <recent name="D:\Workspace\DB-DofusUnity\db_dofus_unity\protos\game" />
       <recent name="D:\Workspace\DB-DofusUnity\src\generator" />
-      <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\db_dofus_unity" />
-      <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator" />
-      <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\src\generator\proto_mapping\similarity" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate_mapping_obfuscate_protos (1)">
+  <component name="RunManager" selected="Python.on_maj">
     <configuration name="generate_mapping_obfuscate_protos (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -149,28 +181,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="on_init" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/on_init.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="on_maj" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -193,13 +203,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DB-DofusUnity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/generator/p_comparator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/generator/p_comparator/temp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.generate_mapping_obfuscate_protos (1)" />
         <item itemvalue="Python.on_maj" />
-        <item itemvalue="Python.generate_python_from_datas" />
-        <item itemvalue="Python.on_init" />
+        <item itemvalue="Python.generate_mapping_obfuscate_protos (1)" />
         <item itemvalue="Python.generate_python_from_proto" />
+        <item itemvalue="Python.temp" />
+        <item itemvalue="Python.generate_python_from_datas" />
       </list>
     </recent_temporary>
   </component>
@@ -443,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730388552386</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add debug msg">
+      <option name="closed" value="true" />
+      <created>1730728248724</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730728248724</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -469,7 +509,8 @@
     <MESSAGE value="remove auto generator (not stable)" />
     <MESSAGE value="better python generator" />
     <MESSAGE value="fix protos" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix protos" />
+    <MESSAGE value="add debug msg" />
+    <option name="LAST_COMMIT_MESSAGE" value="add debug msg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

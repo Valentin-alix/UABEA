@@ -228,7 +228,6 @@ class ObjectError(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CANNOT_DROP_NO_PLACE: _ClassVar[ObjectError]
     CANNOT_DESTROY: _ClassVar[ObjectError]
     LEVEL_TOO_LOW: _ClassVar[ObjectError]
-    LIVING_OBJECT_REFUSED_FOOD: _ClassVar[ObjectError]
     CANNOT_UNEQUIP: _ClassVar[ObjectError]
     CANNOT_EQUIP_HERE: _ClassVar[ObjectError]
     CRITERIONS: _ClassVar[ObjectError]
@@ -496,7 +495,6 @@ CANNOT_DROP: ObjectError
 CANNOT_DROP_NO_PLACE: ObjectError
 CANNOT_DESTROY: ObjectError
 LEVEL_TOO_LOW: ObjectError
-LIVING_OBJECT_REFUSED_FOOD: ObjectError
 CANNOT_UNEQUIP: ObjectError
 CANNOT_EQUIP_HERE: ObjectError
 CRITERIONS: ObjectError

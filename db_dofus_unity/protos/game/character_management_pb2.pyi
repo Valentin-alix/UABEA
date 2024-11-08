@@ -153,12 +153,10 @@ class CharacterSelectionEvent(_message.Message):
         __slots__ = ()
         def __init__(self) -> None: ...
     class Success(_message.Message):
-        __slots__ = ("character", "collect_stats")
+        __slots__ = ("character",)
         CHARACTER_FIELD_NUMBER: _ClassVar[int]
-        COLLECT_STATS_FIELD_NUMBER: _ClassVar[int]
         character: _common_pb2.Character
-        collect_stats: bool
-        def __init__(self, character: _Optional[_Union[_common_pb2.Character, _Mapping]] = ..., collect_stats: bool = ...) -> None: ...
+        def __init__(self, character: _Optional[_Union[_common_pb2.Character, _Mapping]] = ...) -> None: ...
     ERROR_FIELD_NUMBER: _ClassVar[int]
     SUCCESS_FIELD_NUMBER: _ClassVar[int]
     error: CharacterSelectionEvent.Error

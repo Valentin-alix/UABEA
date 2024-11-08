@@ -14,15 +14,15 @@ message GameMessage {
 
 message Request {
 	int32 uid = 1;
-	.google.protobuf.Any content = 2;
+	google.protobuf.Any content = 2;
 }
 
 message Response {
 	int32 uid = 1;
-	.google.protobuf.Any content = 2;
+	google.protobuf.Any content = 2;
 }
 
 message Event {
-	.google.protobuf.Any content = 1;
+	google.protobuf.Any content = 1;
 }
 

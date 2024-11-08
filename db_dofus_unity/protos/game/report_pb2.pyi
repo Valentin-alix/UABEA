@@ -17,7 +17,6 @@ class ReportRequest(_message.Message):
         OFFENSIVE_NAME: _ClassVar[ReportRequest.Category]
         VERBAL_ABUSE: _ClassVar[ReportRequest.Category]
         PHISHING: _ClassVar[ReportRequest.Category]
-        MONO_ACCOUNT: _ClassVar[ReportRequest.Category]
     CHEATING: ReportRequest.Category
     ILLEGAL_TRADE: ReportRequest.Category
     ILLEGAL_PROMOTE: ReportRequest.Category
@@ -25,7 +24,6 @@ class ReportRequest(_message.Message):
     OFFENSIVE_NAME: ReportRequest.Category
     VERBAL_ABUSE: ReportRequest.Category
     PHISHING: ReportRequest.Category
-    MONO_ACCOUNT: ReportRequest.Category
     ACTOR_ID_FIELD_NUMBER: _ClassVar[int]
     CATEGORIES_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]

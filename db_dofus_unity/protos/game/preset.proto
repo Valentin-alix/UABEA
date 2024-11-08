@@ -69,7 +69,7 @@ message ForgettableSpellInfo {
 }
 
 message SpellPreset {
-	map<int32, SpellPositions> spell_positions_by_id = 1;
+	map<int32, .com.ankama.dofus.server.game.protocol.preset.SpellPositions> spell_positions_by_id = 1;
 }
 
 message PresetOrigin {
