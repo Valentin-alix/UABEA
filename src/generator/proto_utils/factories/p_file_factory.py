@@ -1,12 +1,12 @@
 from proto_schema_parser import Message
 from proto_schema_parser.ast import File, Import, Package, Enum, Comment
 
-from src.generator.p_comparator.exceptions import UnhandledTypeCase
-from src.generator.p_comparator.factories.p_enum_factory import PEnumFactory
-from src.generator.p_comparator.factories.p_message_factory import PMessageFactory
-from src.generator.p_comparator.models.p_enum import PEnum
-from src.generator.p_comparator.models.p_file import PFile
-from src.generator.p_comparator.models.p_message import PMessage
+from src.generator.proto_utils.exceptions import UnhandledTypeCase
+from src.generator.proto_utils.factories.p_enum_factory import PEnumFactory
+from src.generator.proto_utils.factories.p_message_factory import PMessageFactory
+from src.generator.proto_utils.models.p_enum import PEnum
+from src.generator.proto_utils.models.p_file import PFile
+from src.generator.proto_utils.models.p_message import PMessage
 
 
 class PFileFactory:

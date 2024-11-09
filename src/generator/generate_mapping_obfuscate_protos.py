@@ -8,8 +8,8 @@ from db_dofus_unity.consts import (
     MAPPING_GAME_PROTO_PATH,
     MAPPING_CONN_PROTO_PATH,
 )
-from src.generator.p_comparator.factories.p_folder_factory import PFolderFactory
-from src.generator.p_comparator.p_comparator import PComparator
+from src.generator.proto_utils.comparator.p_comparator import PComparator
+from src.generator.proto_utils.factories.p_folder_factory import PFolderFactory
 
 
 def generate_mapping_proto():

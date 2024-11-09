@@ -2,9 +2,9 @@ import os
 
 from proto_schema_parser import Parser
 
-from src.generator.p_comparator.factories.p_file_factory import PFileFactory
-from src.generator.p_comparator.models.p_file import PFile
-from src.generator.p_comparator.models.p_folder import PFolder
+from src.generator.proto_utils.factories.p_file_factory import PFileFactory
+from src.generator.proto_utils.models.p_file import PFile
+from src.generator.proto_utils.models.p_folder import PFolder
 
 
 class PFolderFactory:

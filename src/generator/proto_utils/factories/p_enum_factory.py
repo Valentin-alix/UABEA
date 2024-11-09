@@ -1,7 +1,7 @@
 from proto_schema_parser.ast import Enum, EnumValue
 
-from src.generator.p_comparator.exceptions import UnhandledTypeCase
-from src.generator.p_comparator.models.p_enum import PEnum, PEnumElement
+from src.generator.proto_utils.exceptions import UnhandledTypeCase
+from src.generator.proto_utils.models.p_enum import PEnum, PEnumElement
 
 
 class PEnumFactory:

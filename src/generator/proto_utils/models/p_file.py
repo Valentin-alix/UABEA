@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from functools import cache
 
-from src.generator.p_comparator.models.p_enum import PEnum
-from src.generator.p_comparator.models.p_message import PMessage
+from src.generator.proto_utils.models.p_enum import PEnum
+from src.generator.proto_utils.models.p_message import PMessage
 
 
 @dataclass(frozen=True)

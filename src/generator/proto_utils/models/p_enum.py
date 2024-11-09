@@ -19,5 +19,5 @@ class PEnum:
         return self.name.__hash__()
 
     @property
-    def complexity(self):
-        return len(self.elements)
+    def reliability(self):
+        return len(self.elements) * 4

@@ -3,16 +3,21 @@ from dataclasses import dataclass
 from proto_schema_parser import Message, Field
 from proto_schema_parser.ast import OneOf, Enum, MapField
 
-from src.generator.p_comparator.exceptions import UnhandledTypeCase
-from src.generator.p_comparator.factories.p_enum_factory import PEnumFactory
-from src.generator.p_comparator.models.p_enum import PEnum
-from src.generator.p_comparator.models.p_message import PMessage, POneOf, PField
+from src.generator.proto_utils.exceptions import UnhandledTypeCase
+from src.generator.proto_utils.factories.p_enum_factory import PEnumFactory
+from src.generator.proto_utils.models.p_enum import PEnum
+from src.generator.proto_utils.models.p_message import (
+    PMessage,
+    POneOf,
+    PField,
+    PMapField,
+)
 
 
 class PMessageFactory:
     @staticmethod
     def create_p_message(proto_message: Message) -> PMessage:
-        p_message_elements: list[POneOf | PField | MapField] = []
+        p_message_elements: list[POneOf | PField | PMapField] = []
         p_message_children: list[PMessage] = []
         p_enum_children: list[PEnum] = []
         for elem in proto_message.elements:
@@ -32,7 +37,7 @@ class PMessageFactory:
             elif type(elem) is Enum:
                 p_enum_children.append(PEnumFactory.create_p_enum(elem))
             elif type(elem) is MapField:
-                p_message_elements.append(elem)
+                p_message_elements.append(PMapFieldFactory.create_p_map_field(elem))
             else:
                 raise UnhandledTypeCase(type(elem))
 
@@ -62,3 +67,15 @@ class POneOfFactory:
             else:
                 raise UnhandledTypeCase(type(elem))
         return POneOf(name=proto_one_of.name, elements=p_one_of_elements)
+
+
+class PMapFieldFactory:
+    @staticmethod
+    def create_p_map_field(map_field: MapField) -> PMapField:
+        value_p_field = PField(
+            type_name=map_field.value_type,
+            name=map_field.name,
+            number=map_field.number,
+            cardinality=None,
+        )
+        return PMapField(key_type=map_field.key_type, value_p_field=value_p_field)

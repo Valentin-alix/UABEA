@@ -2,13 +2,17 @@ from dataclasses import dataclass
 from functools import cache
 
 from cachetools import cached
-from proto_schema_parser.ast import MapField
 
-from src.generator.p_comparator.consts import PROTO_BASE_FIELDS, BLACKLIST_IMPORT_URLS
-from src.generator.p_comparator.exceptions import TypeNotFound
-from src.generator.p_comparator.models.p_enum import PEnum
-from src.generator.p_comparator.models.p_file import PFile
-from src.generator.p_comparator.models.p_message import PMessage, PField, POneOf
+from src.generator.proto_utils.consts import PROTO_BASE_FIELDS, BLACKLIST_IMPORT_URLS
+from src.generator.proto_utils.exceptions import TypeNotFound
+from src.generator.proto_utils.models.p_enum import PEnum
+from src.generator.proto_utils.models.p_file import PFile
+from src.generator.proto_utils.models.p_message import (
+    PMessage,
+    PField,
+    POneOf,
+    PMapField,
+)
 
 
 @dataclass(frozen=True)
@@ -19,21 +23,23 @@ class PFolder:
     def __hash__(self):
         return self.root.__hash__()
 
-    def get_complexity_message(
+    def get_reliability_message(
         self, p_file: PFile, p_message: PMessage, stack_msg: list[str]
     ) -> float:
         stack_msg.append(p_message.name)
         value: float = 1
         for elem in p_message.elements:
             if type(elem) is PField:
-                value += self.get_complexity_p_field(p_file, p_message, elem, stack_msg)
+                value += self.get_reliability_p_field(
+                    p_file, p_message, elem, stack_msg
+                )
             elif type(elem) is POneOf:
                 for one_of_elem in elem.elements:
-                    value += self.get_complexity_p_field(
+                    value += self.get_reliability_p_field(
                         p_file, p_message, one_of_elem, stack_msg
                     )
-            elif type(elem) is MapField:
-                value += self.get_complexity_map_field(
+            elif type(elem) is PMapField:
+                value += self.get_reliability_map_field(
                     p_file, p_message, elem, stack_msg
                 )
 
@@ -43,7 +49,7 @@ class PFolder:
         cache={},
         key=lambda self, p_file, p_msg, p_field, stack: (self, p_file, p_msg, p_field),
     )
-    def get_complexity_p_field(
+    def get_reliability_p_field(
         self, p_file: PFile, p_message: PMessage, p_field: PField, stack_msg: list[str]
     ) -> float:
         if p_field.type_name in PROTO_BASE_FIELDS:
@@ -59,32 +65,26 @@ class PFolder:
         if type(sub_p_struct) is PMessage:
             if stack_msg and sub_p_struct.name in stack_msg:
                 return 1
-            return self.get_complexity_message(sub_p_file, sub_p_struct, stack_msg)
+            return self.get_reliability_message(sub_p_file, sub_p_struct, stack_msg)
         elif type(sub_p_struct) is PEnum:
-            return sub_p_struct.complexity
+            return sub_p_struct.reliability
 
         raise ValueError
 
-    def get_complexity_map_field(
+    def get_reliability_map_field(
         self,
         p_file: PFile,
         p_message: PMessage,
-        map_field: MapField,
+        p_map_field: PMapField,
         stack_msg: list[str],
     ) -> float:
-        complexity: float = 1
+        reliability: float = 1
 
-        map_value_p_field = PField(
-            type_name=map_field.value_type,
-            name=map_field.name,
-            number=map_field.number,
-            cardinality=None,
-        )
-        complexity += self.get_complexity_p_field(
-            p_file, p_message, map_value_p_field, stack_msg
+        reliability += self.get_reliability_p_field(
+            p_file, p_message, p_map_field.value_p_field, stack_msg
         )
 
-        return complexity
+        return reliability
 
     @cache
     def get_msg_or_enum_from_type_name(
