@@ -22,32 +22,64 @@ class PComparator:
 
         # here we sort proto file by most reliable msg because order INSIDE old file info is kept
         old_sorted_p_file_infos: list[
-            tuple[PFile, list[tuple[int, PMessage, tuple[bool, float]]]]
-        ] = self.get_sorted_p_file_by_reliability(self.old_p_folder)
+            tuple[PFile, list[tuple[int, PMessage, tuple[bool, float]]], bool, set[str]]
+        ] = [
+            (elem[0], elem[1], False, set())
+            for elem in self.get_sorted_p_file_by_reliability(self.old_p_folder)
+        ]
 
-        for old_p_file, old_p_messages_with_indexes in old_sorted_p_file_infos:
+        while len(old_sorted_p_file_infos) > 0:
+            (
+                old_p_file,
+                old_p_messages_with_indexes,
+                is_done,
+                exclude_new_most_complex_name,
+            ) = old_sorted_p_file_infos.pop(0)
+
+            curr_mapping_old_file: dict[str, str] = {}
+            curr_treated_new_msg_name: set[str] = self.treated_new_msg_name.copy()
+
             # get most reliable msg mapping for this old proto file info
-            most_reliable_matched_index: tuple[int, int] | None = None
+            most_reliable_matched: tuple[int, int, str] | None
             for old_index, old_p_msg, _ in old_p_messages_with_indexes:
                 matching_new_p_msg = self.get_matching_for_old_p_msg(
-                    old_p_file, old_p_msg, None, 1
+                    old_p_file,
+                    old_p_msg,
+                    curr_treated_new_msg_name | exclude_new_most_complex_name,
+                    None,
+                    1,
                 )
                 if matching_new_p_msg is not None:
-                    most_reliable_matched_index = (
+                    most_reliable_matched = (
                         old_index,
                         matching_new_p_msg[1],
+                        matching_new_p_msg[0],
                     )
-                    mapping[matching_new_p_msg[0]] = (
+                    curr_treated_new_msg_name.add(matching_new_p_msg[0])
+                    curr_mapping_old_file[matching_new_p_msg[0]] = (
                         f"{old_p_file.package}.{old_p_msg.name}"
                     )
                     break
+            else:
+                if is_done:
+                    raise ValueError(f"{old_p_file.filename} could not be resolved")
 
-            if most_reliable_matched_index is None:
-                raise ValueError()
+                old_sorted_p_file_infos.append(
+                    (
+                        old_p_file,
+                        old_p_messages_with_indexes,
+                        True,
+                        set(),
+                    )
+                )
+                continue
 
-            old_most_reliable_index, new_most_reliable_related_index = (
-                most_reliable_matched_index
-            )
+            (
+                old_most_reliable_index,
+                new_most_reliable_related_index,
+                new_most_reliable_msg_name,
+            ) = most_reliable_matched
+
             for old_p_msg_index, old_p_msg, _ in old_p_messages_with_indexes:
                 if old_p_msg_index == old_most_reliable_index:
                     continue
@@ -58,21 +90,44 @@ class PComparator:
                 )
 
                 new_msg_mapping = self.get_matching_for_old_p_msg(
-                    old_p_file, old_p_msg, new_index_start_search
+                    old_p_file,
+                    old_p_msg,
+                    curr_treated_new_msg_name,
+                    new_index_start_search,
                 )
                 if new_msg_mapping is None:
-                    continue
+                    if is_done:
+                        print(f"{old_p_msg.name} could not be resolved")
+                        continue
+
+                    # group is not coherent, put this group at last & exclude this most complex index
+                    exclude_new_most_complex_name.add(new_most_reliable_msg_name)
+                    old_sorted_p_file_infos.append(
+                        (
+                            old_p_file,
+                            old_p_messages_with_indexes,
+                            False,
+                            exclude_new_most_complex_name,
+                        )
+                    )
+                    break
 
                 if new_msg_mapping[2] != 1:
                     print(f"{old_p_msg.name} : {new_msg_mapping}")
 
-                mapping[new_msg_mapping[0]] = f"{old_p_file.package}.{old_p_msg.name}"
+                curr_treated_new_msg_name.add(new_msg_mapping[0])
+                curr_mapping_old_file[new_msg_mapping[0]] = (
+                    f"{old_p_file.package}.{old_p_msg.name}"
+                )
+            else:
+                self.treated_new_msg_name = curr_treated_new_msg_name
+                mapping |= curr_mapping_old_file
 
         for new_p_file in self.new_p_folder.files_by_filename.values():
             for new_msg in new_p_file.messages:
                 if new_msg.name in self.treated_new_msg_name:
                     continue
-                print(new_msg.name)
+                print(f"unknown new msg : {new_msg.name}")
 
         return mapping
 
@@ -118,6 +173,7 @@ class PComparator:
         self,
         old_p_file: PFile,
         old_p_msg: PMessage,
+        exclude_msg_name: set[str],
         new_index: int | None,
         limit: float = 0.85,
     ) -> tuple[str, int, float] | None:
@@ -142,14 +198,13 @@ class PComparator:
 
             new_file_index = new_file_indexes.pop(0)
             if new_index is not None and abs(new_file_index - new_index) > 10:
-                print(f"{old_p_msg.name} searching too far from index")
                 return None
 
             new_p_file = list(self.new_p_folder.files_by_filename.values())[
                 new_file_index
             ]
             for new_p_msg in new_p_file.messages:
-                if new_p_msg.name in self.treated_new_msg_name:
+                if new_p_msg.name in exclude_msg_name:
                     continue
                 old_context_msg = ContextMessage(
                     p_folder=self.old_p_folder,
@@ -173,7 +228,6 @@ class PComparator:
                         break
 
         if mapping and mapping[2] >= limit:
-            self.treated_new_msg_name.add(mapping[0])
             return mapping
         return None
 

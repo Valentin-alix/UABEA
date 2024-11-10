@@ -23,6 +23,10 @@ class PFolder:
     def __hash__(self):
         return self.root.__hash__()
 
+    @cached(
+        cache={},
+        key=lambda self, p_file, p_msg, stack: (self, p_file, p_msg),
+    )
     def get_reliability_message(
         self, p_file: PFile, p_message: PMessage, stack_msg: list[str]
     ) -> float:
