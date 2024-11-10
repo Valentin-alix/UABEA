@@ -23,9 +23,15 @@ class ChangeAppearanceDialogStart(_message.Message):
         BODY: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
         FACE: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
         COLORS: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
+        GENDER: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
+        BREED: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
+        NAME: _ClassVar[ChangeAppearanceDialogStart.AppearanceType]
     BODY: ChangeAppearanceDialogStart.AppearanceType
     FACE: ChangeAppearanceDialogStart.AppearanceType
     COLORS: ChangeAppearanceDialogStart.AppearanceType
+    GENDER: ChangeAppearanceDialogStart.AppearanceType
+    BREED: ChangeAppearanceDialogStart.AppearanceType
+    NAME: ChangeAppearanceDialogStart.AppearanceType
     TYPE_FIELD_NUMBER: _ClassVar[int]
     type: ChangeAppearanceDialogStart.AppearanceType
     def __init__(self, type: _Optional[_Union[ChangeAppearanceDialogStart.AppearanceType, str]] = ...) -> None: ...

@@ -29,17 +29,17 @@ class PrismListEvent(_message.Message):
     prism_localized_information: _containers.RepeatedCompositeFieldContainer[_common_pb2.PrismLocalizedInformation]
     def __init__(self, prism_localized_information: _Optional[_Iterable[_Union[_common_pb2.PrismLocalizedInformation, _Mapping]]] = ...) -> None: ...
 
-class PrismAddOrUpdateEvent(_message.Message):
-    __slots__ = ("prism_localized_information",)
-    PRISM_LOCALIZED_INFORMATION_FIELD_NUMBER: _ClassVar[int]
-    prism_localized_information: _common_pb2.PrismLocalizedInformation
-    def __init__(self, prism_localized_information: _Optional[_Union[_common_pb2.PrismLocalizedInformation, _Mapping]] = ...) -> None: ...
-
 class PrismRemoveEvent(_message.Message):
     __slots__ = ("prism_localized_information",)
     PRISM_LOCALIZED_INFORMATION_FIELD_NUMBER: _ClassVar[int]
     prism_localized_information: _common_pb2.PrismLocalizedInformation
     def __init__(self, prism_localized_information: _Optional[_Union[_common_pb2.PrismLocalizedInformation, _Mapping]] = ...) -> None: ...
+
+class hgc(_message.Message):
+    __slots__ = ("erzx",)
+    ERZX_FIELD_NUMBER: _ClassVar[int]
+    erzx: int
+    def __init__(self, erzx: _Optional[int] = ...) -> None: ...
 
 class PrismAttackedEvent(_message.Message):
     __slots__ = ("prism_localized_information",)

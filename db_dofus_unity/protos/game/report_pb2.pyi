@@ -1,8 +1,7 @@
-from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
@@ -28,9 +27,9 @@ class ReportRequest(_message.Message):
     CATEGORIES_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     actor_id: int
-    categories: _containers.RepeatedScalarFieldContainer[ReportRequest.Category]
+    categories: ReportRequest.Category
     description: str
-    def __init__(self, actor_id: _Optional[int] = ..., categories: _Optional[_Iterable[_Union[ReportRequest.Category, str]]] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, actor_id: _Optional[int] = ..., categories: _Optional[_Union[ReportRequest.Category, str]] = ..., description: _Optional[str] = ...) -> None: ...
 
 class ReportResponse(_message.Message):
     __slots__ = ("success", "error")
