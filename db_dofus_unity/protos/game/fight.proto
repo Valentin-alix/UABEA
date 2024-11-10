@@ -31,20 +31,10 @@ message FightEndEvent {
 	optional int32 budget = 6;
 }
 
-message iae {
-  .com.ankama.dofus.server.game.protocol.stats.wws erzy = 1;
-  map<int64, .com.ankama.dofus.server.game.protocol.stats.FightStats> stats = 2;
+message FightStatisticsEvent {
+  .com.ankama.dofus.server.game.protocol.stats.FightStatisticsResume stat_resume = 1;
+  map<int64, .com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed> stat_detailed = 2;
 }
-
-//message FightStatisticsEvent {
-//	int32 damage_done = 1;
-//	int32 damage_taken = 2;
-//	int32 blocked_damage = 3;
-//	int32 applied_shield = 4;
-//	int32 heal_done = 5;
-//	int32 heal_taken = 6;
-//	int32 kill_count = 7;
-//}
 
 message FightNewRoundEvent {
 	int32 round_number = 1;
