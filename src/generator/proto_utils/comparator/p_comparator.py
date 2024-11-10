@@ -18,9 +18,6 @@ class PComparator:
     treated_new_msg_name: set[str] = field(init=False, default_factory=set)
 
     def get_mapping(self) -> dict[str, str]:
-        # TODO Get new messages & auto generate them (we need to put them in folder otherwise we will have an offset
-        #  for future version) ?
-
         mapping: dict[str, str] = {}
 
         # here we sort proto file by most reliable msg because order INSIDE old file info is kept
@@ -33,7 +30,7 @@ class PComparator:
             most_reliable_matched_index: tuple[int, int] | None = None
             for old_index, old_p_msg, _ in old_p_messages_with_indexes:
                 matching_new_p_msg = self.get_matching_for_old_p_msg(
-                    old_p_file, old_p_msg, 0, 1
+                    old_p_file, old_p_msg, None, 1
                 )
                 if matching_new_p_msg is not None:
                     most_reliable_matched_index = (
@@ -64,12 +61,18 @@ class PComparator:
                     old_p_file, old_p_msg, new_index_start_search
                 )
                 if new_msg_mapping is None:
-                    raise ValueError(f"Did not found mapping for {old_p_msg.name}")
+                    continue
 
                 if new_msg_mapping[2] != 1:
                     print(f"{old_p_msg.name} : {new_msg_mapping}")
 
                 mapping[new_msg_mapping[0]] = f"{old_p_file.package}.{old_p_msg.name}"
+
+        for new_p_file in self.new_p_folder.files_by_filename.values():
+            for new_msg in new_p_file.messages:
+                if new_msg.name in self.treated_new_msg_name:
+                    continue
+                print(new_msg.name)
 
         return mapping
 
@@ -82,10 +85,6 @@ class PComparator:
             for p_file in p_folder.files_by_filename.values()
             for p_message in p_file.messages
         ]
-
-        # TODO PK message HouseAccountEvent {
-        # 	repeated .com.ankama.dofus.server.game.protocol.common.House houses = 1;
-        # } est en premier dans reliability alors que ya un deuxième HouseAccountEvent
 
         for p_file in p_folder.files_by_filename.values():
             messages_infos: list[tuple[int, PMessage, tuple[bool, float]]] = []
@@ -119,23 +118,33 @@ class PComparator:
         self,
         old_p_file: PFile,
         old_p_msg: PMessage,
-        new_index: int,
+        new_index: int | None,
         limit: float = 0.85,
     ) -> tuple[str, int, float] | None:
 
         mapping: tuple[str, int, float] | None = None
 
         # we just need new file index because 1 file = 1 enum or 1 message in new protos
-        new_file_indexes = sorted(
-            range(len(self.new_p_folder.files_by_filename.values())),
-            key=lambda index: abs(index - new_index),
-        )
+        if new_index:
+            new_file_indexes = sorted(
+                range(len(self.new_p_folder.files_by_filename.values())),
+                key=lambda index: abs(index - new_index),
+            )
+        else:
+            new_file_indexes = list(
+                range(len(self.new_p_folder.files_by_filename.values()))
+            )
+
         is_found: bool = False
         while not is_found:
             if len(new_file_indexes) == 0:
                 break
 
             new_file_index = new_file_indexes.pop(0)
+            if new_index is not None and abs(new_file_index - new_index) > 10:
+                print(f"{old_p_msg.name} searching too far from index")
+                return None
+
             new_p_file = list(self.new_p_folder.files_by_filename.values())[
                 new_file_index
             ]

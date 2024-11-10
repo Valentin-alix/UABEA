@@ -4,30 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="refactor mapping protos">
-      <change afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_message_comparator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generator/proto_utils/factories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/__init__.py" afterDir="false" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="much better mapping based on reliability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/connection_mappings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/game_mappings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/dialog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/dialog.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/prism.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/prism.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/common.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/common.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight.proto" beforeDir="false" afterPath="$PROJECT_DIR$/db_dofus_unity/protos/game/fight.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/factories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_enum_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/factories/p_enum_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_file_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/factories/p_file_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_folder_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/factories/p_folder_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/factories/p_message_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/factories/p_message_factory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_enum_comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/models/p_enum.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/p_enum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/models/p_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/p_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/models/p_folder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/p_folder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/models/p_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/p_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/p_comparator/p_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,26 +57,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__main__.executor": "Run",
-    "Python.generate_mapping_obfuscate_protos (1).executor": "Run",
-    "Python.generate_mapping_obfuscate_protos.executor": "Run",
-    "Python.generate_python_from_datas.executor": "Run",
-    "Python.generate_python_from_proto.executor": "Run",
-    "Python.maj.executor": "Run",
-    "Python.on_init.executor": "Run",
-    "Python.on_maj.executor": "Run",
-    "Python.p_comparator.executor": "Run",
-    "Python.temp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/DB-DofusUnity",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_comparator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.temp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/DB-DofusUnity&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator" />
@@ -485,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731096184501</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="much better mapping based on reliability">
+      <option name="closed" value="true" />
+      <created>1731189462221</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1731189462221</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -513,22 +504,11 @@
     <MESSAGE value="fix protos" />
     <MESSAGE value="add debug msg" />
     <MESSAGE value="refactor mapping protos" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor mapping protos" />
+    <MESSAGE value="much better mapping based on reliability" />
+    <option name="LAST_COMMIT_MESSAGE" value="much better mapping based on reliability" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py</url>
-          <line>126</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">

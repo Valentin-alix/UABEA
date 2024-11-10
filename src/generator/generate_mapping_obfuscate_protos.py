@@ -15,6 +15,7 @@ from src.generator.proto_utils.factories.p_folder_factory import PFolderFactory
 def generate_mapping_proto():
     old_p_folder_conn = PFolderFactory.create_p_folder(PROTO_CONNECTION_PATH)
     new_p_folder_conn = PFolderFactory.create_p_folder(OBFUSCATED_PROTO_CONNECTION)
+    print("getting mapping connection")
     mapping_conn = PComparator(
         new_p_folder=new_p_folder_conn, old_p_folder=old_p_folder_conn
     ).get_mapping()
@@ -23,6 +24,7 @@ def generate_mapping_proto():
 
     old_p_folder_game = PFolderFactory.create_p_folder(PROTO_GAME_PATH)
     new_p_folder_game = PFolderFactory.create_p_folder(OBFUSCATED_PROTO_GAME)
+    print("getting mapping game")
     mapping_game = PComparator(
         new_p_folder=new_p_folder_game, old_p_folder=old_p_folder_game
     ).get_mapping()
