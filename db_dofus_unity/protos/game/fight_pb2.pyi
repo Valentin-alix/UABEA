@@ -1,4 +1,5 @@
 import common_pb2 as _common_pb2
+import stats_pb2 as _stats_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -51,23 +52,20 @@ class FightEndEvent(_message.Message):
     budget: int
     def __init__(self, duration: _Optional[int] = ..., reward_rate: _Optional[int] = ..., loot_share_limit_malus: _Optional[int] = ..., results: _Optional[_Iterable[_Union[_common_pb2.FightResultListEntry, _Mapping]]] = ..., named_party_teams_outcomes: _Optional[_Iterable[_Union[_common_pb2.NamedPartyTeamWithOutcome, _Mapping]]] = ..., budget: _Optional[int] = ...) -> None: ...
 
-class FightStatisticsEvent(_message.Message):
-    __slots__ = ("damage_done", "damage_taken", "blocked_damage", "applied_shield", "heal_done", "heal_taken", "kill_count")
-    DAMAGE_DONE_FIELD_NUMBER: _ClassVar[int]
-    DAMAGE_TAKEN_FIELD_NUMBER: _ClassVar[int]
-    BLOCKED_DAMAGE_FIELD_NUMBER: _ClassVar[int]
-    APPLIED_SHIELD_FIELD_NUMBER: _ClassVar[int]
-    HEAL_DONE_FIELD_NUMBER: _ClassVar[int]
-    HEAL_TAKEN_FIELD_NUMBER: _ClassVar[int]
-    KILL_COUNT_FIELD_NUMBER: _ClassVar[int]
-    damage_done: int
-    damage_taken: int
-    blocked_damage: int
-    applied_shield: int
-    heal_done: int
-    heal_taken: int
-    kill_count: int
-    def __init__(self, damage_done: _Optional[int] = ..., damage_taken: _Optional[int] = ..., blocked_damage: _Optional[int] = ..., applied_shield: _Optional[int] = ..., heal_done: _Optional[int] = ..., heal_taken: _Optional[int] = ..., kill_count: _Optional[int] = ...) -> None: ...
+class iae(_message.Message):
+    __slots__ = ("erzy", "stats")
+    class StatsEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: int
+        value: _stats_pb2.FightStats
+        def __init__(self, key: _Optional[int] = ..., value: _Optional[_Union[_stats_pb2.FightStats, _Mapping]] = ...) -> None: ...
+    ERZY_FIELD_NUMBER: _ClassVar[int]
+    STATS_FIELD_NUMBER: _ClassVar[int]
+    erzy: _stats_pb2.wws
+    stats: _containers.MessageMap[int, _stats_pb2.FightStats]
+    def __init__(self, erzy: _Optional[_Union[_stats_pb2.wws, _Mapping]] = ..., stats: _Optional[_Mapping[int, _stats_pb2.FightStats]] = ...) -> None: ...
 
 class FightNewRoundEvent(_message.Message):
     __slots__ = ("round_number",)

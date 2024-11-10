@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package com.ankama.dofus.server.game.protocol.stats;
+
+// irx
+enum Team {
+  TEAM_CHALLENGER = 0;
+  TEAM_DEFENDER = 1;
+  TEAM_SPECTATOR = 2;
+  TEAM_NEUTRAL = 3;
+}
+
+// wwr
+message wwr {
+  int64 esau = 1;
+  .com.ankama.dofus.server.game.protocol.stats.Team team = 2;
+  oneof esba {
+    .com.ankama.dofus.server.game.protocol.stats.wwr.Player esaw = 3;
+    .com.ankama.dofus.server.game.protocol.stats.wwr.Monster esax = 4;
+    .com.ankama.dofus.server.game.protocol.stats.wwr.Companion esay = 5;
+    .com.ankama.dofus.server.game.protocol.stats.wwr.Summon esaz = 6;
+  }
+  message Player {
+  }
+  message Monster {
+    int32 esag = 1;
+  }
+  message Companion {
+    int32 esak = 1;
+    .com.ankama.dofus.server.game.protocol.stats.wwr esal = 2;
+  }
+  message Summon {
+    int32 esap = 1;
+    .com.ankama.dofus.server.game.protocol.stats.wwr esaq = 2;
+  }
+}
+
+// wws
+message wws {
+  int32 esbe = 1;
+  int32 esbf = 2;
+  int32 esbg = 3;
+  int32 esbh = 4;
+  int32 esbi = 5;
+  int32 esbj = 6;
+  int32 esbk = 7;
+}
+
+
+// ybe
+message FightStats {
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.DamageDone damage_done = 1;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.DamageTaken damage_taken = 2;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.HealDone heal_done = 3;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.HealTaken heal_taken = 4;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.ShieldDone shield_done = 5;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.ShieldTaken shield_taken = 6;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.wwt eseg = 7;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.wwt eseh = 8;
+  .com.ankama.dofus.server.game.protocol.stats.FightStats.Kill kill = 9;
+  .com.ankama.dofus.server.game.protocol.stats.wwr esej = 10;
+  message DamageDone {
+    int32 esbo = 1;
+    int32 esbp = 2;
+    int32 esbq = 3;
+    int32 esbr = 4;
+    int32 esbs = 5;
+    int32 esbt = 6;
+    float esbu = 7;
+    float esbv = 8;
+    int32 esbw = 9;
+  }
+  message DamageTaken {
+    int32 esca = 1;
+    int32 escb = 2;
+    int32 escc = 3;
+    int32 escd = 4;
+    int32 esce = 5;
+    int32 escf = 6;
+    float escg = 7;
+    int32 esch = 8;
+  }
+  message HealDone {
+    int32 escl = 1;
+    int32 escm = 2;
+    float escn = 3;
+    float esco = 4;
+  }
+  message HealTaken {
+    int32 escs = 1;
+    int32 esct = 2;
+    float escu = 3;
+  }
+  message ShieldDone {
+    int32 escy = 1;
+    int32 escz = 2;
+    float esda = 3;
+  }
+  message ShieldTaken {
+    int32 esde = 1;
+    int32 esdf = 2;
+    float esdg = 3;
+  }
+  message wwt {
+    int32 esdk = 1;
+    int32 esdl = 2;
+    int32 esdm = 3;
+    float esdn = 4;
+    float esdo = 5;
+    float esdp = 6;
+    float esdq = 7;
+  }
+  message Kill {
+    int32 esdu = 1;
+    int32 esdv = 2;
+    int32 esdw = 3;
+  }
+}
+
+// ybw
+message ybw {
+  int32 esen = 1;
+}
+
+//yej
+message yej {
+  oneof esfb {
+    .com.ankama.dofus.server.game.protocol.stats.yej.Success esez = 1;
+    .com.ankama.dofus.server.game.protocol.stats.yej.Error esfa = 2;
+  }
+  message Success {
+    int32 eser = 1;
+    int32 eses = 2;
+  }
+  message Error {
+  }
+}

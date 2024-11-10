@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common.proto";
+import "stats.proto";
 
 package com.ankama.dofus.server.game.protocol.fight;
 
@@ -31,8 +32,8 @@ message FightEndEvent {
 }
 
 message iae {
-  .com.ankama.dofus.server.game.protocol.common.wws erzy = 1;
-  map<int64, .com.ankama.dofus.server.game.protocol.common.FightStats> stats = 2;
+  .com.ankama.dofus.server.game.protocol.stats.wws erzy = 1;
+  map<int64, .com.ankama.dofus.server.game.protocol.stats.FightStats> stats = 2;
 }
 
 //message FightStatisticsEvent {
