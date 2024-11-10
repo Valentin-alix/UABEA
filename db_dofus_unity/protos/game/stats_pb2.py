@@ -22,53 +22,44 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+import common_pb2 as common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstats.proto\x12+com.ankama.dofus.server.game.protocol.stats\"\xda\x04\n\x03wwr\x12\x0c\n\x04\x65sau\x18\x01 \x01(\x03\x12?\n\x04team\x18\x02 \x01(\x0e\x32\x31.com.ankama.dofus.server.game.protocol.stats.Team\x12G\n\x04\x65saw\x18\x03 \x01(\x0b\x32\x37.com.ankama.dofus.server.game.protocol.stats.wwr.PlayerH\x00\x12H\n\x04\x65sax\x18\x04 \x01(\x0b\x32\x38.com.ankama.dofus.server.game.protocol.stats.wwr.MonsterH\x00\x12J\n\x04\x65say\x18\x05 \x01(\x0b\x32:.com.ankama.dofus.server.game.protocol.stats.wwr.CompanionH\x00\x12G\n\x04\x65saz\x18\x06 \x01(\x0b\x32\x37.com.ankama.dofus.server.game.protocol.stats.wwr.SummonH\x00\x1a\x08\n\x06Player\x1a\x17\n\x07Monster\x12\x0c\n\x04\x65sag\x18\x01 \x01(\x05\x1aY\n\tCompanion\x12\x0c\n\x04\x65sak\x18\x01 \x01(\x05\x12>\n\x04\x65sal\x18\x02 \x01(\x0b\x32\x30.com.ankama.dofus.server.game.protocol.stats.wwr\x1aV\n\x06Summon\x12\x0c\n\x04\x65sap\x18\x01 \x01(\x05\x12>\n\x04\x65saq\x18\x02 \x01(\x0b\x32\x30.com.ankama.dofus.server.game.protocol.stats.wwrB\x06\n\x04\x65sba\"g\n\x03wws\x12\x0c\n\x04\x65sbe\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sbf\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sbg\x18\x03 \x01(\x05\x12\x0c\n\x04\x65sbh\x18\x04 \x01(\x05\x12\x0c\n\x04\x65sbi\x18\x05 \x01(\x05\x12\x0c\n\x04\x65sbj\x18\x06 \x01(\x05\x12\x0c\n\x04\x65sbk\x18\x07 \x01(\x05\"\xd5\x0b\n\nFightStats\x12W\n\x0b\x64\x61mage_done\x18\x01 \x01(\x0b\x32\x42.com.ankama.dofus.server.game.protocol.stats.FightStats.DamageDone\x12Y\n\x0c\x64\x61mage_taken\x18\x02 \x01(\x0b\x32\x43.com.ankama.dofus.server.game.protocol.stats.FightStats.DamageTaken\x12S\n\theal_done\x18\x03 \x01(\x0b\x32@.com.ankama.dofus.server.game.protocol.stats.FightStats.HealDone\x12U\n\nheal_taken\x18\x04 \x01(\x0b\x32\x41.com.ankama.dofus.server.game.protocol.stats.FightStats.HealTaken\x12W\n\x0bshield_done\x18\x05 \x01(\x0b\x32\x42.com.ankama.dofus.server.game.protocol.stats.FightStats.ShieldDone\x12Y\n\x0cshield_taken\x18\x06 \x01(\x0b\x32\x43.com.ankama.dofus.server.game.protocol.stats.FightStats.ShieldTaken\x12I\n\x04\x65seg\x18\x07 \x01(\x0b\x32;.com.ankama.dofus.server.game.protocol.stats.FightStats.wwt\x12I\n\x04\x65seh\x18\x08 \x01(\x0b\x32;.com.ankama.dofus.server.game.protocol.stats.FightStats.wwt\x12J\n\x04kill\x18\t \x01(\x0b\x32<.com.ankama.dofus.server.game.protocol.stats.FightStats.Kill\x12>\n\x04\x65sej\x18\n \x01(\x0b\x32\x30.com.ankama.dofus.server.game.protocol.stats.wwr\x1a\x8a\x01\n\nDamageDone\x12\x0c\n\x04\x65sbo\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sbp\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sbq\x18\x03 \x01(\x05\x12\x0c\n\x04\x65sbr\x18\x04 \x01(\x05\x12\x0c\n\x04\x65sbs\x18\x05 \x01(\x05\x12\x0c\n\x04\x65sbt\x18\x06 \x01(\x05\x12\x0c\n\x04\x65sbu\x18\x07 \x01(\x02\x12\x0c\n\x04\x65sbv\x18\x08 \x01(\x02\x12\x0c\n\x04\x65sbw\x18\t \x01(\x05\x1a}\n\x0b\x44\x61mageTaken\x12\x0c\n\x04\x65sca\x18\x01 \x01(\x05\x12\x0c\n\x04\x65scb\x18\x02 \x01(\x05\x12\x0c\n\x04\x65scc\x18\x03 \x01(\x05\x12\x0c\n\x04\x65scd\x18\x04 \x01(\x05\x12\x0c\n\x04\x65sce\x18\x05 \x01(\x05\x12\x0c\n\x04\x65scf\x18\x06 \x01(\x05\x12\x0c\n\x04\x65scg\x18\x07 \x01(\x02\x12\x0c\n\x04\x65sch\x18\x08 \x01(\x05\x1a\x42\n\x08HealDone\x12\x0c\n\x04\x65scl\x18\x01 \x01(\x05\x12\x0c\n\x04\x65scm\x18\x02 \x01(\x05\x12\x0c\n\x04\x65scn\x18\x03 \x01(\x02\x12\x0c\n\x04\x65sco\x18\x04 \x01(\x02\x1a\x35\n\tHealTaken\x12\x0c\n\x04\x65scs\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sct\x18\x02 \x01(\x05\x12\x0c\n\x04\x65scu\x18\x03 \x01(\x02\x1a\x36\n\nShieldDone\x12\x0c\n\x04\x65scy\x18\x01 \x01(\x05\x12\x0c\n\x04\x65scz\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sda\x18\x03 \x01(\x02\x1a\x37\n\x0bShieldTaken\x12\x0c\n\x04\x65sde\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sdf\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sdg\x18\x03 \x01(\x02\x1ag\n\x03wwt\x12\x0c\n\x04\x65sdk\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sdl\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sdm\x18\x03 \x01(\x05\x12\x0c\n\x04\x65sdn\x18\x04 \x01(\x02\x12\x0c\n\x04\x65sdo\x18\x05 \x01(\x02\x12\x0c\n\x04\x65sdp\x18\x06 \x01(\x02\x12\x0c\n\x04\x65sdq\x18\x07 \x01(\x02\x1a\x30\n\x04Kill\x12\x0c\n\x04\x65sdu\x18\x01 \x01(\x05\x12\x0c\n\x04\x65sdv\x18\x02 \x01(\x05\x12\x0c\n\x04\x65sdw\x18\x03 \x01(\x05\"\x13\n\x03ybw\x12\x0c\n\x04\x65sen\x18\x01 \x01(\x05\"\xcf\x01\n\x03yej\x12H\n\x04\x65sez\x18\x01 \x01(\x0b\x32\x38.com.ankama.dofus.server.game.protocol.stats.yej.SuccessH\x00\x12\x46\n\x04\x65sfa\x18\x02 \x01(\x0b\x32\x36.com.ankama.dofus.server.game.protocol.stats.yej.ErrorH\x00\x1a%\n\x07Success\x12\x0c\n\x04\x65ser\x18\x01 \x01(\x05\x12\x0c\n\x04\x65ses\x18\x02 \x01(\x05\x1a\x07\n\x05\x45rrorB\x06\n\x04\x65sfb*T\n\x04Team\x12\x13\n\x0fTEAM_CHALLENGER\x10\x00\x12\x11\n\rTEAM_DEFENDER\x10\x01\x12\x12\n\x0eTEAM_SPECTATOR\x10\x02\x12\x10\n\x0cTEAM_NEUTRAL\x10\x03\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstats.proto\x12+com.ankama.dofus.server.game.protocol.stats\x1a\x0c\x63ommon.proto\"\xaf\x05\n\x0b\x46ightEntity\x12\x11\n\tplayer_id\x18\x01 \x01(\x03\x12@\n\x04team\x18\x02 \x01(\x0e\x32\x32.com.ankama.dofus.server.game.protocol.common.Team\x12Q\n\x06player\x18\x03 \x01(\x0b\x32?.com.ankama.dofus.server.game.protocol.stats.FightEntity.PlayerH\x00\x12S\n\x07monster\x18\x04 \x01(\x0b\x32@.com.ankama.dofus.server.game.protocol.stats.FightEntity.MonsterH\x00\x12W\n\tcompanion\x18\x05 \x01(\x0b\x32\x42.com.ankama.dofus.server.game.protocol.stats.FightEntity.CompanionH\x00\x12Q\n\x06summon\x18\x06 \x01(\x0b\x32?.com.ankama.dofus.server.game.protocol.stats.FightEntity.SummonH\x00\x1a\x08\n\x06Player\x1a\x17\n\x07Monster\x12\x0c\n\x04\x65sag\x18\x01 \x01(\x05\x1a\x63\n\tCompanion\x12\x0c\n\x04\x65sak\x18\x01 \x01(\x05\x12H\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x38.com.ankama.dofus.server.game.protocol.stats.FightEntity\x1a`\n\x06Summon\x12\x0c\n\x04\x65sap\x18\x01 \x01(\x05\x12H\n\x06\x65ntity\x18\x02 \x01(\x0b\x32\x38.com.ankama.dofus.server.game.protocol.stats.FightEntityB\r\n\x0b\x65ntity_type\"\xad\x01\n\x15\x46ightStatisticsResume\x12\x13\n\x0b\x64\x61mage_done\x18\x01 \x01(\x05\x12\x14\n\x0c\x64\x61mage_taken\x18\x02 \x01(\x05\x12\x16\n\x0e\x62locked_damage\x18\x03 \x01(\x05\x12\x16\n\x0e\x61pplied_shield\x18\x04 \x01(\x05\x12\x11\n\theal_done\x18\x05 \x01(\x05\x12\x12\n\nheal_taken\x18\x06 \x01(\x05\x12\x12\n\nkill_count\x18\x07 \x01(\x05\"\x84\x0f\n\x17\x46ightStatisticsDetailed\x12\x64\n\x0b\x64\x61mage_done\x18\x01 \x01(\x0b\x32O.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.DamageDone\x12\x66\n\x0c\x64\x61mage_taken\x18\x02 \x01(\x0b\x32P.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.DamageTaken\x12`\n\theal_done\x18\x03 \x01(\x0b\x32M.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.HealDone\x12\x62\n\nheal_taken\x18\x04 \x01(\x0b\x32N.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.HealTaken\x12\x64\n\x0bshield_done\x18\x05 \x01(\x0b\x32O.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.ShieldDone\x12\x66\n\x0cshield_taken\x18\x06 \x01(\x0b\x32P.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.ShieldTaken\x12i\n\x0f\x61p_stat_removed\x18\x07 \x01(\x0b\x32P.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.StatRemoved\x12i\n\x0fmp_stat_removed\x18\x08 \x01(\x0b\x32P.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.StatRemoved\x12W\n\x04kill\x18\t \x01(\x0b\x32I.com.ankama.dofus.server.game.protocol.stats.FightStatisticsDetailed.Kill\x12H\n\x06\x65ntity\x18\n \x01(\x0b\x32\x38.com.ankama.dofus.server.game.protocol.stats.FightEntity\x1a\xbf\x01\n\nDamageDone\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_poison\x18\x02 \x01(\x05\x12\x12\n\nby_pushing\x18\x03 \x01(\x05\x12\x18\n\x10\x62y_ground_object\x18\x04 \x01(\x05\x12\x11\n\tby_summon\x18\x05 \x01(\x05\x12\x11\n\ton_shield\x18\x06 \x01(\x05\x12\x14\n\x0c\x62y_ap_action\x18\x07 \x01(\x02\x12\x0f\n\x07\x62y_turn\x18\x08 \x01(\x02\x12\x14\n\x0c\x65rosion_done\x18\t \x01(\x05\x1a\xaa\x01\n\x0b\x44\x61mageTaken\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_poison\x18\x02 \x01(\x05\x12\x12\n\nby_pushing\x18\x03 \x01(\x05\x12\x18\n\x10\x62y_ground_object\x18\x04 \x01(\x05\x12\x11\n\tby_summon\x18\x05 \x01(\x05\x12\x11\n\ton_shield\x18\x06 \x01(\x05\x12\x0f\n\x07\x62y_turn\x18\x07 \x01(\x02\x12\x14\n\x0c\x65rosion_done\x18\x08 \x01(\x05\x1aS\n\x08HealDone\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_summon\x18\x02 \x01(\x05\x12\x14\n\x0c\x62y_ap_action\x18\x03 \x01(\x02\x12\x0f\n\x07\x62y_turn\x18\x04 \x01(\x02\x1a>\n\tHealTaken\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_summon\x18\x02 \x01(\x05\x12\x0f\n\x07\x62y_turn\x18\x03 \x01(\x02\x1a?\n\nShieldDone\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_summon\x18\x02 \x01(\x05\x12\x0f\n\x07\x62y_turn\x18\x03 \x01(\x02\x1a@\n\x0bShieldTaken\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x11\n\tby_summon\x18\x02 \x01(\x05\x12\x0f\n\x07\x62y_turn\x18\x03 \x01(\x02\x1a\xc6\x01\n\x0bStatRemoved\x12\x0e\n\x06\x64odged\x18\x01 \x01(\x05\x12\x12\n\nnot_dodged\x18\x02 \x01(\x05\x12\x0f\n\x07removed\x18\x03 \x01(\x05\x12\x1e\n\x16\x61verage_dodged_by_turn\x18\x04 \x01(\x02\x12\"\n\x1a\x61verage_not_dodged_by_turn\x18\x05 \x01(\x02\x12\x1f\n\x17\x61verage_removed_by_turn\x18\x06 \x01(\x02\x12\x1d\n\x15\x61verage_spent_by_turn\x18\x07 \x01(\x02\x1a>\n\x04Kill\x12\r\n\x05total\x18\x01 \x01(\x05\x12\x0f\n\x07\x65nemies\x18\x02 \x01(\x05\x12\x16\n\x0e\x65nemies_summon\x18\x03 \x01(\x05\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'stats_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_TEAM']._serialized_start=2497
-  _globals['_TEAM']._serialized_end=2581
-  _globals['_WWR']._serialized_start=61
-  _globals['_WWR']._serialized_end=663
-  _globals['_WWR_PLAYER']._serialized_start=443
-  _globals['_WWR_PLAYER']._serialized_end=451
-  _globals['_WWR_MONSTER']._serialized_start=453
-  _globals['_WWR_MONSTER']._serialized_end=476
-  _globals['_WWR_COMPANION']._serialized_start=478
-  _globals['_WWR_COMPANION']._serialized_end=567
-  _globals['_WWR_SUMMON']._serialized_start=569
-  _globals['_WWR_SUMMON']._serialized_end=655
-  _globals['_WWS']._serialized_start=665
-  _globals['_WWS']._serialized_end=768
-  _globals['_FIGHTSTATS']._serialized_start=771
-  _globals['_FIGHTSTATS']._serialized_end=2264
-  _globals['_FIGHTSTATS_DAMAGEDONE']._serialized_start=1608
-  _globals['_FIGHTSTATS_DAMAGEDONE']._serialized_end=1746
-  _globals['_FIGHTSTATS_DAMAGETAKEN']._serialized_start=1748
-  _globals['_FIGHTSTATS_DAMAGETAKEN']._serialized_end=1873
-  _globals['_FIGHTSTATS_HEALDONE']._serialized_start=1875
-  _globals['_FIGHTSTATS_HEALDONE']._serialized_end=1941
-  _globals['_FIGHTSTATS_HEALTAKEN']._serialized_start=1943
-  _globals['_FIGHTSTATS_HEALTAKEN']._serialized_end=1996
-  _globals['_FIGHTSTATS_SHIELDDONE']._serialized_start=1998
-  _globals['_FIGHTSTATS_SHIELDDONE']._serialized_end=2052
-  _globals['_FIGHTSTATS_SHIELDTAKEN']._serialized_start=2054
-  _globals['_FIGHTSTATS_SHIELDTAKEN']._serialized_end=2109
-  _globals['_FIGHTSTATS_WWT']._serialized_start=2111
-  _globals['_FIGHTSTATS_WWT']._serialized_end=2214
-  _globals['_FIGHTSTATS_KILL']._serialized_start=2216
-  _globals['_FIGHTSTATS_KILL']._serialized_end=2264
-  _globals['_YBW']._serialized_start=2266
-  _globals['_YBW']._serialized_end=2285
-  _globals['_YEJ']._serialized_start=2288
-  _globals['_YEJ']._serialized_end=2495
-  _globals['_YEJ_SUCCESS']._serialized_start=2441
-  _globals['_YEJ_SUCCESS']._serialized_end=2478
-  _globals['_YEJ_ERROR']._serialized_start=2480
-  _globals['_YEJ_ERROR']._serialized_end=2487
+  _globals['_FIGHTENTITY']._serialized_start=75
+  _globals['_FIGHTENTITY']._serialized_end=762
+  _globals['_FIGHTENTITY_PLAYER']._serialized_start=515
+  _globals['_FIGHTENTITY_PLAYER']._serialized_end=523
+  _globals['_FIGHTENTITY_MONSTER']._serialized_start=525
+  _globals['_FIGHTENTITY_MONSTER']._serialized_end=548
+  _globals['_FIGHTENTITY_COMPANION']._serialized_start=550
+  _globals['_FIGHTENTITY_COMPANION']._serialized_end=649
+  _globals['_FIGHTENTITY_SUMMON']._serialized_start=651
+  _globals['_FIGHTENTITY_SUMMON']._serialized_end=747
+  _globals['_FIGHTSTATISTICSRESUME']._serialized_start=765
+  _globals['_FIGHTSTATISTICSRESUME']._serialized_end=938
+  _globals['_FIGHTSTATISTICSDETAILED']._serialized_start=941
+  _globals['_FIGHTSTATISTICSDETAILED']._serialized_end=2865
+  _globals['_FIGHTSTATISTICSDETAILED_DAMAGEDONE']._serialized_start=1956
+  _globals['_FIGHTSTATISTICSDETAILED_DAMAGEDONE']._serialized_end=2147
+  _globals['_FIGHTSTATISTICSDETAILED_DAMAGETAKEN']._serialized_start=2150
+  _globals['_FIGHTSTATISTICSDETAILED_DAMAGETAKEN']._serialized_end=2320
+  _globals['_FIGHTSTATISTICSDETAILED_HEALDONE']._serialized_start=2322
+  _globals['_FIGHTSTATISTICSDETAILED_HEALDONE']._serialized_end=2405
+  _globals['_FIGHTSTATISTICSDETAILED_HEALTAKEN']._serialized_start=2407
+  _globals['_FIGHTSTATISTICSDETAILED_HEALTAKEN']._serialized_end=2469
+  _globals['_FIGHTSTATISTICSDETAILED_SHIELDDONE']._serialized_start=2471
+  _globals['_FIGHTSTATISTICSDETAILED_SHIELDDONE']._serialized_end=2534
+  _globals['_FIGHTSTATISTICSDETAILED_SHIELDTAKEN']._serialized_start=2536
+  _globals['_FIGHTSTATISTICSDETAILED_SHIELDTAKEN']._serialized_end=2600
+  _globals['_FIGHTSTATISTICSDETAILED_STATREMOVED']._serialized_start=2603
+  _globals['_FIGHTSTATISTICSDETAILED_STATREMOVED']._serialized_end=2801
+  _globals['_FIGHTSTATISTICSDETAILED_KILL']._serialized_start=2803
+  _globals['_FIGHTSTATISTICSDETAILED_KILL']._serialized_end=2865
 # @@protoc_insertion_point(module_scope)

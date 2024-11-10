@@ -52,20 +52,20 @@ class FightEndEvent(_message.Message):
     budget: int
     def __init__(self, duration: _Optional[int] = ..., reward_rate: _Optional[int] = ..., loot_share_limit_malus: _Optional[int] = ..., results: _Optional[_Iterable[_Union[_common_pb2.FightResultListEntry, _Mapping]]] = ..., named_party_teams_outcomes: _Optional[_Iterable[_Union[_common_pb2.NamedPartyTeamWithOutcome, _Mapping]]] = ..., budget: _Optional[int] = ...) -> None: ...
 
-class iae(_message.Message):
-    __slots__ = ("erzy", "stats")
-    class StatsEntry(_message.Message):
+class FightStatisticsEvent(_message.Message):
+    __slots__ = ("stat_resume", "stat_detailed")
+    class StatDetailedEntry(_message.Message):
         __slots__ = ("key", "value")
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: int
-        value: _stats_pb2.FightStats
-        def __init__(self, key: _Optional[int] = ..., value: _Optional[_Union[_stats_pb2.FightStats, _Mapping]] = ...) -> None: ...
-    ERZY_FIELD_NUMBER: _ClassVar[int]
-    STATS_FIELD_NUMBER: _ClassVar[int]
-    erzy: _stats_pb2.wws
-    stats: _containers.MessageMap[int, _stats_pb2.FightStats]
-    def __init__(self, erzy: _Optional[_Union[_stats_pb2.wws, _Mapping]] = ..., stats: _Optional[_Mapping[int, _stats_pb2.FightStats]] = ...) -> None: ...
+        value: _stats_pb2.FightStatisticsDetailed
+        def __init__(self, key: _Optional[int] = ..., value: _Optional[_Union[_stats_pb2.FightStatisticsDetailed, _Mapping]] = ...) -> None: ...
+    STAT_RESUME_FIELD_NUMBER: _ClassVar[int]
+    STAT_DETAILED_FIELD_NUMBER: _ClassVar[int]
+    stat_resume: _stats_pb2.FightStatisticsResume
+    stat_detailed: _containers.MessageMap[int, _stats_pb2.FightStatisticsDetailed]
+    def __init__(self, stat_resume: _Optional[_Union[_stats_pb2.FightStatisticsResume, _Mapping]] = ..., stat_detailed: _Optional[_Mapping[int, _stats_pb2.FightStatisticsDetailed]] = ...) -> None: ...
 
 class FightNewRoundEvent(_message.Message):
     __slots__ = ("round_number",)
