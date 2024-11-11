@@ -1,3 +1,5 @@
+{%- if not excluded_model -%}
+
 {% for decorator in decorators -%}
 {{ decorator }}
 {% endfor -%}
@@ -19,6 +21,7 @@ class {{ class_name }}:
     pass
 {%- endif %}
 {%- for field in fields -%}
+    {%- if not excluded_fields or field.name not in excluded_fields %}
     {%- if not field.annotated and field.field %}
     {{ field.name }}: {{ field.type_hint }} = {{ field.field }}
     {%- else %}
@@ -39,4 +42,7 @@ class {{ class_name }}:
     {{ field.docstring | indent(4) }}
     """
     {%- endif %}
+    {%- endif %}
 {%- endfor -%}
+
+{%- endif %}

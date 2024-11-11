@@ -2,7 +2,9 @@ import os
 import sys
 from pathlib import Path
 
-from src.generator.generate_python_from_datas import gen_all_python_class_datas
+from src.generator.generate_python_from_datas_and_clean import (
+    gen_all_python_class_datas,
+)
 from src.on_maj import on_maj
 
 sys.path.append(str(Path(__file__).parent.parent))
