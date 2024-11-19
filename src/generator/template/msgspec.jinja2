@@ -4,7 +4,7 @@
 {{ decorator }}
 {% endfor -%}
 {%- if base_class %}
-class {{ class_name }}({{ base_class }}):
+class {{ class_name }}({{ base_class }}, frozen=True):
 {%- else %}
 class {{ class_name }}:
 {%- endif %}
