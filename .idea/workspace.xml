@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="fix proto obf">
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add elem json">
+      <change afterPath="$PROJECT_DIR$/D3Database/bundles/elements.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_maps/MapsRoot.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/gen/gen_maps/MapsRoot.py" afterDir="false" />
@@ -525,11 +526,18 @@
       <option name="project" value="LOCAL" />
       <updated>1731250664513</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="add elem json">
+      <option name="closed" value="true" />
+      <created>1732050506948</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1732050506948</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="mapping finally working" />
     <MESSAGE value="update" />
     <MESSAGE value="update dependencies" />
     <MESSAGE value="fix poetry project name" />
@@ -554,7 +562,8 @@
     <MESSAGE value="much better mapping based on reliability" />
     <MESSAGE value="add obf proto" />
     <MESSAGE value="fix proto obf" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix proto obf" />
+    <MESSAGE value="add elem json" />
+    <option name="LAST_COMMIT_MESSAGE" value="add elem json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
