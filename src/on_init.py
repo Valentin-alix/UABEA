@@ -11,11 +11,11 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from src.consts import UABEA_PATH_EXE
 from D3Database.consts import (
-    D3_STANDALONE,
     DOFUS_PATH,
-    D3_DATA,
     D3_MAP,
     D3_GFX,
+    D3_STANDALONE,
+    D3_DATA,
 )
 
 

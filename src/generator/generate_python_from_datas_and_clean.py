@@ -11,13 +11,13 @@ from tqdm import tqdm
 
 from D3Database.consts import (
     WORLD_GRAPH_FILENAME,
+    D3_MAP,
+    OUTPUT_CLASS_MAPS,
     D3_DATABASE,
     D3_DATA,
     OUTPUT_CLASS_DATAS,
     D3_STANDALONE,
     OUTPUT_CLASS_STANDALONE,
-    D3_MAP,
-    OUTPUT_CLASS_MAPS,
 )
 from src.utils import instantiate_class_from_path
 
