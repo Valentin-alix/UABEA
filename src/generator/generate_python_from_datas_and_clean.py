@@ -3,19 +3,21 @@ import os
 from collections import defaultdict
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from typing import cast
 
 import msgspec.json
+from msgspec import Struct
 from tqdm import tqdm
 
-from db_dofus_unity.consts import (
+from D3Database.consts import (
     WORLD_GRAPH_FILENAME,
-    OUTPUT_CLASS_MAPS,
-    DOFUS_MAP_PATH,
-    DOFUS_PATH,
-    DOFUS_STANDALONE_PATH,
-    DOFUS_DATA_PATH,
+    D3_DATABASE,
+    D3_DATA,
     OUTPUT_CLASS_DATAS,
+    D3_STANDALONE,
     OUTPUT_CLASS_STANDALONE,
+    D3_MAP,
+    OUTPUT_CLASS_MAPS,
 )
 from src.utils import instantiate_class_from_path
 
@@ -23,17 +25,18 @@ from src.utils import instantiate_class_from_path
 def run_cmd_codegen(
     input_filename: str,
     output_filename: str,
-    base_dofus_folder: str | None = None,
+    base_folder: str | None = None,
     excluded_field_by_class_name: dict[str, list[str]] | None = None,
     excluded_class_name: list[str] | None = None,
-):
+) -> None:
     cmd = (
         f"datamodel-codegen --input-file-type json --input {input_filename} --output {output_filename} --custom"
-        f"-template-dir {os.path.join(Path(__file__).parent, "template")}  --output-model-type msgspec.Struct"
+        f"-template-dir {os.path.join(Path(__file__).parent, "template")}  --output-model-type msgspec.Struct "
+        f"--encoding utf-8"
     )
     extra_data: dict[str, dict] = defaultdict(dict)
-    if base_dofus_folder:
-        filepath = os.path.relpath(input_filename, base_dofus_folder)
+    if base_folder is not None:
+        filepath = os.path.relpath(input_filename, base_folder)
         extra_data["Model"]["filepath"] = filepath
 
     if excluded_field_by_class_name:
@@ -49,7 +52,7 @@ def run_cmd_codegen(
     os.system(cmd)
 
 
-def gen_and_clean_datas(base_dofus_folder: str, input_folder: str, output_folder: str):
+def gen_and_clean_datas(base_folder: str, input_folder: str, output_folder: str):
     for filename in os.listdir(input_folder):
         if not filename.endswith(".json"):
             continue
@@ -59,7 +62,7 @@ def gen_and_clean_datas(base_dofus_folder: str, input_folder: str, output_folder
         run_cmd_codegen(
             file_path,
             os.path.join(output_folder, python_filename),
-            base_dofus_folder,
+            base_folder,
             excluded_field_by_class_name={
                 "Model": [
                     "m_GameObject",
@@ -101,7 +104,7 @@ def gen_and_clean_map_datas(input_folder: str, output_folder: str):
         if count > 100:
             break
 
-    temp_path = "temp.json"
+    temp_path = "unity_output.json"
     with open(temp_path, "w+") as temp_file:
         json.dump(all_datas_groupes, temp_file, indent=2)
     output_file = os.path.join(output_folder, "MapsRoot.py")
@@ -226,7 +229,7 @@ def gen_and_clean_map_datas(input_folder: str, output_folder: str):
     os.remove(temp_path)
 
     print("cleaning map folder..")
-    class_type = instantiate_class_from_path("Model", output_file)
+    class_type = cast(Struct, instantiate_class_from_path("Model", output_file))
     for filename in tqdm(os.listdir(input_folder)):
         if not filename.startswith("map_") or not filename.endswith(".json"):
             continue
@@ -238,14 +241,14 @@ def gen_and_clean_map_datas(input_folder: str, output_folder: str):
 
 
 def gen_and_clean_world_graph_datas(
-    base_dofus_folder: str, input_folder: str, output_folder: str
+    base_folder: str, input_folder: str, output_folder: str
 ):
     file_path = os.path.join(input_folder, WORLD_GRAPH_FILENAME)
     print("processing world graph")
     run_cmd_codegen(
         file_path,
         os.path.join(output_folder, "WorldGraphRoot" + ".py"),
-        base_dofus_folder,
+        base_folder,
         excluded_field_by_class_name={
             "Model": [
                 "m_GameObject",
@@ -258,23 +261,24 @@ def gen_and_clean_world_graph_datas(
     )
 
     print("cleaning world graph")
-    class_type = instantiate_class_from_path(
-        "Model",
-        os.path.join(output_folder, "WorldGraphRoot" + ".py"),
+    class_type = cast(
+        Struct,
+        instantiate_class_from_path(
+            "Model",
+            os.path.join(output_folder, "WorldGraphRoot" + ".py"),
+        ),
     )
     with open(file_path, "rb") as file:
-        content = msgspec.json.decode(file.read(), type=class_type)
+        content: Struct = msgspec.json.decode(file.read(), type=class_type)
     with open(file_path, "wb") as file:
-        file.write(msgspec.json.encode(content))
+        file.write(msgspec.json.format(msgspec.json.encode(content), indent=2))
 
 
-def gen_all_python_class_datas():
-    gen_and_clean_datas(DOFUS_PATH, DOFUS_DATA_PATH, OUTPUT_CLASS_DATAS)
-    gen_and_clean_world_graph_datas(
-        DOFUS_PATH, DOFUS_STANDALONE_PATH, OUTPUT_CLASS_STANDALONE
-    )
-    gen_and_clean_map_datas(DOFUS_MAP_PATH, OUTPUT_CLASS_MAPS)
+def gen_and_clean_python_class_datas():
+    gen_and_clean_datas(D3_DATABASE, D3_DATA, OUTPUT_CLASS_DATAS)
+    gen_and_clean_world_graph_datas(D3_DATABASE, D3_STANDALONE, OUTPUT_CLASS_STANDALONE)
+    gen_and_clean_map_datas(D3_MAP, OUTPUT_CLASS_MAPS)
 
 
 if __name__ == "__main__":
-    gen_all_python_class_datas()
+    gen_and_clean_python_class_datas()

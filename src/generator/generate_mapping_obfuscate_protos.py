@@ -1,6 +1,6 @@
 import json
 
-from db_dofus_unity.consts import (
+from D3Database.consts import (
     PROTO_CONNECTION_PATH,
     OBFUSCATED_PROTO_CONNECTION,
     PROTO_GAME_PATH,
