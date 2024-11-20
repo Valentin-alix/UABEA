@@ -115,7 +115,6 @@ def gen_and_clean_map_datas(input_folder: str, output_folder: str):
             "RefId": ["rid", "type"],
             "Data": [
                 "color",
-                "transform",
                 "materialIndex",
                 "innerCellRenderOrder",
                 "displayBehaviour",
