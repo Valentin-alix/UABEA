@@ -1,9 +1,14 @@
 ﻿using AssetsTools.NET;
 using AssetsTools.NET.Extra;
 using Avalonia.Controls.Documents;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace UABEAvalonia
@@ -40,6 +45,19 @@ namespace UABEAvalonia
                     return args[i];
             }
             return string.Empty;
+        }
+
+        private static string GetExportDirectory(string[] args)
+        {
+            int outIndex = Array.IndexOf(args, "-out");
+            if (outIndex != -1 && outIndex + 1 < args.Length)
+            {
+                return args[outIndex + 1];
+            }
+            else
+            {
+                throw new ArgumentException("Le chemin exportDirectory n'a pas été spécifié après l'argument -out.");
+            }
         }
 
         private static HashSet<string> GetFlags(string[] args)
@@ -111,7 +129,7 @@ namespace UABEAvalonia
         {
             HashSet<string> flags = GetFlags(args);
 
-            string decompFile = $"{file}.decomp";
+            string? decompFile = $"{file}.decomp";
             if (flags.Contains("-md"))
                 decompFile = null;
 
@@ -140,86 +158,110 @@ namespace UABEAvalonia
 
             int entryCount = bun.BlockAndDirInfo.DirectoryInfos.Length;
 
-            var outDir = Path.Combine(exportDirectory, "exported");
+            var outDir = exportDirectory;
+
+            List<string> uselessCABFiles = new();
+
             Directory.CreateDirectory(outDir);
 
             for (int i = 0; i < entryCount; i++)
             {
+                string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
+
+                string outName;
+                if (flags.Contains("-keepnames"))
+                    outName = Path.Combine(exportDirectory, name);
+                else
+                    outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
+
+                var ass = new AssetWorkspace(am, true);
+
+                byte[]? data = BundleHelper.LoadAssetDataFromBundle(bun, i);
+
+                Console.WriteLine($"Exporting {outName}...");
+
+                uselessCABFiles.Add(outName);
+                File.WriteAllBytes(outName, data);
+
+                AssetsFileInstance fileInst;
                 try
                 {
-
-                    var ass = new AssetWorkspace(am, true);
-
-                    string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
-                    byte[] data = BundleHelper.LoadAssetDataFromBundle(bun, i);
-
-                    string outName;
-                    if (flags.Contains("-keepnames"))
-                        outName = Path.Combine(exportDirectory, name);
-                    else
-                        outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
-
-                    Console.WriteLine($"Exporting {outName}...");
-                    File.WriteAllBytes(outName, data);
-
-                    DetectedFileType otherFileType = FileTypeDetector.DetectFileType(outName);
-
-                    AssetsFileInstance fileInst;
-
-
                     fileInst = am.LoadAssetsFile(outName, true);
-
-
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+                try
+                {
                     ass.LoadedFiles.Add(fileInst);
-
-                    //Directory.CreateDirectory(Path.Combine(outDir, name));
-
                     string uVer = fileInst.file.Metadata.UnityVersion;
                     if (uVer == "0.0.0" && fileInst.parentBundle != null)
                     {
                         uVer = fileInst.parentBundle.file.Header.EngineVersion;
                     }
                     am.LoadClassDatabaseFromPackage(uVer);
-
+                
                     foreach (AssetFileInfo info in fileInst.file.AssetInfos)
                     {
-                        AssetContainer cont = new AssetContainer(info, fileInst);
-                        ass.LoadedAssets.Add(cont.AssetId, cont);
-
-                    }
-
-                    foreach (var asset in ass.LoadedAssets)
-                    {
-                        AssetImportExport dumper = new AssetImportExport();
-                        AssetNameUtils.GetDisplayNameFast(ass, asset.Value, false, out var assetName, out var type);
-                        if (type == "AssetBundle" || type == "MonoScript")
+                        AssetContainer cont = new(info, fileInst);
+                        AssetNameUtils.GetDisplayNameFast(ass, cont, false, out var assetName, out var type);
+                        if (type != "MonoBehaviour")
                         {
                             continue;
                         }
-                        FileStream fs;
-                        using (fs = File.Open(Path.Combine(outDir, assetName + ".json"), FileMode.Create))
-                        {
-                            using (StreamWriter sw = new StreamWriter(fs))
-                            {
-                                AssetTypeValueField? baseField = ass.GetBaseField(asset.Value);
-                                dumper.DumpJsonAsset(sw, baseField);
-                            }
-                        }
+                        ass.LoadedAssets.Add(cont.AssetId, cont);
 
+                        AssetTypeValueField? baseField = ass.GetBaseField(cont);
+
+                        if (baseField == null) continue;
+
+                        FileStream fs;
+                        assetName = assetName.Replace("/", "_");
+                        string filePath = Path.Combine(outDir, assetName + ".json");
+                        using (fs = File.Open(filePath, FileMode.Create))
+                        using (StreamWriter sw = new(fs))
+                        {
+                            JToken jBaseField = CommandLineHandler.RecurseJsonDump(baseField, false, true);
+                            sw.Write(jBaseField.ToString());
+                            //AssetImportExport dumper = new();
+                            //dumper.DumpJsonAsset(sw, baseField);
+                        }
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    continue;
+                    //Console.WriteLine(ex);
                 }
-
-                BundleHelper.LoadAllAssetsFromBundle(bun);
+                finally
+                {
+                    ass = null;
+                    am.UnloadAssetsFile(outName);
+                }
             }
 
             bun.Close();
 
+            am.UnloadAll(true);
+
             if (!flags.Contains("-kd") && !flags.Contains("-md") && File.Exists(decompFile))
                 File.Delete(decompFile);
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            foreach (var cabFile in uselessCABFiles)
+            {
+                try
+                {
+                    File.Delete(cabFile);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to delete CAB file {cabFile}: {ex.Message}");
+                }
+
+            }
 
             Console.WriteLine("Done.");
         }
@@ -234,8 +276,9 @@ namespace UABEAvalonia
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             { 
                 //export all file in directory
-                exportDirectory = argPath;
-                foreach (string file in Directory.EnumerateFiles(exportDirectory))
+                exportDirectory = GetExportDirectory(args);
+
+                foreach (string file in Directory.EnumerateFiles(argPath))
                 {
                     ExportBundleFile(args, file, exportDirectory);
                 }
@@ -243,8 +286,154 @@ namespace UABEAvalonia
             else
             {
                 // export file
-                exportDirectory = Path.GetDirectoryName(argPath);
+                exportDirectory = GetExportDirectory(args);
+                //exportDirectory = Path.GetDirectoryName(argPath);
                 ExportBundleFile(args, argPath, exportDirectory);
+            }
+        }
+
+
+        public static JToken RecurseJsonDump(AssetTypeValueField field, bool uabeFlavor,bool isFirst=false)
+        {
+            AssetTypeTemplateField template = field.TemplateField;
+
+            bool isArray = template.IsArray;
+
+            if (isArray)
+            {
+                JArray jArray = new JArray();
+
+                if (template.ValueType != AssetValueType.ByteArray)
+                {
+                    for (int i = 0; i < field.Children.Count; i++)
+                    {
+                        jArray.Add(RecurseJsonDump(field.Children[i], uabeFlavor));
+                    }
+                }
+                else
+                {
+                    byte[] byteArrayData = field.AsByteArray;
+                    for (int i = 0; i < byteArrayData.Length; i++)
+                    {
+                        jArray.Add(byteArrayData[i]);
+                    }
+                }
+
+                return jArray;
+            }
+
+            if (field.Value == null)
+            {
+                JObject jObject = new();
+
+                JArray values = new();
+                JArray keys = new();
+
+                List<string> excludedFields = new List<string> { "m_GameObject", "m_Enabled", "m_Script", "m_Name" };
+
+                int countNoExcludedFields = field.Where(p => excludedFields.Contains(p.FieldName)).Count();
+
+                foreach (AssetTypeValueField child in field)
+                {
+                    if (isFirst)
+                    {   
+                        if (excludedFields.Contains(child.FieldName)) continue;
+                        if (child.FieldName == "references" && countNoExcludedFields == 1)
+                        {
+                            // si references est le seul field, dump direct le contenu
+                            return RecurseJsonDump(child, uabeFlavor);
+                        }
+                    }
+                    if (child.FieldName == "m_keys")
+                    {
+                        foreach (AssetTypeValueField subChildKey in child["Array"].Children)
+                        {
+                            keys.Add(RecurseJsonDump(subChildKey, uabeFlavor));
+                        }
+                        continue;
+                    }
+                    if (child.FieldName == "m_values")
+                    {
+                        foreach (AssetTypeValueField subChildKey in child["Array"].Children)
+                        {
+                            values.Add(RecurseJsonDump(subChildKey, uabeFlavor));
+                        }
+                        continue;
+                    }
+
+                    if (child.FieldName == "Array")
+                    {
+                        return RecurseJsonDump(child, uabeFlavor);
+                    }
+                    else
+                    {
+                        jObject.Add(child.FieldName, RecurseJsonDump(child, uabeFlavor));
+                    }
+                }
+
+                if (keys.Count > 0)
+                {
+                    JObject dictKeyValue = new JObject();
+                    for (int i = 0; i < keys.Count;i++)
+                    {
+                        dictKeyValue.Add(keys[i].ToString(), values[i]);
+                    }
+                    return dictKeyValue;
+                }
+
+                return jObject;
+            }
+            
+            AssetValueType evt = field.Value.ValueType;
+
+            if (field.Value.ValueType != AssetValueType.ManagedReferencesRegistry)
+            {
+                object value = evt switch
+                {
+                    AssetValueType.Bool => field.AsBool,
+                    AssetValueType.Int8 or
+                    AssetValueType.Int16 or
+                    AssetValueType.Int32 => field.AsInt,
+                    AssetValueType.Int64 => field.AsLong,
+                    AssetValueType.UInt8 or
+                    AssetValueType.UInt16 or
+                    AssetValueType.UInt32 => field.AsUInt,
+                    AssetValueType.UInt64 => field.AsULong,
+                    AssetValueType.String => field.AsString,
+                    AssetValueType.Float => field.AsFloat,
+                    AssetValueType.Double => field.AsDouble,
+                    _ => "invalid value"
+                };
+
+                return (JValue)JToken.FromObject(value);
+            }
+            else
+            { 
+                // todo separate method
+                ManagedReferencesRegistry registry = field.Value.AsManagedReferencesRegistry;
+
+                if (registry.version == 1 || registry.version == 2)
+                {
+                    JArray jArrayRefs = new JArray();
+
+                    foreach (AssetTypeReferencedObject refObj in registry.references)
+                    {
+                        JObject jObjData = new JObject();
+
+                        foreach (AssetTypeValueField child in refObj.data)
+                        {
+                            jObjData.Add(child.FieldName, RecurseJsonDump(child, uabeFlavor));
+                        }
+
+                        jArrayRefs.Add(jObjData);
+                    }
+
+                    return jArrayRefs;
+                }
+                else
+                {
+                    throw new NotSupportedException($"Registry version {registry.version} not supported!");
+                }
             }
         }
 
