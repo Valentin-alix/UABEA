@@ -329,9 +329,9 @@ namespace UABEAvalonia
                 JArray values = new();
                 JArray keys = new();
 
-                List<string> excludedFields = new List<string> { "m_GameObject", "m_Enabled", "m_Script", "m_Name" };
+                List<string> excludedFields = new List<string> { "m_GameObject", "m_Enabled", "m_Script", "m_Name", "objectsById" };
 
-                int countNoExcludedFields = field.Where(p => excludedFields.Contains(p.FieldName)).Count();
+                int countNoExcludedFields = field.Where(p => !excludedFields.Contains(p.FieldName)).Count();
 
                 foreach (AssetTypeValueField child in field)
                 {
