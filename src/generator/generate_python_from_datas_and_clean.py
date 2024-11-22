@@ -7,6 +7,10 @@ from tempfile import NamedTemporaryFile
 import msgspec.json
 from D3Database.consts import (
     WORLD_GRAPH_FILENAME,
+    D3_DATABASE,
+    D3_DATA,
+    OUTPUT_CLASS_DATAS,
+    D3_STANDALONE,
     D3_MAP,
 )
 from D3Database.models.maps import MapData
@@ -37,16 +41,19 @@ def run_cmd_codegen(
     os.system(cmd)
 
 
-def gen_and_clean_datas(base_folder: str, input_folder: str, output_folder: str):
+def gen_and_clean_datas(
+    gen_model: bool, base_folder: str, input_folder: str, output_folder: str
+):
     for filename in os.listdir(input_folder):
         if not filename.endswith(".json"):
             continue
         print(f"processing data {filename}")
         file_path = os.path.join(input_folder, filename)
         python_filename = filename.split(".json")[0] + ".py"
-        run_cmd_codegen(
-            file_path, os.path.join(output_folder, python_filename), base_folder
-        )
+        if gen_model:
+            run_cmd_codegen(
+                file_path, os.path.join(output_folder, python_filename), base_folder
+            )
         if os.path.exists(os.path.join(output_folder, python_filename)):
             class_type = instantiate_class_from_path(
                 "Model",
@@ -70,7 +77,7 @@ def clean_map_datas(input_folder: str):
             file.write(msgspec.json.encode(content))
 
 
-def gen_and_clean_world_graph_datas(input_folder: str):
+def clean_world_graph_datas(input_folder: str):
     file_path = os.path.join(input_folder, WORLD_GRAPH_FILENAME)
     print("cleaning world graph")
     with open(file_path, "rb") as file:
@@ -80,8 +87,8 @@ def gen_and_clean_world_graph_datas(input_folder: str):
 
 
 def gen_and_clean_python_class_datas():
-    # gen_and_clean_datas(D3_DATABASE, D3_DATA, OUTPUT_CLASS_DATAS)
-    # gen_and_clean_world_graph_datas(D3_STANDALONE)
+    gen_and_clean_datas(False, D3_DATABASE, D3_DATA, OUTPUT_CLASS_DATAS)
+    clean_world_graph_datas(D3_STANDALONE)
     clean_map_datas(D3_MAP)
 
 

@@ -203,6 +203,7 @@ class PComparator:
             new_p_file = list(self.new_p_folder.files_by_filename.values())[
                 new_file_index
             ]
+
             for new_p_msg in new_p_file.messages:
                 if new_p_msg.name in exclude_msg_name:
                     continue
@@ -223,7 +224,7 @@ class PComparator:
                 )
                 if mapping is None or mapping[2] < similarity:
                     mapping = (new_p_msg.name, new_file_index, similarity)
-                    if similarity == 1:
+                    if similarity >= limit:
                         is_found = True
                         break
 
