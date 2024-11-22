@@ -4,8 +4,187 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add elem json">
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add transform on map json">
+      <change afterPath="$PROJECT_DIR$/D3Database/models/maps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D3Database/models/world_graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AbuseReasonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AbuseReasonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementObjectivesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementObjectivesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementProgressRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementProgressRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementProgressStepsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementProgressStepsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementRewardsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementRewardsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AchievementsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AchievementsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ActionFiltersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ActionFiltersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ActivitySuggestionsCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ActivitySuggestionsCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ActivitySuggestionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ActivitySuggestionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentGiftRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentGiftRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentOrderRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentOrderRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentRankJntGiftRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentRankJntGiftRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentRankRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentRankRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentSidesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentSidesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentTitlesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlignmentTitlesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRankNameSuggestionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRankNameSuggestionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRanksRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRanksRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRightGroupsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRightGroupsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRightsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceRightsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceTagsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceTagsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AllianceTagsTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AllianceTagsTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlmanaxCalendarsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlmanaxCalendarsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlterationCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlterationCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AlterationsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AlterationsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AppearancesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AppearancesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/AreasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/AreasRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeagueRewardsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeagueRewardsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeagueSeasonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeagueSeasonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeaguesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ArenaLeaguesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BonusesCriterionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BonusesCriterionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BonusesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BonusesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachBossesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachBossesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachDungeonModificatorsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachDungeonModificatorsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachInfinityLevelsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachInfinityLevelsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachPrizesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachPrizesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachWorldMapCoordinatesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachWorldMapCoordinatesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreachWorldMapSectorsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreachWorldMapSectorsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreedRolesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreedRolesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/BreedsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/BreedsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CensoredContentsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CensoredContentsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CensoredWordsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CensoredWordsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ChallengesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ChallengesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CharacterXPMappingsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CharacterXPMappingsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CharacteristicCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CharacteristicCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CharacteristicsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CharacteristicsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ChatChannelsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ChatChannelsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ChoicesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ChoicesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CollectablesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CollectablesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CollectionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CollectionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CompanionCharacteristicsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CompanionCharacteristicsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CompanionSpellsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CompanionSpellsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CompanionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CompanionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CreatureBonesOverridesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CreatureBonesOverridesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CreatureBonesTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CreatureBonesTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/CustomModeBreedSpellsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/CustomModeBreedSpellsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/DocumentsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/DocumentsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/DungeonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/DungeonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EffectsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EffectsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EmblemBackgroundsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EmblemBackgroundsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EmblemSymbolCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EmblemSymbolCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EmblemSymbolsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EmblemSymbolsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EmoticonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EmoticonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EvolutiveEffectsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EvolutiveEffectsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/EvolutiveItemTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/EvolutiveItemTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ExpeditionSeasonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ExpeditionSeasonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ExternalNotificationsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ExternalNotificationsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/FeatureDescriptionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/FeatureDescriptionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/FightScenariosRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/FightScenariosRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/FinishMovesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/FinishMovesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ForgettableSpellsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ForgettableSpellsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildChestTabsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildChestTabsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildRankNameSuggestionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildRankNameSuggestionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildRanksRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildRanksRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildRightGroupsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildRightGroupsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildRightsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildRightsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildTagsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildTagsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/GuildTagsTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/GuildTagsTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HavenbagFurnituresRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HavenbagFurnituresRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HavenbagThemesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HavenbagThemesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HeadsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HeadsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HintCategoryRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HintCategoryRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HintsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HintsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/HousesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/HousesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/IncarnationLevelsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/IncarnationLevelsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/IncarnationRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/IncarnationRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/InfoMessagesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/InfoMessagesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/InteractivesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/InteractivesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemSetsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemSetsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemSuperTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemSuperTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/JobsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/JobsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/KothRolesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/KothRolesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/LegendaryPowersCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/LegendaryPowersCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/LegendaryTreasureHuntsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/LegendaryTreasureHuntsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/LivingObjectSkinJntMoodRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/LivingObjectSkinJntMoodRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/LuaFormulasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/LuaFormulasRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapCoordinatesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapCoordinatesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapReferencesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapReferencesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapScrollActionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapScrollActionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ModstersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ModstersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonsterMiniBossRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonsterMiniBossRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonsterRacesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonsterRacesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonsterSuperRacesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonsterSuperRacesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonstersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonstersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonthsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonthsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MountBehaviorsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MountBehaviorsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MountBonesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MountBonesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MountFamilyRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MountFamilyRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MountsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MountsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/NamingRulesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/NamingRulesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/NotificationsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/NotificationsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/NpcActionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/NpcActionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/NpcMessagesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/NpcMessagesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/NpcsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/NpcsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/OptionalFeaturesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/OptionalFeaturesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/OrnamentsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/OrnamentsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PackRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PackRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PlaylistsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PlaylistsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PointOfInterestCategoryRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PointOfInterestCategoryRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PointOfInterestRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PointOfInterestRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PopupInformationsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PopupInformationsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/PresetIconsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/PresetIconsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestCategoryRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestCategoryRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectiveTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectiveTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectivesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectivesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestStepRewardsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestStepRewardsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestStepsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestStepsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/RandomDropGroupsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/RandomDropGroupsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/RecipesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/RecipesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/RideFoodRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/RideFoodRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServerCommunitiesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServerCommunitiesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServerGameTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServerGameTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServerLangsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServerLangsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServerPopulationsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServerPopulationsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServerSeasonsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServerSeasonsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ServersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ServersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SignsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SignsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SkillNamesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SkillNamesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SkillsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SkillsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SkinMappingsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SkinMappingsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SkinSlotsRulesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SkinSlotsRulesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SmileyCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SmileyCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SmileyPacksRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SmileyPacksRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SmileysRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SmileysRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SoundBonesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SoundBonesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SoundUiHookRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SoundUiHookRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SoundUiRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SoundUiRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpeakingItemsTextRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpeakingItemsTextRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpeakingItemsTriggersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpeakingItemsTriggersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellBombsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellBombsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellConversionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellConversionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellLevelsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellLevelsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellPairsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellPairsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellScriptsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellScriptsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellStatesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellStatesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellTypesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellVariantsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellVariantsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/StealthBonesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/StealthBonesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SubhintsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SubhintsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SuperAreasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SuperAreasRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TaxCollectorFirstnamesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TaxCollectorFirstnamesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TaxCollectorNamesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TaxCollectorNamesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TextIconReferencesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TextIconReferencesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TipsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TipsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TitleCategoriesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TitleCategoriesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/TitlesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/TitlesRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/VeteranRewardsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/VeteranRewardsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/WaypointsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/WaypointsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/WorldMapsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/WorldMapsRoot.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_0.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_0.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_100139008.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_100139008.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_100139009.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_100139009.json" afterDir="false" />
@@ -14323,8 +14502,194 @@
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_99756549.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_99756549.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_99756801.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_99756801.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_99756803.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_99756803.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/standalone/worldgraph.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/standalone/worldgraph.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/game_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/game_mappings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AbuseReasonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementObjectivesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementProgressRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementProgressStepsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementRewardsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AchievementsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ActionFiltersRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ActivitySuggestionsCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ActivitySuggestionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentGiftRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentOrderRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentRankJntGiftRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentRankRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentSidesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlignmentTitlesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceRankNameSuggestionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceRanksRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceRightGroupsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceRightsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceTagsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AllianceTagsTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlmanaxCalendarsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlterationCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AlterationsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AppearancesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/AreasRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ArenaLeagueRewardsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ArenaLeagueSeasonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ArenaLeaguesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BonusesCriterionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BonusesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachBossesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachDungeonModificatorsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachInfinityLevelsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachPrizesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachWorldMapCoordinatesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreachWorldMapSectorsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreedRolesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/BreedsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CensoredContentsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CensoredWordsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ChallengesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CharacterXPMappingsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CharacteristicCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CharacteristicsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ChatChannelsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ChoicesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CollectablesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CollectionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CompanionCharacteristicsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CompanionSpellsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CompanionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CreatureBonesOverridesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CreatureBonesTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/CustomModeBreedSpellsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/DocumentsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/DungeonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EffectsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EmblemBackgroundsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EmblemSymbolCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EmblemSymbolsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EmoticonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EvolutiveEffectsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/EvolutiveItemTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ExpeditionSeasonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ExternalNotificationsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/FeatureDescriptionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/FightScenariosRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/FinishMovesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ForgettableSpellsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildChestTabsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildRankNameSuggestionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildRanksRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildRightGroupsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildRightsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildTagsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/GuildTagsTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HavenbagFurnituresRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HavenbagThemesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HeadsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HintCategoryRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HintsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/HousesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/IncarnationLevelsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/IncarnationRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/InfoMessagesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/InteractivesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ItemSetsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ItemSuperTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ItemTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ItemsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/JobsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/KothRolesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/LegendaryPowersCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/LegendaryTreasureHuntsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/LivingObjectSkinJntMoodRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/LuaFormulasRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MapCoordinatesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MapPositionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MapReferencesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MapScrollActionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ModstersRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MonsterMiniBossRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MonsterRacesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MonsterSuperRacesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MonstersRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MonthsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MountBehaviorsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MountBonesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MountFamilyRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/MountsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/NamingRulesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/NotificationsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/NpcActionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/NpcMessagesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/NpcsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/OptionalFeaturesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/OrnamentsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PackRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PlaylistsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PointOfInterestCategoryRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PointOfInterestRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PopupInformationsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/PresetIconsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestCategoryRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestObjectiveTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestObjectivesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestStepRewardsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestStepsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/QuestsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/RandomDropGroupsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/RecipesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/RideFoodRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServerCommunitiesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServerGameTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServerLangsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServerPopulationsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServerSeasonsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/ServersRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SignsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SkillNamesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SkillsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SkinMappingsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SkinSlotsRulesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SmileyCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SmileyPacksRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SmileysRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SoundBonesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SoundUiHookRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SoundUiRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpeakingItemsTextRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpeakingItemsTriggersRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellBombsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellConversionsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellLevelsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellPairsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellScriptsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellStatesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellTypesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellVariantsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SpellsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/StealthBonesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SubAreasRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SubhintsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/SuperAreasRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TaxCollectorFirstnamesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TaxCollectorNamesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TextIconReferencesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TipsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TitleCategoriesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/TitlesRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/VeteranRewardsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/WaypointsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/WorldMapsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_datas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/models/datas/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_maps/MapsRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_maps/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/apperance_fill.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_standalone/WorldGraphRoot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/gen/gen_standalone/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/generate_python_from_datas_and_clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/generate_python_from_datas_and_clean.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generator/template/msgspec.jinja2" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/template/msgspec.jinja2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/on_init.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/on_init.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14371,28 +14736,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__main__.executor": "Run",
-    "Python.generate_mapping_obfuscate_protos (1).executor": "Run",
-    "Python.generate_mapping_obfuscate_protos.executor": "Run",
-    "Python.generate_python_from_datas.executor": "Run",
-    "Python.generate_python_from_datas_and_clean (1).executor": "Run",
-    "Python.generate_python_from_proto.executor": "Run",
-    "Python.maj.executor": "Run",
-    "Python.on_init.executor": "Run",
-    "Python.on_maj.executor": "Run",
-    "Python.p_comparator.executor": "Run",
-    "Python.temp.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/Bot-DofusUnity",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas_and_clean (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_comparator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.temp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/Bot-DofusUnity&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator" />
@@ -14400,14 +14765,36 @@
       <recent name="C:\Users\valen\Documents\Workspace\DB-DofusUnity\outputs\protos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\DB-DofusUnity\D3Database\models" />
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\proto_utils\comparator" />
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator\models" />
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\p_comparator" />
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\comparator" />
-      <recent name="D:\Workspace\DB-DofusUnity\db_dofus_unity\protos\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.on_init">
+  <component name="RunManager" selected="Python.generate_python_from_datas_and_clean (1)">
+    <configuration name="generate_mapping_obfuscate_protos" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DB-DofusUnity" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/generator" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/generator/generate_mapping_obfuscate_protos.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="generate_python_from_datas_and_clean (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -14444,28 +14831,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="D:\Workspace\DB-DofusUnity\src\generator\generate_python_from_datas_and_clean.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generate_python_from_proto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DB-DofusUnity" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/generator" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/generator/generate_python_from_proto.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -14520,11 +14885,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.on_init" />
         <item itemvalue="Python.generate_python_from_datas_and_clean (1)" />
+        <item itemvalue="Python.on_init" />
+        <item itemvalue="Python.generate_mapping_obfuscate_protos" />
         <item itemvalue="Python.generate_python_from_datas_and_clean" />
         <item itemvalue="Python.utils" />
-        <item itemvalue="Python.generate_python_from_proto" />
       </list>
     </recent_temporary>
   </component>
@@ -14860,7 +15225,6 @@
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="update dependencies" />
     <MESSAGE value="fix poetry project name" />
     <MESSAGE value="fix poetry package" />
@@ -14885,7 +15249,8 @@
     <MESSAGE value="add obf proto" />
     <MESSAGE value="fix proto obf" />
     <MESSAGE value="add elem json" />
-    <option name="LAST_COMMIT_MESSAGE" value="add elem json" />
+    <MESSAGE value="add transform on map json" />
+    <option name="LAST_COMMIT_MESSAGE" value="add transform on map json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

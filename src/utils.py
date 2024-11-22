@@ -18,6 +18,6 @@ def instantiate_class_from_path(class_name: str, file_path: str) -> type[object]
 if __name__ == "__main__":
     _type = instantiate_class_from_path(
         "Model",
-        "D:\\Workspace\\DB-DofusUnity\\db_dofus_unity\\gen\\gen_datas\\AbuseReasonsRoot.py",
+        "D:\\Workspace\\DB-DofusUnity\\db_dofus_unity\\models\\datas\\AbuseReasonsRoot.py",
     )
     print(_type)
