@@ -19,6 +19,7 @@ class PComparator:
 
     def get_mapping(self) -> dict[str, str]:
         mapping: dict[str, str] = {}
+        uncompleted_mapping: dict[str, tuple[str, float]] = {}
 
         # here we sort proto file by most reliable msg because order INSIDE old file info is kept
         old_sorted_p_file_infos: list[
@@ -37,6 +38,7 @@ class PComparator:
             ) = old_sorted_p_file_infos.pop(0)
 
             curr_mapping_old_file: dict[str, str] = {}
+            curr_uncomplete_mapping: dict[str, tuple[str, float]] = {}
             curr_treated_new_msg_name: set[str] = self.treated_new_msg_name.copy()
 
             # get most reliable msg mapping for this old proto file info
@@ -113,7 +115,10 @@ class PComparator:
                     break
 
                 if new_msg_mapping[2] != 1:
-                    print(f"{old_p_msg.name} : {new_msg_mapping}")
+                    curr_uncomplete_mapping[old_p_msg.name] = (
+                        old_p_msg.name,
+                        new_msg_mapping[2],
+                    )
 
                 curr_treated_new_msg_name.add(new_msg_mapping[0])
                 curr_mapping_old_file[new_msg_mapping[0]] = (
@@ -122,12 +127,15 @@ class PComparator:
             else:
                 self.treated_new_msg_name = curr_treated_new_msg_name
                 mapping |= curr_mapping_old_file
+                uncompleted_mapping |= curr_uncomplete_mapping
 
         for new_p_file in self.new_p_folder.files_by_filename.values():
             for new_msg in new_p_file.messages:
                 if new_msg.name in self.treated_new_msg_name:
                     continue
                 print(f"unknown new msg : {new_msg.name}")
+
+        print(f"uncompleted : {uncompleted_mapping}")
 
         return mapping
 
@@ -146,7 +154,7 @@ class PComparator:
             for index, p_msg in enumerate(p_file.messages):
                 reliability_msg = (
                     not self.does_duplicate_msg_exist(p_msg, p_messages),
-                    p_folder.get_reliability_message(p_file, p_msg, []),
+                    p_folder.get_reliability_message(p_file, p_msg, set()),
                 )
                 messages_infos.append((index, p_msg, reliability_msg))
             messages_infos.sort(key=lambda elem: elem[2], reverse=True)
@@ -209,16 +217,17 @@ class PComparator:
                     continue
                 old_context_msg = ContextMessage(
                     p_folder=self.old_p_folder,
-                    p_msg_stack=[],
+                    p_stack_p_msg_id=set(),
                     p_msg=old_p_msg,
                     p_file=old_p_file,
                 )
                 new_context_msg = ContextMessage(
                     p_folder=self.new_p_folder,
-                    p_msg_stack=[],
+                    p_stack_p_msg_id=set(),
                     p_msg=new_p_msg,
                     p_file=new_p_file,
                 )
+
                 similarity = PMessageComparator.compare_message(
                     old_context_msg, new_context_msg
                 )

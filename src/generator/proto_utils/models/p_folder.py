@@ -28,23 +28,23 @@ class PFolder:
         key=lambda self, p_file, p_msg, stack: (self, p_file, p_msg),
     )
     def get_reliability_message(
-        self, p_file: PFile, p_message: PMessage, stack_msg: list[str]
+        self, p_file: PFile, p_message: PMessage, p_stack_p_msg_id: set[int]
     ) -> float:
-        stack_msg.append(p_message.name)
+        p_stack_p_msg_id.add(id(p_message))
         value: float = 1
         for elem in p_message.elements:
             if type(elem) is PField:
                 value += self.get_reliability_p_field(
-                    p_file, p_message, elem, stack_msg
+                    p_file, p_message, elem, p_stack_p_msg_id
                 )
             elif type(elem) is POneOf:
                 for one_of_elem in elem.elements:
                     value += self.get_reliability_p_field(
-                        p_file, p_message, one_of_elem, stack_msg
+                        p_file, p_message, one_of_elem, p_stack_p_msg_id
                     )
             elif type(elem) is PMapField:
                 value += self.get_reliability_map_field(
-                    p_file, p_message, elem, stack_msg
+                    p_file, p_message, elem, p_stack_p_msg_id
                 )
 
         return value
@@ -54,7 +54,11 @@ class PFolder:
         key=lambda self, p_file, p_msg, p_field, stack: (self, p_file, p_msg, p_field),
     )
     def get_reliability_p_field(
-        self, p_file: PFile, p_message: PMessage, p_field: PField, stack_msg: list[str]
+        self,
+        p_file: PFile,
+        p_message: PMessage,
+        p_field: PField,
+        p_stack_p_msg_id: set[int],
     ) -> float:
         if p_field.type_name in PROTO_BASE_FIELDS:
             return 1
@@ -67,9 +71,11 @@ class PFolder:
 
         sub_p_file, sub_p_struct = sub_msg_info
         if type(sub_p_struct) is PMessage:
-            if stack_msg and sub_p_struct.name in stack_msg:
+            if id(sub_p_struct) in p_stack_p_msg_id:
                 return 1
-            return self.get_reliability_message(sub_p_file, sub_p_struct, stack_msg)
+            return self.get_reliability_message(
+                sub_p_file, sub_p_struct, p_stack_p_msg_id
+            )
         elif type(sub_p_struct) is PEnum:
             return sub_p_struct.reliability
 
@@ -80,12 +86,12 @@ class PFolder:
         p_file: PFile,
         p_message: PMessage,
         p_map_field: PMapField,
-        stack_msg: list[str],
+        p_stack_p_msg_id: set[int],
     ) -> float:
         reliability: float = 1
 
         reliability += self.get_reliability_p_field(
-            p_file, p_message, p_map_field.value_p_field, stack_msg
+            p_file, p_message, p_map_field.value_p_field, p_stack_p_msg_id
         )
 
         return reliability

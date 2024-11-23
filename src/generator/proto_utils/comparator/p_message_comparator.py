@@ -21,7 +21,7 @@ class ContextMessage:
     p_folder: PFolder
     p_file: PFile
     p_msg: PMessage
-    p_msg_stack: list[str]
+    p_stack_p_msg_id: set[int]
 
 
 class PMessageComparator:
@@ -30,8 +30,8 @@ class PMessageComparator:
         old_context_msg: ContextMessage, new_context_msg: ContextMessage
     ) -> float:
 
-        old_context_msg.p_msg_stack.append(old_context_msg.p_msg.name)
-        new_context_msg.p_msg_stack.append(new_context_msg.p_msg.name)
+        old_context_msg.p_stack_p_msg_id.add(id(old_context_msg.p_msg))
+        new_context_msg.p_stack_p_msg_id.add(id(new_context_msg.p_msg))
 
         if len(old_context_msg.p_msg.elements) == 0:
             return 1
@@ -44,19 +44,25 @@ class PMessageComparator:
 
             if type(old_msg_elem) is PField:
                 complexity_msg_elem = old_context_msg.p_folder.get_reliability_p_field(
-                    old_context_msg.p_file, old_context_msg.p_msg, old_msg_elem, []
+                    old_context_msg.p_file, old_context_msg.p_msg, old_msg_elem, set()
                 )
             elif type(old_msg_elem) is POneOf:
                 complexity_msg_elem = sum(
                     old_context_msg.p_folder.get_reliability_p_field(
-                        old_context_msg.p_file, old_context_msg.p_msg, one_of_elem, []
+                        old_context_msg.p_file,
+                        old_context_msg.p_msg,
+                        one_of_elem,
+                        set(),
                     )
                     for one_of_elem in old_msg_elem.elements
                 )
             elif type(old_msg_elem) is PMapField:
                 complexity_msg_elem = (
                     old_context_msg.p_folder.get_reliability_map_field(
-                        old_context_msg.p_file, old_context_msg.p_msg, old_msg_elem, []
+                        old_context_msg.p_file,
+                        old_context_msg.p_msg,
+                        old_msg_elem,
+                        set(),
                     )
                 )
             else:
@@ -106,7 +112,7 @@ class PMessageComparator:
             old_p_field = old_p_one_of.elements[index]
 
             complexity_msg_elem = old_context_msg.p_folder.get_reliability_p_field(
-                old_context_msg.p_file, old_context_msg.p_msg, old_p_field, []
+                old_context_msg.p_file, old_context_msg.p_msg, old_p_field, set()
             )
 
             total_complexity += complexity_msg_elem
@@ -143,7 +149,7 @@ class PMessageComparator:
             old_context.p_file,
             old_context.p_msg,
             old_p_map_field,
-            old_context.p_msg_stack,
+            old_context.p_stack_p_msg_id,
         )
         coeff_check_failed += (
             1
@@ -199,38 +205,36 @@ class PMessageComparator:
         related_old_file, related_old_struct = related_old_struct_with_file
         related_new_file, related_new_struct = related_new_struct_with_file
 
-        if (
-            type(related_old_struct) is PMessage
-            and type(related_new_struct) is PMessage
+        if isinstance(related_old_struct, PMessage) and isinstance(
+            related_new_struct, PMessage
         ):
-            if related_old_struct.name in old_context.p_msg_stack:
-                if related_new_struct.name not in new_context.p_msg_stack:
+            if id(related_old_struct) in old_context.p_stack_p_msg_id:
+                if id(related_new_struct) not in new_context.p_stack_p_msg_id:
                     return 0
                 # found msg in stack, we can assume they are equal to avoid recursion error
                 return 1
 
             reliability_related_old_msg = old_context.p_folder.get_reliability_message(
-                related_old_file, related_old_struct, []
+                related_old_file, related_old_struct, set()
             )
             related_old_context_msg = ContextMessage(
                 p_folder=old_context.p_folder,
                 p_file=related_old_file,
                 p_msg=related_old_struct,
-                p_msg_stack=old_context.p_msg_stack,
+                p_stack_p_msg_id=old_context.p_stack_p_msg_id,
             )
             related_new_context_msg = ContextMessage(
                 p_folder=new_context.p_folder,
                 p_file=related_new_file,
                 p_msg=related_new_struct,
-                p_msg_stack=new_context.p_msg_stack,
+                p_stack_p_msg_id=new_context.p_stack_p_msg_id,
             )
             return (
                 (
                     PMessageComparator.compare_message(
                         related_old_context_msg, related_new_context_msg
                     )
-                    * reliability_related_old_msg
-                    + similarity_score
+                    * (reliability_related_old_msg + similarity_score)
                 )
             ) / (reliability_related_old_msg + 0.5)
         elif type(related_old_struct) is PEnum and type(related_new_struct) is PEnum:
