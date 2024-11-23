@@ -47,7 +47,7 @@ namespace UABEAvalonia
             return string.Empty;
         }
 
-        private static string GetExportDirectory(string[] args)
+        private static string? GetOutputDirectory(string[] args)
         {
             int outIndex = Array.IndexOf(args, "-out");
             if (outIndex != -1 && outIndex + 1 < args.Length)
@@ -56,7 +56,7 @@ namespace UABEAvalonia
             }
             else
             {
-                throw new ArgumentException("Le chemin exportDirectory n'a pas été spécifié après l'argument -out.");
+                return null;
             }
         }
 
@@ -125,7 +125,7 @@ namespace UABEAvalonia
             return null;
         }
 
-        private static void ExportBundleFile(string[] args, string file, string exportDirectory)
+        private static void ExportBundleFile(string[] args, string file, string? exportDirectory)
         {
             HashSet<string> flags = GetFlags(args);
 
@@ -135,7 +135,7 @@ namespace UABEAvalonia
 
             if (!File.Exists(file))
             {
-                Console.WriteLine($"File {file} does not exist!");
+                Console.Error.WriteLine($"File {file} does not exist!");
                 return;
             }
 
@@ -145,7 +145,6 @@ namespace UABEAvalonia
                 return;
             }
 
-            Console.WriteLine($"Decompressing {file}...");
             AssetBundleFile bun = DecompressBundle(file, decompFile);
 
             var am = new AssetsManager();
@@ -157,36 +156,37 @@ namespace UABEAvalonia
             }
 
             int entryCount = bun.BlockAndDirInfo.DirectoryInfos.Length;
-
-            var outDir = exportDirectory;
+            
+            var inTargetDir = Path.GetDirectoryName(file);
 
             List<string> uselessCABFiles = new();
 
-            Directory.CreateDirectory(outDir);
+            if (exportDirectory != null)
+            {
+                Directory.CreateDirectory(exportDirectory);
+            }
 
             for (int i = 0; i < entryCount; i++)
             {
                 string name = bun.BlockAndDirInfo.DirectoryInfos[i].Name;
 
-                string outName;
+                string cabFilePath;
                 if (flags.Contains("-keepnames"))
-                    outName = Path.Combine(exportDirectory, name);
+                    cabFilePath = Path.Combine(inTargetDir, name);
                 else
-                    outName = Path.Combine(exportDirectory, $"{Path.GetFileName(file)}_{name}");
+                    cabFilePath = Path.Combine(inTargetDir, $"{Path.GetFileName(file)}_{name}");
 
                 var ass = new AssetWorkspace(am, true);
 
                 byte[]? data = BundleHelper.LoadAssetDataFromBundle(bun, i);
 
-                Console.WriteLine($"Exporting {outName}...");
-
-                uselessCABFiles.Add(outName);
-                File.WriteAllBytes(outName, data);
+                uselessCABFiles.Add(cabFilePath);
+                File.WriteAllBytes(cabFilePath, data);
 
                 AssetsFileInstance fileInst;
                 try
                 {
-                    fileInst = am.LoadAssetsFile(outName, true);
+                    fileInst = am.LoadAssetsFile(cabFilePath, true);
                 }
                 catch (Exception ex)
                 {
@@ -216,27 +216,35 @@ namespace UABEAvalonia
 
                         if (baseField == null) continue;
 
-                        FileStream fs;
-                        assetName = assetName.Replace("/", "_");
-                        string filePath = Path.Combine(outDir, assetName + ".json");
-                        using (fs = File.Open(filePath, FileMode.Create))
-                        using (StreamWriter sw = new(fs))
+                        JToken jBaseField = CommandLineHandler.RecurseJsonDump(baseField, false, true);
+
+                        if (exportDirectory != null)
                         {
-                            JToken jBaseField = CommandLineHandler.RecurseJsonDump(baseField, false, true);
-                            sw.Write(jBaseField.ToString());
-                            //AssetImportExport dumper = new();
-                            //dumper.DumpJsonAsset(sw, baseField);
+                            FileStream fs;
+                            assetName = assetName.Replace("/", "_");
+                            string filePath = Path.Combine(exportDirectory, assetName + ".json");
+                            using (fs = File.Open(filePath, FileMode.Create))
+                            using (StreamWriter sw = new(fs))
+                            {
+                                sw.Write(jBaseField.ToString());
+                                //AssetImportExport dumper = new();
+                                //dumper.DumpJsonAsset(sw, baseField);
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(jBaseField.ToString());
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine(ex);
+                    Console.Error.Write(ex);
                 }
                 finally
                 {
                     ass = null;
-                    am.UnloadAssetsFile(outName);
+                    am.UnloadAssetsFile(cabFilePath);
                 }
             }
 
@@ -258,26 +266,21 @@ namespace UABEAvalonia
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to delete CAB file {cabFile}: {ex.Message}");
+                    Console.Error.WriteLine($"Failed to delete CAB file {cabFile}: {ex.Message}");
                 }
 
             }
-
-            Console.WriteLine("Done.");
         }
 
         private static void BatchExportBundle(string[] args)
         {
             string argPath = GetMainFileName(args);
-            HashSet<string> flags = GetFlags(args);
             FileAttributes attr = File.GetAttributes(argPath);
-            string exportDirectory;
+            string? exportDirectory = GetOutputDirectory(args);
 
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             { 
                 //export all file in directory
-                exportDirectory = GetExportDirectory(args);
-
                 foreach (string file in Directory.EnumerateFiles(argPath))
                 {
                     ExportBundleFile(args, file, exportDirectory);
@@ -286,7 +289,6 @@ namespace UABEAvalonia
             else
             {
                 // export file
-                exportDirectory = GetExportDirectory(args);
                 //exportDirectory = Path.GetDirectoryName(argPath);
                 ExportBundleFile(args, argPath, exportDirectory);
             }
@@ -301,7 +303,7 @@ namespace UABEAvalonia
 
             if (isArray)
             {
-                JArray jArray = new JArray();
+                JArray jArray = new();
 
                 if (template.ValueType != AssetValueType.ByteArray)
                 {
@@ -414,11 +416,11 @@ namespace UABEAvalonia
 
                 if (registry.version == 1 || registry.version == 2)
                 {
-                    JArray jArrayRefs = new JArray();
+                    JArray jArrayRefs = new();
 
                     foreach (AssetTypeReferencedObject refObj in registry.references)
                     {
-                        JObject jObjData = new JObject();
+                        JObject jObjData = new();
 
                         foreach (AssetTypeValueField child in refObj.data)
                         {
