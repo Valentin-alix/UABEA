@@ -1,3 +1,9 @@
 [submodule "D3Database"]
 	path = D3Database
 	url = https://github.com/Valentin-alix/D3Database
+[submodule "UABEA"]
+	path = UABEA
+	url = https://github.com/Valentin-alix/UABEA
+[submodule "protodec"]
+	path = protodec
+	url = https://github.com/Xpl0itR/protodec

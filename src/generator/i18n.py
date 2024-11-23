@@ -1,6 +1,6 @@
-import gzip
 import json
 import struct
+import zlib
 
 from D3Database.consts import D3_I18N, I18N_PATH
 
@@ -76,8 +76,13 @@ class I18N:
             text = reader.read_text_at(cursor)
             name_by_id[_id] = text
 
-        with gzip.open(D3_I18N, "w") as file:
-            file.write(json.dumps(name_by_id).encode("utf-8"))
+        with open(D3_I18N, "wb") as file:
+            file.write(
+                zlib.compress(
+                    json.dumps(name_by_id).encode("utf-8"),
+                    level=zlib.Z_BEST_COMPRESSION,
+                )
+            )
 
 
 if __name__ == "__main__":

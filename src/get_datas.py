@@ -127,4 +127,4 @@ if __name__ == "__main__":
     get_datas()
     get_world_graph_datas()
     I18N.get_datas()
-    # get_map_datas()
+    get_map_datas()
