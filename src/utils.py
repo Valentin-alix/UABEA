@@ -1,5 +1,10 @@
 import importlib.util
+import re
 import sys
+
+
+def to_snake_case(value: str):
+    return re.sub(r"(?<!^)(?=[A-Z])", "_", value).lower()
 
 
 def instantiate_class_from_path(class_name: str, file_path: str) -> type[object]:

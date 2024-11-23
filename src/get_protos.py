@@ -3,10 +3,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-from src.generator.generate_mapping_obfuscate_protos import generate_mapping_proto
-from src.generator.generate_python_from_proto import gen_all_python_from_protoc
-
 sys.path.append(str(Path(__file__).parent.parent))
+
+from src.generator.gen_mapping_proto import generate_mapping_proto
+from src.generator.gen_python_from_proto import gen_all_python_from_protoc
+
 
 from src.consts import (
     IL2_CPP_DUMPER_PATH_EXE,
@@ -50,7 +51,7 @@ def get_protos():
     os.system(f"{PROTODEC_PATH_EXE} {PROTO_GAME_ASSEMBLY_PATH} {OBFUSCATED_PROTO_GAME}")
 
 
-def on_maj():
+def gen_mapping_and_python_from_proto():
     get_assemblies()
     get_protos()
     generate_mapping_proto()
@@ -58,4 +59,4 @@ def on_maj():
 
 
 if __name__ == "__main__":
-    on_maj()
+    gen_mapping_and_python_from_proto()
