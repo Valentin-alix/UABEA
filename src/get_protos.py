@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 from pathlib import Path
 
@@ -26,12 +25,7 @@ from D3Database.consts import (
 def get_assemblies():
     os.makedirs(ASSEMBLIES_PATH, exist_ok=True)
     command = f"{IL2_CPP_DUMPER_PATH_EXE} {GAME_ASSEMBLY_PATH} {GLOBAL_METADATA_PATH} {ASSEMBLIES_PATH}"
-    process = subprocess.Popen(
-        command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True
-    )
-    stdout, stderr = process.communicate()
-    print(stdout.decode())
-    print(stderr.decode())
+    os.system(command)
 
 
 def get_protos():

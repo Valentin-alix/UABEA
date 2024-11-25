@@ -4,9 +4,9 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/D3Database/bundles" />
-      <excludeFolder url="file://$MODULE_DIR$/IL2CppDumper" />
       <excludeFolder url="file://$MODULE_DIR$/UABEA" />
       <excludeFolder url="file://$MODULE_DIR$/protodec" />
+      <excludeFolder url="file://$MODULE_DIR$/Il2CppDumper" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

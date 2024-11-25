@@ -13,7 +13,22 @@ UABEA_PATH_EXE = os.path.join(
     "UABEAvalonia.exe",
 )
 IL2_CPP_DUMPER_PATH_EXE = os.path.join(
-    Path(__file__).parent.parent, "Il2CppDumper", "IL2CppDumper.exe"
+    Path(__file__).parent.parent,
+    "Il2CppDumper",
+    "Il2CppDumper",
+    "bin",
+    "Debug",
+    "net8.0",
+    "IL2CppDumper.exe",
+)
+PROTODEC_PATH_EXE = os.path.join(
+    Path(__file__).parent.parent,
+    "protodec",
+    "bin",
+    "protodec",
+    "Debug",
+    "net8.0",
+    "protodec.exe",
 )
 
 
@@ -29,13 +44,4 @@ PROTO_CONNECTION_ASSEMBLY_PATH = os.path.join(
 )
 PROTO_GAME_ASSEMBLY_PATH = os.path.join(
     ASSEMBLIES_PATH, "DummyDll", "Ankama.Dofus.Protocol.Game.dll"
-)
-PROTODEC_PATH_EXE = os.path.join(
-    Path(__file__).parent.parent,
-    "protodec",
-    "bin",
-    "protodec",
-    "Debug",
-    "net8.0",
-    "protodec.exe",
 )

@@ -7,3 +7,6 @@
 [submodule "protodec"]
 	path = protodec
 	url = https://github.com/Xpl0itR/protodec
+[submodule "Il2CppDumper"]
+	path = Il2CppDumper
+	url = https://github.com/Perfare/Il2CppDumper

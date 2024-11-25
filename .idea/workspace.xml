@@ -4,185 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add uabea &amp; protodec &amp; il2cppdumper inside repo">
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="clea mapping proto">
+      <change afterPath="$PROJECT_DIR$/Il2CppDumper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/connection_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/connection_mappings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/connection/login_message_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/connection/login_message_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/connection/login_message_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/connection/login_message_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/account_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/account_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/account_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/account_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/achievement_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/achievement_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/achievement_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/achievement_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/admin_console_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/admin_console_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/admin_console_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/admin_console_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_conquest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_conquest_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_conquest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_conquest_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_information_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_information_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_information_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_information_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_member_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_member_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_member_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_member_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_rank_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_rank_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_rank_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_rank_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_recruitment_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_recruitment_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alliance_recruitment_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alliance_recruitment_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alteration_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alteration_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/alteration_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/alteration_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/anomaly_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/anomaly_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/anomaly_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/anomaly_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/appearance_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/appearance_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/appearance_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/appearance_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/apperance_fill_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/apperance_fill_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/apperance_fill_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/apperance_fill_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/area_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/area_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/area_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/area_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/arena_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/arena_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/arena_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/arena_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/atlas_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/atlas_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/atlas_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/atlas_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/bak_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/bak_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/bak_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/bak_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/basic_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/basic_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/basic_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/basic_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/bid_activity_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/bid_activity_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/bid_activity_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/bid_activity_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/breach_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/breach_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/breach_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/breach_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/challenge_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/challenge_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/challenge_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/challenge_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/character_management_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/character_management_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/character_management_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/character_management_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/character_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/character_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/character_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/character_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/chat_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/chat_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/chat_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/chat_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/choice_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/choice_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/choice_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/choice_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/client_verification_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/client_verification_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/client_verification_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/client_verification_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/common_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/common_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/common_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/common_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/connection_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/connection_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/connection_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/connection_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/contact_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/contact_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/contact_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/contact_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/context_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/context_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/context_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/context_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/cosmetic_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/cosmetic_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/cosmetic_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/cosmetic_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/debt_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/debt_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/debt_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/debt_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/debug_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/debug_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/debug_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/debug_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/dialog_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/dialog_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/dialog_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/dialog_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/document_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/document_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/document_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/document_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/element_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/element_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/element_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/element_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/emote_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/emote_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/emote_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/emote_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/exchange_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/fight_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/fight_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/fight_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/fight_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/fight_preparation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/fight_preparation_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/fight_preparation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/fight_preparation_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/finish_move_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/finish_move_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/finish_move_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/finish_move_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/game_action_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/game_action_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/game_action_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/game_action_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/game_message_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/game_message_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/game_message_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/game_message_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/gamemap_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/gamemap_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/gamemap_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/gamemap_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_application_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_application_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_application_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_application_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_chest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_chest_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_chest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_chest_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_house_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_house_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_house_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_house_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_information_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_information_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_information_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_information_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_member_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_member_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_member_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_member_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_rank_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_rank_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_rank_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_rank_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_recruitment_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_recruitment_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/guild_recruitment_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/guild_recruitment_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/haapi_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/haapi_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/haapi_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/haapi_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/haven_bag_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/haven_bag_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/haven_bag_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/haven_bag_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/house_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/house_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/house_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/house_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/interactive_element_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/interactive_element_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/interactive_element_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/interactive_element_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/inventory_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/inventory_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/inventory_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/inventory_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/job_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/living_object_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/living_object_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/living_object_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/living_object_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/moderation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/moderation_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/moderation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/moderation_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/mount_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/mount_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/mount_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/mount_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/multi_account_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/multi_account_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/multi_account_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/multi_account_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/notification_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/notification_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/notification_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/notification_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/npc_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/npc_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/npc_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/npc_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/paddock_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/paddock_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/paddock_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/paddock_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/party_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/party_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/party_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/party_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/preset_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/preset_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/preset_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/preset_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/prism_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/prism_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/prism_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/prism_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/quest_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/quest_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/quest_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/quest_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/report_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/report_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/report_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/report_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/roleplay_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/roleplay_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/roleplay_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/roleplay_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/rule_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/rule_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/rule_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/rule_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/script_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/script_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/script_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/script_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/security_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/security_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/security_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/security_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/server_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/server_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/server_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/server_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/shop_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/shop_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/shop_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/shop_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/social_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/social_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/social_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/social_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/spell_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/spell_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/spell_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/spell_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/stats_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/stats_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/stats_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/stats_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/suggestion_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/suggestion_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/suggestion_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/suggestion_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/symbiont_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/symbiont_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/symbiont_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/symbiont_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/tag_storage_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/tag_storage_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/tag_storage_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/tag_storage_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/taxcollector_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/taxcollector_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/taxcollector_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/taxcollector_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/teleportation_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/teleportation_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/teleportation_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/teleportation_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/tinsel_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/tinsel_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/tinsel_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/tinsel_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/treasure_hunt_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/treasure_hunt_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/treasure_hunt_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/treasure_hunt_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/ui_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/ui_pb2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/protos/game/ui_pb2.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/protos/game/ui_pb2.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_message_comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/comparator/p_message_comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generator/proto_utils/models/p_folder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generator/proto_utils/models/p_folder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/Il2CppDumper-x86.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/Il2CppDumper.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra_wasm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra_with_struct.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_py3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_with_struct.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_with_struct_py3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IL2CppDumper/il2cpp_header_to_ghidra.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,32 +67,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__main__.executor": "Run",
-    "Python.gen_mapping_proto.executor": "Run",
-    "Python.generate_mapping_obfuscate_protos (1).executor": "Run",
-    "Python.generate_mapping_obfuscate_protos.executor": "Run",
-    "Python.generate_python_from_datas.executor": "Run",
-    "Python.generate_python_from_datas_and_clean (1).executor": "Run",
-    "Python.generate_python_from_proto.executor": "Run",
-    "Python.get_datas (1).executor": "Run",
-    "Python.get_protos.executor": "Run",
-    "Python.i18n.executor": "Run",
-    "Python.maj.executor": "Run",
-    "Python.on_init.executor": "Run",
-    "Python.on_maj.executor": "Run",
-    "Python.p_comparator.executor": "Debug",
-    "Python.temp.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/DB-DofusUnity/IL2CppDumper",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gen_mapping_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas_and_clean (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_datas (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.i18n.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_comparator.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.temp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/DB-DofusUnity&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\DB-DofusUnity\IL2CppDumper" />
@@ -271,7 +109,7 @@
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\comparator" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gen_mapping_proto">
+  <component name="RunManager" selected="Python.get_protos">
     <configuration name="gen_mapping_proto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -382,10 +220,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gen_mapping_proto" />
         <item itemvalue="Python.get_protos" />
+        <item itemvalue="Python.gen_mapping_proto" />
         <item itemvalue="Python.get_datas (1)" />
         <item itemvalue="Python.i18n" />
         <item itemvalue="Python.get_datas" />
@@ -776,11 +620,18 @@
       <option name="project" value="LOCAL" />
       <updated>1732383910030</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="clea mapping proto">
+      <option name="closed" value="true" />
+      <created>1732386863205</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1732386863205</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove dist" />
     <MESSAGE value="move folders, better mapping display" />
     <MESSAGE value="more precise maps root" />
     <MESSAGE value="ugly temp but working fix proto are better ordered, better matching" />
@@ -805,7 +656,8 @@
     <MESSAGE value="optimize size output datas" />
     <MESSAGE value="temp" />
     <MESSAGE value="add uabea &amp; protodec &amp; il2cppdumper inside repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add uabea &amp; protodec &amp; il2cppdumper inside repo" />
+    <MESSAGE value="clea mapping proto" />
+    <option name="LAST_COMMIT_MESSAGE" value="clea mapping proto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
