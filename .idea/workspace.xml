@@ -4,23 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="clea mapping proto">
-      <change afterPath="$PROJECT_DIR$/Il2CppDumper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DB-DofusUnity.iml" afterDir="false" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add IL2CppDumper submodule">
+      <change afterPath="$PROJECT_DIR$/D3Database/models/datas/characteristic_category_root.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D3Database/models/datas/characteristic_root.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D3Database/models/datas/effects_root.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/Il2CppDumper-x86.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/Il2CppDumper.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/config.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra_wasm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ghidra_with_struct.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_py3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_with_struct.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/ida_with_struct_py3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IL2CppDumper/il2cpp_header_to_ghidra.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/WaypointsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/WaypointsRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/get_datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/get_datas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,32 +60,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gen_mapping_proto.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_python_from_datas.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_python_from_datas_and_clean (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
-    &quot;Python.get_datas (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.get_protos.executor&quot;: &quot;Run&quot;,
-    &quot;Python.i18n.executor&quot;: &quot;Run&quot;,
-    &quot;Python.maj.executor&quot;: &quot;Run&quot;,
-    &quot;Python.on_init.executor&quot;: &quot;Run&quot;,
-    &quot;Python.on_maj.executor&quot;: &quot;Run&quot;,
-    &quot;Python.p_comparator.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.temp.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/DB-DofusUnity&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.__main__.executor": "Run",
+    "Python.gen_mapping_proto.executor": "Run",
+    "Python.generate_mapping_obfuscate_protos (1).executor": "Run",
+    "Python.generate_mapping_obfuscate_protos.executor": "Run",
+    "Python.generate_python_from_datas.executor": "Run",
+    "Python.generate_python_from_datas_and_clean (1).executor": "Run",
+    "Python.generate_python_from_proto.executor": "Run",
+    "Python.get_datas (1).executor": "Run",
+    "Python.get_protos.executor": "Run",
+    "Python.i18n.executor": "Run",
+    "Python.maj.executor": "Run",
+    "Python.on_init.executor": "Run",
+    "Python.on_maj.executor": "Run",
+    "Python.p_comparator.executor": "Debug",
+    "Python.temp.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Workspace/DB-DofusUnity",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\DB-DofusUnity\IL2CppDumper" />
@@ -109,7 +102,7 @@
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\comparator" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.get_protos">
+  <component name="RunManager" selected="Python.get_datas (1)">
     <configuration name="gen_mapping_proto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -228,9 +221,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.get_datas (1)" />
         <item itemvalue="Python.get_protos" />
         <item itemvalue="Python.gen_mapping_proto" />
-        <item itemvalue="Python.get_datas (1)" />
         <item itemvalue="Python.i18n" />
         <item itemvalue="Python.get_datas" />
       </list>
@@ -628,11 +621,18 @@
       <option name="project" value="LOCAL" />
       <updated>1732386863205</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="add IL2CppDumper submodule">
+      <option name="closed" value="true" />
+      <created>1732548508479</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1732548508479</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="move folders, better mapping display" />
     <MESSAGE value="more precise maps root" />
     <MESSAGE value="ugly temp but working fix proto are better ordered, better matching" />
     <MESSAGE value="fix switch key value mapping" />
@@ -657,7 +657,8 @@
     <MESSAGE value="temp" />
     <MESSAGE value="add uabea &amp; protodec &amp; il2cppdumper inside repo" />
     <MESSAGE value="clea mapping proto" />
-    <option name="LAST_COMMIT_MESSAGE" value="clea mapping proto" />
+    <MESSAGE value="add IL2CppDumper submodule" />
+    <option name="LAST_COMMIT_MESSAGE" value="add IL2CppDumper submodule" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

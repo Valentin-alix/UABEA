@@ -6,6 +6,11 @@ from typing import Any
 from tqdm import tqdm
 
 from D3Database.models.datas.areas_root import AreasRoot
+from D3Database.models.datas.characteristic_category_root import (
+    CharacteristicCategoriesRoot,
+)
+from D3Database.models.datas.characteristic_root import CharacteristicsRoot
+from D3Database.models.datas.effects_root import EffectsRoot
 from D3Database.models.datas.items_root import ItemsRoot
 from D3Database.models.datas.jobs_root import JobsRoot
 from D3Database.models.datas.map_positions_root import MapPositionsRoot
@@ -104,6 +109,9 @@ def get_datas() -> None:
         "spellsroot": SpellsRoot,
         "spellvariantsroot": SpellVariantsRoot,
         "spelllevelsroot": SpellLevelsRoot,
+        "effectsroot": EffectsRoot,
+        "characteristicsroot": CharacteristicsRoot,
+        "characteristiccategoriesroot": CharacteristicCategoriesRoot,
     }
     for filename in tqdm(os.listdir(PATH_DATAS)):
         infos = next(
@@ -119,6 +127,8 @@ def get_datas() -> None:
         short_filename, related_model = infos
         command = f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(PATH_DATAS, filename)} -out {D3_DATA}"
         os.system(command)
+        if related_model is False:
+            continue
         filepath = f"{os.path.join(D3_DATA, short_filename)}.json"
         clean_data_to_output(related_model, filepath)
 
