@@ -38,8 +38,12 @@ class PComparator:
             ) = old_sorted_p_file_infos.pop(0)
 
             curr_mapping_old_file: dict[str, str] = {}
-            curr_uncomplete_mapping: dict[str, tuple[str, float]] = {}
+            curr_uncompleted_mapping: dict[str, tuple[str, float]] = {}
             curr_treated_new_msg_name: set[str] = self.treated_new_msg_name.copy()
+
+            print(old_p_file.filename)
+            print(len(mapping))
+            print(len(exclude_new_most_complex_name))
 
             # get most reliable msg mapping for this old proto file info
             most_reliable_matched: tuple[int, int, str] | None
@@ -115,7 +119,7 @@ class PComparator:
                     break
 
                 if new_msg_mapping[2] != 1:
-                    curr_uncomplete_mapping[old_p_msg.name] = (
+                    curr_uncompleted_mapping[old_p_msg.name] = (
                         old_p_msg.name,
                         new_msg_mapping[2],
                     )
@@ -127,7 +131,7 @@ class PComparator:
             else:
                 self.treated_new_msg_name = curr_treated_new_msg_name
                 mapping |= curr_mapping_old_file
-                uncompleted_mapping |= curr_uncomplete_mapping
+                uncompleted_mapping |= curr_uncompleted_mapping
 
         for new_p_file in self.new_p_folder.files_by_filename.values():
             for new_msg in new_p_file.messages:
