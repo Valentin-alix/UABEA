@@ -22,10 +22,9 @@ from D3Database.models.datas.spell_variants_root import SpellVariantsRoot
 from D3Database.models.datas.spells_root import SpellsRoot
 from D3Database.models.datas.sub_areas_root import SubAreasRoot
 from D3Database.models.datas.waypoints_root import WaypointsRoot
-from D3Database.models.maps import MapData
+from D3Database.models.maps import MapDataRoot
 from D3Database.models.world_graph import WorldGraphData
 from src.generator.data_cleaning import clean_data_to_output
-from src.generator.i18n import I18N
 
 sys.path.append(str(Path(__file__).parent.parent))
 
@@ -40,7 +39,9 @@ from D3Database.consts import (
 PATH_STANDALONE_BUNDLES = os.path.join(
     DOFUS_PATH, "Dofus_Data", "StreamingAssets", "aa", "StandaloneWindows64"
 )
-PATH_MAPS = os.path.join(DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map")
+PATH_MAPS = os.path.join(
+    DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map", "Data"
+)
 PATH_DATAS = os.path.join(
     DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Data"
 )
@@ -59,7 +60,7 @@ def get_world_graph_datas():
 
     print("cleaning worldgraph")
     for filename in os.listdir(D3_STANDALONE):
-        if filename == "worldgraph.json":
+        if filename == "world-graph.json":
             clean_data_to_output(WorldGraphData, os.path.join(D3_STANDALONE, filename))
         else:
             os.remove(os.path.join(D3_STANDALONE, filename))
@@ -90,7 +91,7 @@ def get_map_datas() -> None:
             last_modified = last_modified_by_filename.get(out_filename)
             if last_modified and last_modified == os.path.getmtime(out_filepath):
                 continue
-            clean_data_to_output(MapData, out_filepath)
+            clean_data_to_output(MapDataRoot, out_filepath)
             treated_filenames.add(out_filename)
 
 
@@ -134,7 +135,7 @@ def get_datas() -> None:
 
 
 if __name__ == "__main__":
-    get_datas()
-    get_world_graph_datas()
-    I18N.get_datas()
+    # get_datas()
+    # get_world_graph_datas()
+    # I18N.get_datas()
     get_map_datas()
