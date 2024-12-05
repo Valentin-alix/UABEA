@@ -34,7 +34,9 @@ class PMessageComparator:
         new_context_msg.p_stack_p_msg_id.add(id(new_context_msg.p_msg))
 
         if len(old_context_msg.p_msg.elements) == 0:
-            return 1
+            if len(new_context_msg.p_msg.elements) == 0:
+                return 1
+            return 0
 
         similarity: float = 0
         total_complexity: float = 0

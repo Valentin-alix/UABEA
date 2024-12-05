@@ -33,17 +33,13 @@ class PComparator:
             (
                 old_p_file,
                 old_p_messages_with_indexes,
-                is_done,
+                is_last_chance,
                 exclude_new_most_complex_name,
             ) = old_sorted_p_file_infos.pop(0)
 
             curr_mapping_old_file: dict[str, str] = {}
             curr_uncompleted_mapping: dict[str, tuple[str, float]] = {}
             curr_treated_new_msg_name: set[str] = self.treated_new_msg_name.copy()
-
-            print(old_p_file.filename)
-            print(len(mapping))
-            print(len(exclude_new_most_complex_name))
 
             # get most reliable msg mapping for this old proto file info
             most_reliable_matched: tuple[int, int, str] | None
@@ -67,7 +63,7 @@ class PComparator:
                     )
                     break
             else:
-                if is_done:
+                if is_last_chance:
                     raise ValueError(f"{old_p_file.filename} could not be resolved")
 
                 old_sorted_p_file_infos.append(
@@ -102,7 +98,7 @@ class PComparator:
                     new_index_start_search,
                 )
                 if new_msg_mapping is None:
-                    if is_done:
+                    if is_last_chance:
                         print(f"{old_p_msg.name} could not be resolved")
                         continue
 
@@ -195,13 +191,11 @@ class PComparator:
         # we just need new file index because 1 file = 1 enum or 1 message in new protos
         if new_index:
             new_file_indexes = sorted(
-                range(len(self.new_p_folder.files_by_filename.values())),
+                range(len(self.new_p_folder.p_file_array)),
                 key=lambda index: abs(index - new_index),
             )
         else:
-            new_file_indexes = list(
-                range(len(self.new_p_folder.files_by_filename.values()))
-            )
+            new_file_indexes = list(range(len(self.new_p_folder.p_file_array)))
 
         is_found: bool = False
         while not is_found:
@@ -209,12 +203,10 @@ class PComparator:
                 break
 
             new_file_index = new_file_indexes.pop(0)
-            if new_index is not None and abs(new_file_index - new_index) > 10:
+            if new_index is not None and abs(new_file_index - new_index) > 12:
                 return None
 
-            new_p_file = list(self.new_p_folder.files_by_filename.values())[
-                new_file_index
-            ]
+            new_p_file = self.new_p_folder.p_file_array[new_file_index]
 
             for new_p_msg in new_p_file.messages:
                 if new_p_msg.name in exclude_msg_name:

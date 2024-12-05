@@ -15,10 +15,13 @@ from src.generator.proto_utils.models.p_message import (
 )
 
 
-@dataclass(frozen=True)
+@dataclass
 class PFolder:
     root: str
     files_by_filename: dict[str, PFile]
+
+    def __post_init__(self):
+        self.p_file_array = list(self.files_by_filename.values())
 
     def __hash__(self):
         return self.root.__hash__()
