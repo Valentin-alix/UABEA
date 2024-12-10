@@ -25,6 +25,7 @@ from D3Database.models.datas.waypoints_root import WaypointsRoot
 from D3Database.models.maps import MapDataRoot
 from D3Database.models.world_graph import WorldGraphData
 from src.generator.data_cleaning import clean_data_to_output
+from src.generator.i18n import I18N
 
 sys.path.append(str(Path(__file__).parent.parent))
 
@@ -135,7 +136,7 @@ def get_datas() -> None:
 
 
 if __name__ == "__main__":
-    # get_datas()
-    # get_world_graph_datas()
-    # I18N.get_datas()
+    get_datas()
+    get_world_graph_datas()
+    I18N.get_datas()
     get_map_datas()
