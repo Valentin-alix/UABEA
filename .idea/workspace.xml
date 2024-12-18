@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="d3 update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
-    </list>
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="d3 update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +94,7 @@
       <recent name="D:\Workspace\DB-DofusUnity\src\generator\comparator" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.get_protos">
+  <component name="RunManager" selected="Python.get_datas (1)">
     <configuration name="gen_mapping_proto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DB-DofusUnity" />
       <option name="ENV_FILES" value="" />
@@ -216,8 +213,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.get_protos" />
         <item itemvalue="Python.get_datas (1)" />
+        <item itemvalue="Python.get_protos" />
         <item itemvalue="Python.gen_python_from_proto" />
         <item itemvalue="Python.gen_mapping_proto" />
         <item itemvalue="Python.p_enum_comparator" />
@@ -239,38 +236,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729193056425</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix poetry package">
-      <option name="closed" value="true" />
-      <created>1729431101686</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1729431101686</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fix poetry">
-      <option name="closed" value="true" />
-      <created>1729431898547</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1729431898547</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix poetry">
-      <option name="closed" value="true" />
-      <created>1729433064018</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1729433064018</updated>
-    </task>
-    <task id="LOCAL-00013" summary="remove dist">
-      <option name="closed" value="true" />
-      <created>1729433472870</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1729433472870</updated>
     </task>
     <task id="LOCAL-00014" summary="move folders, better mapping display">
       <option name="closed" value="true" />
@@ -632,7 +597,39 @@
       <option name="project" value="LOCAL" />
       <updated>1733857069291</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1734546829031</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1734546829031</updated>
+    </task>
+    <task id="LOCAL-00060" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1734546890355</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1734546890355</updated>
+    </task>
+    <task id="LOCAL-00061" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1734547144841</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1734547144841</updated>
+    </task>
+    <task id="LOCAL-00062" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1734547154712</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1734547154712</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

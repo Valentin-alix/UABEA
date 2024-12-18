@@ -11,11 +11,13 @@ from D3Database.models.datas.characteristic_category_root import (
 )
 from D3Database.models.datas.characteristic_root import CharacteristicsRoot
 from D3Database.models.datas.effects_root import EffectsRoot
+from D3Database.models.datas.item_type_root import ItemsTypeRoot
 from D3Database.models.datas.items_root import ItemsRoot
 from D3Database.models.datas.jobs_root import JobsRoot
 from D3Database.models.datas.map_positions_root import MapPositionsRoot
 from D3Database.models.datas.quest_objectives_root import QuestObjectivesRoot
 from D3Database.models.datas.quests_root import QuestsRoot
+from D3Database.models.datas.recipe_root import RecipeRoot
 from D3Database.models.datas.skills_root import SkillsRoot
 from D3Database.models.datas.spell_levels_root import SpellLevelsRoot
 from D3Database.models.datas.spell_variants_root import SpellVariantsRoot
@@ -114,6 +116,8 @@ def get_datas() -> None:
         "effectsroot": EffectsRoot,
         "characteristicsroot": CharacteristicsRoot,
         "characteristiccategoriesroot": CharacteristicCategoriesRoot,
+        "recipesroot": RecipeRoot,
+        "itemtypesroot": ItemsTypeRoot,
     }
     for filename in tqdm(os.listdir(PATH_DATAS)):
         infos = next(
