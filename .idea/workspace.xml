@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="fix proto d3 release">
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="d3 update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/i18n.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/i18n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/get_datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/get_datas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,34 +53,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.__main__.executor": "Run",
-    "Python.gen_mapping_proto.executor": "Run",
-    "Python.gen_python_from_proto.executor": "Run",
-    "Python.generate_mapping_obfuscate_protos (1).executor": "Run",
-    "Python.generate_mapping_obfuscate_protos.executor": "Run",
-    "Python.generate_python_from_datas.executor": "Run",
-    "Python.generate_python_from_datas_and_clean (1).executor": "Run",
-    "Python.generate_python_from_proto.executor": "Run",
-    "Python.get_datas (1).executor": "Run",
-    "Python.get_protos.executor": "Run",
-    "Python.i18n.executor": "Run",
-    "Python.maj.executor": "Run",
-    "Python.on_init.executor": "Run",
-    "Python.on_maj.executor": "Run",
-    "Python.p_comparator.executor": "Debug",
-    "Python.p_enum_comparator.executor": "Run",
-    "Python.temp.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Workspace/Bot-DofusUnity",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.__main__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gen_mapping_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gen_python_from_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_mapping_obfuscate_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_datas_and_clean (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_python_from_proto.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_datas (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_protos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.i18n.executor&quot;: &quot;Run&quot;,
+    &quot;Python.maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python.on_maj.executor&quot;: &quot;Run&quot;,
+    &quot;Python.p_comparator.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.p_enum_comparator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.temp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Workspace/DB-DofusUnity&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Workspace\DB-DofusUnity\IL2CppDumper" />
@@ -241,22 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729193056425</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix poetry project name">
-      <option name="closed" value="true" />
-      <created>1729428768937</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1729428768937</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix poetry project name">
-      <option name="closed" value="true" />
-      <created>1729430910110</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1729430910110</updated>
     </task>
     <task id="LOCAL-00010" summary="fix poetry package">
       <option name="closed" value="true" />
@@ -634,11 +616,26 @@
       <option name="project" value="LOCAL" />
       <updated>1733435958693</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1733856899623</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1733856899624</updated>
+    </task>
+    <task id="LOCAL-00058" summary="d3 update">
+      <option name="closed" value="true" />
+      <created>1733857069291</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1733857069291</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more fiable mapping" />
     <MESSAGE value="maj update" />
     <MESSAGE value="remove main" />
     <MESSAGE value="update proto version" />
@@ -663,7 +660,8 @@
     <MESSAGE value="update proto d3" />
     <MESSAGE value="d3 release update" />
     <MESSAGE value="fix proto d3 release" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix proto d3 release" />
+    <MESSAGE value="d3 update" />
+    <option name="LAST_COMMIT_MESSAGE" value="d3 update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
