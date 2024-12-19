@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="d3 update" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add recipes &amp; item type">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,14 +239,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729193056425</updated>
-    </task>
-    <task id="LOCAL-00014" summary="move folders, better mapping display">
-      <option name="closed" value="true" />
-      <created>1729502768577</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1729502768577</updated>
     </task>
     <task id="LOCAL-00015" summary="more precise maps root">
       <option name="closed" value="true" />
@@ -629,11 +624,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734547154712</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="add recipes &amp; item type">
+      <option name="closed" value="true" />
+      <created>1734553451623</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1734553451623</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="maj update" />
     <MESSAGE value="remove main" />
     <MESSAGE value="update proto version" />
     <MESSAGE value="temp add generator" />
@@ -658,7 +660,8 @@
     <MESSAGE value="d3 release update" />
     <MESSAGE value="fix proto d3 release" />
     <MESSAGE value="d3 update" />
-    <option name="LAST_COMMIT_MESSAGE" value="d3 update" />
+    <MESSAGE value="add recipes &amp; item type" />
+    <option name="LAST_COMMIT_MESSAGE" value="add recipes &amp; item type" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
