@@ -15,6 +15,7 @@ from D3Database.models.datas.item_type_root import ItemsTypeRoot
 from D3Database.models.datas.items_root import ItemsRoot
 from D3Database.models.datas.jobs_root import JobsRoot
 from D3Database.models.datas.map_positions_root import MapPositionsRoot
+from D3Database.models.datas.monsters_root import MonstersRoot
 from D3Database.models.datas.quest_objectives_root import QuestObjectivesRoot
 from D3Database.models.datas.quests_root import QuestsRoot
 from D3Database.models.datas.recipe_root import RecipeRoot
@@ -118,6 +119,7 @@ def get_datas() -> None:
         "characteristiccategoriesroot": CharacteristicCategoriesRoot,
         "recipesroot": RecipeRoot,
         "itemtypesroot": ItemsTypeRoot,
+        "monstersroot": MonstersRoot,
     }
     for filename in tqdm(os.listdir(PATH_DATAS)):
         infos = next(
