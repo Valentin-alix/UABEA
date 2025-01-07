@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add monster datas" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="add map move confirm response">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MonstersRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MonstersRoot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D3Database/bundles/i18n.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/i18n.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,22 +240,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729193056425</updated>
-    </task>
-    <task id="LOCAL-00018" summary="ugly temp but working fix proto are better ordered, better matching">
-      <option name="closed" value="true" />
-      <created>1729714508444</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1729714508444</updated>
-    </task>
-    <task id="LOCAL-00019" summary="fix switch key value mapping">
-      <option name="closed" value="true" />
-      <created>1729714792566</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1729714792566</updated>
     </task>
     <task id="LOCAL-00020" summary="fix">
       <option name="closed" value="true" />
@@ -629,11 +617,26 @@
       <option name="project" value="LOCAL" />
       <updated>1734803317021</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add map move confirm response">
+      <option name="closed" value="true" />
+      <created>1734859567577</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1734859567577</updated>
+    </task>
+    <task id="LOCAL-00068" summary="add map move confirm response">
+      <option name="closed" value="true" />
+      <created>1734859599160</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1734859599160</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="temp add generator" />
     <MESSAGE value="remove auto generator (not stable)" />
     <MESSAGE value="better python generator" />
     <MESSAGE value="fix protos" />
@@ -658,7 +661,8 @@
     <MESSAGE value="add recipes &amp; item type" />
     <MESSAGE value="d3 release" />
     <MESSAGE value="add monster datas" />
-    <option name="LAST_COMMIT_MESSAGE" value="add monster datas" />
+    <MESSAGE value="add map move confirm response" />
+    <option name="LAST_COMMIT_MESSAGE" value="add map move confirm response" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
