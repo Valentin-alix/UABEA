@@ -41,62 +41,84 @@ class PMessageComparator:
         similarity: float = 0
         total_complexity: float = 0
 
-        for index in range(len(old_context_msg.p_msg.elements)):
-            old_msg_elem = old_context_msg.p_msg.elements[index]
+        if len(old_context_msg.p_msg.elements) >= len(new_context_msg.p_msg.elements):
+            first_context_msg = old_context_msg
+            second_context_msg = new_context_msg
+        else:
+            first_context_msg = new_context_msg
+            second_context_msg = old_context_msg
 
-            if type(old_msg_elem) is PField:
-                complexity_msg_elem = old_context_msg.p_folder.get_reliability_p_field(
-                    old_context_msg.p_file, old_context_msg.p_msg, old_msg_elem, set()
+        for index in range(len(first_context_msg.p_msg.elements)):
+            first_msg_elem = first_context_msg.p_msg.elements[index]
+            if type(first_msg_elem) is PField:
+                first_complexity_msg_elem = (
+                    first_context_msg.p_folder.get_reliability_p_field(
+                        first_context_msg.p_file,
+                        first_context_msg.p_msg,
+                        first_msg_elem,
+                        set(),
+                    )
                 )
-            elif type(old_msg_elem) is POneOf:
-                complexity_msg_elem = sum(
-                    old_context_msg.p_folder.get_reliability_p_field(
-                        old_context_msg.p_file,
-                        old_context_msg.p_msg,
+            elif type(first_msg_elem) is POneOf:
+                first_complexity_msg_elem = sum(
+                    first_context_msg.p_folder.get_reliability_p_field(
+                        first_context_msg.p_file,
+                        first_context_msg.p_msg,
                         one_of_elem,
                         set(),
                     )
-                    for one_of_elem in old_msg_elem.elements
+                    for one_of_elem in first_msg_elem.elements
                 )
-            elif type(old_msg_elem) is PMapField:
-                complexity_msg_elem = (
-                    old_context_msg.p_folder.get_reliability_map_field(
-                        old_context_msg.p_file,
-                        old_context_msg.p_msg,
-                        old_msg_elem,
+            elif type(first_msg_elem) is PMapField:
+                first_complexity_msg_elem = (
+                    first_context_msg.p_folder.get_reliability_map_field(
+                        first_context_msg.p_file,
+                        first_context_msg.p_msg,
+                        first_msg_elem,
                         set(),
                     )
                 )
             else:
                 continue
 
-            total_complexity += complexity_msg_elem
+            total_complexity += first_complexity_msg_elem
 
-            if len(new_context_msg.p_msg.elements) - 1 < index:
+            if len(second_context_msg.p_msg.elements) - 1 < index:
                 continue
 
-            new_msg_elem = new_context_msg.p_msg.elements[index]
+            second_msg_elem = second_context_msg.p_msg.elements[index]
 
-            if type(old_msg_elem) is PField and type(new_msg_elem) is PField:
+            if type(first_msg_elem) is PField and type(second_msg_elem) is PField:
                 similarity += (
                     PMessageComparator.compare_p_field(
-                        old_context_msg, old_msg_elem, new_context_msg, new_msg_elem
+                        first_context_msg,
+                        first_msg_elem,
+                        second_context_msg,
+                        second_msg_elem,
                     )
-                    * complexity_msg_elem
+                    * first_complexity_msg_elem
                 )
-            elif type(old_msg_elem) is POneOf and type(new_msg_elem) is POneOf:
+            elif type(first_msg_elem) is POneOf and type(second_msg_elem) is POneOf:
                 similarity += (
                     PMessageComparator.compare_p_one_of(
-                        old_context_msg, old_msg_elem, new_context_msg, new_msg_elem
+                        first_context_msg,
+                        first_msg_elem,
+                        second_context_msg,
+                        second_msg_elem,
                     )
-                    * complexity_msg_elem
+                    * first_complexity_msg_elem
                 )
-            elif type(old_msg_elem) is PMapField and type(new_msg_elem) is PMapField:
+            elif (
+                type(first_msg_elem) is PMapField and type(second_msg_elem) is PMapField
+            ):
                 similarity += (
                     PMessageComparator.compare_map_fields(
-                        old_context_msg, old_msg_elem, new_context_msg, new_msg_elem
+                        first_context_msg,
+                        first_msg_elem,
+                        second_context_msg,
+                        second_msg_elem,
                     )
-                    * complexity_msg_elem
+                    * first_complexity_msg_elem
                 )
 
         return similarity / total_complexity

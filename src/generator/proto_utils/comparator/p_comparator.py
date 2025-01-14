@@ -203,7 +203,7 @@ class PComparator:
                 break
 
             new_file_index = new_file_indexes.pop(0)
-            if new_index is not None and abs(new_file_index - new_index) > 12:
+            if new_index is not None and abs(new_file_index - new_index) > 10:
                 return None
 
             new_p_file = self.new_p_folder.p_file_array[new_file_index]
