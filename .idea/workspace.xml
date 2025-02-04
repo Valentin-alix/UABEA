@@ -4,127 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="release d3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemTypesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemTypesRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/ItemsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/MapPositionsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectivesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestObjectivesRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/QuestsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/QuestsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/RecipesRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/RecipesRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SkillsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SkillsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellLevelsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellLevelsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SpellsRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SpellsRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/data/SubAreasRoot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/i18n.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/i18n.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_101187588.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_101187588.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_101844501.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_101844501.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_104071937.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_104071937.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_104205570.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_104205570.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_104595977.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_104595977.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_104597001.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_104597001.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_146675716.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_146675716.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_146803972.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_146803972.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_146804996.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_146804996.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_147324928.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_147324928.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_147325952.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_147325952.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_148636418.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_148636418.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_160959747.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_160959747.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_171442177.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_171442177.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_171442180.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_171442180.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_171442689.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_171442689.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_183765011.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_183765011.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_183765251.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_183765251.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_185993216.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_185993216.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_185993218.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_185993218.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_185993220.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_185993220.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_185993222.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_185993222.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_192414728.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_192414728.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_192419846.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_192419846.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_196088326.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_196088326.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_200018944.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_200018944.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_200018946.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_200018946.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_200279040.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_200279040.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_200279299.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_200279299.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_206831618.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_206831618.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_206831619.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_206831619.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_207097856.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_207097856.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_207097860.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_207097860.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_207097864.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_207097864.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_215091712.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_215091712.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_215091714.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_215091714.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_216794630.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_216794630.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_216795141.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_216795141.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_216795142.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_216795142.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_223348736.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_223348736.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230167053.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230167053.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230167055.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230167055.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230429197.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230429197.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230429199.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230429199.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230691341.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230691341.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_230691343.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_230691343.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233311240.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233311240.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233311242.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233311242.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233312262.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233312262.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233312268.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233312268.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233312270.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233312270.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233313286.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233313286.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233313290.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233313290.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233315338.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233315338.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233316354.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233316354.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233316362.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233316362.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233317380.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233317380.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233318402.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233318402.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_233320452.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_233320452.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54153554.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54153554.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54154582.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54154582.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54157626.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54157626.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54161720.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54161720.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54162232.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54162232.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54171475.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54171475.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54179149.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54179149.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_54181197.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_54181197.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_57152519.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_57152519.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_57155591.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_57155591.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_61998088.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_61998088.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_68556034.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_68556034.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_72089604.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_72089604.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_72221696.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_72221696.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_72361988.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_72361988.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78905350.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78905350.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78906374.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78906374.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78907398.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78907398.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78908422.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78908422.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78909446.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78909446.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78910470.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78910470.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_78911494.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_78911494.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_84544001.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_84544001.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_84544007.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_84544007.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_84544257.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_84544257.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_84545027.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_84545027.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88080642.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88080642.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88081154.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88081154.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88085509.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88085509.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88085510.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88085510.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88086285.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88086285.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88086286.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88086286.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88087297.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88087297.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88087298.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88087298.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88216858.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88216858.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_88216860.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_88216860.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_90703362.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_90703362.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_90703874.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_90703874.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_94111750.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_94111750.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_95420418.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_95420418.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_95815681.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_95815681.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_96995855.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_96995855.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_96996875.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_96996875.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_97388033.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_97388033.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_97388037.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_97388037.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_97388039.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_97388039.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/map/map_97388041.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/map/map_97388041.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/bundles/standalone/world-graph.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/bundles/standalone/world-graph.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D3Database/game_mappings.json" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database/game_mappings.json" afterDir="false" />
+    <list default="true" id="cb70bdba-d04c-4825-80f8-dd3c17616ff4" name="Changes" comment="manual fix mapping">
+      <change beforePath="$PROJECT_DIR$/D3Database" beforeDir="false" afterPath="$PROJECT_DIR$/D3Database" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/D3Database" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -357,14 +238,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729193056425</updated>
-    </task>
-    <task id="LOCAL-00023" summary="remove main">
-      <option name="closed" value="true" />
-      <created>1729798277933</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1729798277933</updated>
     </task>
     <task id="LOCAL-00024" summary="update proto version">
       <option name="closed" value="true" />
@@ -750,11 +623,18 @@
       <option name="project" value="LOCAL" />
       <updated>1737670345535</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="manual fix mapping">
+      <option name="closed" value="true" />
+      <created>1738089085365</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1738089085366</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add debug msg" />
     <MESSAGE value="refactor mapping protos" />
     <MESSAGE value="much better mapping based on reliability" />
     <MESSAGE value="add obf proto" />
@@ -779,7 +659,8 @@
     <MESSAGE value="add some maps" />
     <MESSAGE value="new mapping &amp; datas d3" />
     <MESSAGE value="release d3" />
-    <option name="LAST_COMMIT_MESSAGE" value="release d3" />
+    <MESSAGE value="manual fix mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="manual fix mapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
