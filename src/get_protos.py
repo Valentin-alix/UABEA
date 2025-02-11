@@ -2,10 +2,10 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.append(str(Path(__file__).parent.parent))
 from src.generator.gen_mapping_proto import generate_mapping_proto
 from src.generator.gen_python_from_proto import gen_all_python_from_protoc
 
-sys.path.append(str(Path(__file__).parent.parent))
 
 from src.consts import (
     IL2_CPP_DUMPER_PATH_EXE,

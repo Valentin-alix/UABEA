@@ -5,6 +5,7 @@ from typing import Any
 
 from tqdm import tqdm
 
+sys.path.append(str(Path(__file__).parent.parent))
 from D3Database.models.datas.areas_root import AreasRoot
 from D3Database.models.datas.characteristic_category_root import (
     CharacteristicCategoriesRoot,
@@ -30,7 +31,6 @@ from D3Database.models.world_graph import WorldGraphData
 from src.generator.data_cleaning import clean_data_to_output
 from src.generator.i18n import I18N
 
-sys.path.append(str(Path(__file__).parent.parent))
 
 from src.consts import UABEA_PATH_EXE
 from D3Database.consts import (
