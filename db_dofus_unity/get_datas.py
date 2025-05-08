@@ -5,9 +5,10 @@ from typing import Any
 
 from tqdm import tqdm
 
-from db_dofus_unity.generator.i18n import I18N
 
 sys.path.append(str(Path(__file__).parent.parent))
+
+from db_dofus_unity.generator.i18n import I18NReader
 
 from D3Database.models.datas.areas_root import AreasRoot
 from D3Database.models.datas.characteristic_category_root import (
@@ -34,22 +35,16 @@ from D3Database.models.world_graph import WorldGraphData
 from db_dofus_unity.generator.data_cleaning import clean_data_to_output
 
 
-from db_dofus_unity.consts import UABEA_PATH_EXE
+from db_dofus_unity.consts import (
+    PATH_DATAS,
+    PATH_MAPS,
+    PATH_STANDALONE_BUNDLES,
+    UABEA_PATH_EXE,
+)
 from D3Database.consts import (
-    DOFUS_PATH,
     D3_STANDALONE,
     D3_MAP,
     D3_DATA,
-)
-
-PATH_STANDALONE_BUNDLES = os.path.join(
-    DOFUS_PATH, "Dofus_Data", "StreamingAssets", "aa", "StandaloneWindows64"
-)
-PATH_MAPS = os.path.join(
-    DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Map", "Data"
-)
-PATH_DATAS = os.path.join(
-    DOFUS_PATH, "Dofus_Data", "StreamingAssets", "Content", "Data"
 )
 
 
@@ -146,5 +141,5 @@ def get_datas() -> None:
 def update_all_datas():
     get_datas()
     get_world_graph_datas()
-    I18N.get_datas()
+    I18NReader.get_datas()
     get_map_datas()

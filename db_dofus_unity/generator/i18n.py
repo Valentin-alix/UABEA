@@ -49,7 +49,7 @@ class BinaryReader:
         return value.decode()
 
 
-class I18N:
+class I18NReader:
     @staticmethod
     def get_datas() -> None:
         name_by_id: dict[int, str] = {}
@@ -86,4 +86,4 @@ class I18N:
 
 
 if __name__ == "__main__":
-    I18N.get_datas()
+    I18NReader.get_datas()

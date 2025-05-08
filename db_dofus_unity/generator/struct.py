@@ -1,7 +1,10 @@
 import os
 from pathlib import Path
+import re
 
-from db_dofus_unity.utils import to_snake_case
+
+def to_snake_case(value: str):
+    return re.sub(r"(?<!^)(?=[A-Z])", "_", value).lower()
 
 
 def run_cmd_codegen(input_filename: str, output_filename: str, class_name: str) -> None:
