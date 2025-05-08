@@ -1,13 +1,13 @@
 import os
 from pathlib import Path
 
-from src.utils import to_snake_case
+from db_dofus_unity.utils import to_snake_case
 
 
 def run_cmd_codegen(input_filename: str, output_filename: str, class_name: str) -> None:
     cmd = (
         f"datamodel-codegen --input-file-type json --input {input_filename} --output {output_filename} --custom"
-        f"-template-dir {os.path.join(Path(__file__).parent, "template")}  --output-model-type msgspec.Struct "
+        f"-template-dir {os.path.join(Path(__file__).parent, 'template')}  --output-model-type msgspec.Struct "
         f"--encoding utf-8 --target-python-version 3.12 --keyword-only --class-name {class_name}"
     )
     os.system(cmd)

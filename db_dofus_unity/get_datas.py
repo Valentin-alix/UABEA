@@ -5,7 +5,10 @@ from typing import Any
 
 from tqdm import tqdm
 
+from db_dofus_unity.generator.i18n import I18N
+
 sys.path.append(str(Path(__file__).parent.parent))
+
 from D3Database.models.datas.areas_root import AreasRoot
 from D3Database.models.datas.characteristic_category_root import (
     CharacteristicCategoriesRoot,
@@ -28,11 +31,10 @@ from D3Database.models.datas.sub_areas_root import SubAreasRoot
 from D3Database.models.datas.waypoints_root import WaypointsRoot
 from D3Database.models.maps import MapDataRoot
 from D3Database.models.world_graph import WorldGraphData
-from src.generator.data_cleaning import clean_data_to_output
-from src.generator.i18n import I18N
+from db_dofus_unity.generator.data_cleaning import clean_data_to_output
 
 
-from src.consts import UABEA_PATH_EXE
+from db_dofus_unity.consts import UABEA_PATH_EXE
 from D3Database.consts import (
     DOFUS_PATH,
     D3_STANDALONE,
@@ -141,7 +143,7 @@ def get_datas() -> None:
         clean_data_to_output(related_model, filepath)
 
 
-if __name__ == "__main__":
+def update_all_datas():
     get_datas()
     get_world_graph_datas()
     I18N.get_datas()
