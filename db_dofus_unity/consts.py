@@ -3,14 +3,13 @@ from pathlib import Path
 
 from D3Database.consts import DOFUS_PATH
 
-
 UABEA_PATH_EXE = os.path.join(
     Path(__file__).parent.parent,
     "UABEA",
     "UABEAvalonia",
     "bin",
     "Debug",
-    "net6.0",
+    "net8.0",
     "UABEAvalonia.exe",
 )
 
