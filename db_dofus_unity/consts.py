@@ -9,7 +9,7 @@ UABEA_PATH_EXE = os.path.join(
     "UABEAvalonia",
     "bin",
     "Debug",
-    "net8.0",
+    "net6.0",
     "UABEAvalonia.exe",
 )
 

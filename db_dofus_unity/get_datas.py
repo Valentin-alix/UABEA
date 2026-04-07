@@ -5,8 +5,9 @@ from typing import Any
 
 from tqdm import tqdm
 
-sys.path.append(str(Path(__file__).parent.parent))
+from DBDofusUnity.db_dofus_unity.generator.i18n import I18NReader
 
+sys.path.append(str(Path(__file__).parent.parent))
 
 from D3Database.consts import (
     D3_DATA,
@@ -34,6 +35,7 @@ from D3Database.models.datas.spells_root import SpellsRoot
 from D3Database.models.datas.sub_areas_root import SubAreasRoot
 from D3Database.models.datas.waypoints_root import WaypointsRoot
 from D3Database.models.maps import MapDataRoot
+from D3Database.models.world_graph import WorldGraphData
 from db_dofus_unity.consts import (
     PATH_DATAS,
     PATH_MAPS,
@@ -45,17 +47,21 @@ from db_dofus_unity.generator.data_cleaning import clean_data_to_output
 
 def get_world_graph_datas():
     print("get world graph")
+    bundle_filename = next(
+        filename
+        for filename in os.listdir(PATH_STANDALONE_BUNDLES)
+        if "worldassets_assets_all" in filename
+    )
     os.system(
-        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(PATH_STANDALONE_BUNDLES)} -out {D3_STANDALONE}"
+        f"{UABEA_PATH_EXE} batchexportbundle {os.path.join(PATH_STANDALONE_BUNDLES, bundle_filename)} -out {D3_STANDALONE}"
     )
 
     print("cleaning worldgraph")
-
-    # for filename in os.listdir(D3_STANDALONE):
-    #     if filename == "world-graph.json":
-    #         clean_data_to_output(WorldGraphData, os.path.join(D3_STANDALONE, filename))
-    #     else:
-    #         os.remove(os.path.join(D3_STANDALONE, filename))
+    for filename in os.listdir(D3_STANDALONE):
+        if filename == "world-graph.json":
+            clean_data_to_output(WorldGraphData, os.path.join(D3_STANDALONE, filename))
+        else:
+            os.remove(os.path.join(D3_STANDALONE, filename))
 
 
 def get_map_datas() -> None:
@@ -132,5 +138,5 @@ def get_datas() -> None:
 def update_all_datas():
     get_datas()
     get_world_graph_datas()
-    # I18NReader.get_datas()
-    # get_map_datas()
+    I18NReader.get_datas()
+    get_map_datas()
